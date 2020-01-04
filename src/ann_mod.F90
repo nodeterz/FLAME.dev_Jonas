@@ -135,6 +135,7 @@ module mod_ann
         real(8), allocatable:: chi_o(:)
         real(8), allocatable:: chi_1(:) ! for cent2
         real(8), allocatable:: chi_2(:) ! for cent2
+        real(8), allocatable:: gama(:) ! for cent2
         real(8), allocatable:: chi_d(:)
         real(8), allocatable:: fat_chi(:,:)
         real(8), allocatable:: dqat_weights(:,:)

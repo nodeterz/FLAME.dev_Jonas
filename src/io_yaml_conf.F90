@@ -101,6 +101,11 @@ subroutine read_yaml_conf(parini,filename,nconfmax,atoms_arr)
         if(has_key(dict1,"dpm")) then
             atoms_arr%atoms(iconf)%dpm=dict1//'dpm'
         endif
+        if(has_key(dict1,"fpotindex") .or. has_key(dict1,"fpotcoeff") .or. has_key(dict1,"fpotgw")) then
+            atoms_arr%atoms(iconf)%fakegw=dict1//'fpotgw'
+            atoms_arr%atoms(iconf)%fakecoeff=dict1//'fpotcoeff'
+            atoms_arr%atoms(iconf)%fakeindex=dict1//'fpotindex'
+        endif
         if(has_key(dict1,"elecfield")) then
             atoms_arr%atoms(iconf)%elecfield=dict1//'elecfield'
         endif

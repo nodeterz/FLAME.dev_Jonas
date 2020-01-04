@@ -46,6 +46,8 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
         ann_arr%chi_d=0.d0
         ann_arr%a=0.d0
     endif
+    allocate(ann_arr%gama(1:2*atoms%nat))
+    ann_arr%gama(1:2*atoms%nat)=0.d0
     if(parini%iverbose>=2) call cpu_time(time1)
     call init_electrostatic_cent2(parini,atoms,ann_arr,ann_arr%a,poisson)
     if(parini%iverbose>=2) call cpu_time(time2)
@@ -83,6 +85,7 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
     !This must be here since contribution from coulomb
     !interaction is calculated during the process of charge optimization.
     if(parini%iverbose>=2) call cpu_time(time4)
+    call get_gama_cent2(atoms,ann_arr) 
     call get_qat_from_chi_cent2(parini,ann_arr,atoms,poisson,ann_arr%a)
     if(parini%iverbose>=2) call cpu_time(time5)
     !--------------------------------------------------------------------------
@@ -180,6 +183,7 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
         deallocate(ann_arr%fatpq)
         deallocate(ann_arr%stresspq)
     endif
+    deallocate(ann_arr%gama)
     call f_release_routine()
 end subroutine cal_ann_cent2
 !*****************************************************************************************
@@ -251,8 +255,8 @@ subroutine get_qat_from_chi_dir_cent2(parini,ann_arr,atoms,a)
         write(*,'(a19,i8)') 'ERROR: DGETRF info=',info
         stop
     endif
-    ann_arr%qq(1:nat)=-ann_arr%chi_1(1:nat)
-    ann_arr%qq(nat+1:2*nat)=-ann_arr%chi_2(1:nat)
+    ann_arr%qq(1:nat)=-ann_arr%chi_1(1:nat)-ann_arr%gama(1:nat)
+    ann_arr%qq(nat+1:2*nat)=-ann_arr%chi_2(1:nat)-ann_arr%gama(nat+1:2*nat)
     ann_arr%qq(2*nat+1)=atoms%qtot
     call DGETRS('N',2*nat+1,1,a,2*nat+1,ann_arr%ipiv,ann_arr%qq,2*nat+1,info)
     if(info/=0) then
@@ -431,18 +435,20 @@ subroutine get_electrostatic_cent2(parini,atoms,ann_arr,epot_c,a,poisson)
     !local variables
     integer:: iat, jat
     real(8):: vol, c
-    real(8):: dx, dy, dz, r, tt1, tt2, pi, beta_iat, beta_jat, gama, ttf
+    real(8):: dx, dy, dz, r, tt1, tt2, tt3, pi, beta_iat, beta_jat, gama, ttf
     associate(epot_es=>ann_arr%epot_es)
     tt1=0.d0
     tt2=0.d0
+    tt3=0.d0
     do iat=1,atoms%nat
         tt1=tt1+ann_arr%chi_1(iat)*atoms%qat_1(iat)+&
                 ann_arr%chi_2(iat)*atoms%qat_2(iat)
         tt2=tt2+atoms%qat_1(iat)**2*0.5d0*ann_arr%ann(atoms%itypat(iat))%hardness_1+&
                 atoms%qat_2(iat)**2*0.5d0*ann_arr%ann(atoms%itypat(iat))%hardness_2
+        tt3=tt3+atoms%qat_1(iat)*ann_arr%gama(iat)+atoms%qat_2(iat)*ann_arr%gama(iat+atoms%nat)
     enddo
     call cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
-    epot_c=epot_es+tt1+tt2+ann_arr%ener_ref
+    epot_c=epot_es+tt1+tt2+tt3+ann_arr%ener_ref
     end associate
 end subroutine get_electrostatic_cent2
 !*****************************************************************************************
@@ -570,4 +576,37 @@ subroutine charge_analysis_cent2(parini,atoms,ann_arr)
         ann_arr%chi_2_delta(i)=max(ann_arr%chi_2_delta(i),chi_2_max_per_conf(i)-chi_2_min_per_conf(i))
     enddo
 end subroutine charge_analysis_cent2
+!*****************************************************************************************
+subroutine get_gama_cent2(atoms,ann_arr)
+    use mod_atoms, only: typ_atoms, update_ratp
+    use mod_ann, only: typ_ann_arr
+    implicit none
+    type(typ_atoms), intent(inout):: atoms
+    type(typ_ann_arr), intent(inout):: ann_arr
+    !local variables
+    integer:: iat
+    real(8):: dx, dy, dz, rsq, pi
+    real(8):: alpha_1, alpha_2, beta_1, beta_2, sigma
+    pi=4.d0*atan(1.d0)
+    write(*,*) atoms%nat,atoms%fakegw, atoms%fakeindex, atoms%fakecoeff
+    call update_ratp(atoms)
+    do iat=1,atoms%nat
+        alpha_1=ann_arr%ann(atoms%itypat(iat))%gausswidth_1
+        alpha_2=ann_arr%ann(atoms%itypat(iat))%gausswidth_2
+        sigma  = atoms%fakegw
+        beta_1=1.d0/(sqrt(pi*(alpha_1**2+sigma**2)))**3
+        beta_2=1.d0/(sqrt(pi*(alpha_2**2+sigma**2)))**3
+        if (iat==atoms%fakeindex) then
+            ann_arr%gama(iat)=atoms%fakecoeff*beta_1
+            ann_arr%gama(atoms%nat+iat)=atoms%fakecoeff*beta_2
+        else
+            dx=atoms%ratp(1,iat)-atoms%ratp(1,atoms%fakeindex)
+            dy=atoms%ratp(2,iat)-atoms%ratp(2,atoms%fakeindex)
+            dz=atoms%ratp(3,iat)-atoms%ratp(3,atoms%fakeindex)
+            rsq=dx*dx+dy*dy+dz*dz
+            ann_arr%gama(iat)=atoms%fakecoeff*beta_1*exp(-rsq/(alpha_1**2+sigma**2))
+            ann_arr%gama(atoms%nat+iat)=atoms%fakecoeff*beta_2*exp(-rsq/(alpha_1**2+sigma**2))
+        endif
+    enddo
+end subroutine get_gama_cent2
 !*****************************************************************************************

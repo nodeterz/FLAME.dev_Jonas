@@ -38,6 +38,9 @@ module mod_atoms
         real(8), public:: pressure=0.d0 !external pressure
         real(8), public:: tol
         real(8), public:: qtypat(20)=1.d20
+        real(8), public:: fakegw=0.d0 !fake gaussian potential's width
+        real(8), public:: fakecoeff=0.d0 !fake gaussian potential's coefficient
+        integer, public:: fakeindex=1 !atom number where the fake potential is.
         integer, public:: ntypat=-1
         integer, public:: ltypat(20)=-1
         integer, public:: nfp=-1
@@ -849,6 +852,9 @@ subroutine atom_copy(at_inp,at_out,str_message)
         at_out%dpm(1)=at_inp%dpm(1)
         at_out%dpm(2)=at_inp%dpm(2)
         at_out%dpm(3)=at_inp%dpm(3)
+        at_out%fakegw=at_inp%fakegw
+        at_out%fakeindex=at_inp%fakeindex
+        at_out%fakecoeff=at_inp%fakecoeff
         at_out%elecfield(1)=at_inp%elecfield(1)
         at_out%elecfield(2)=at_inp%elecfield(2)
         at_out%elecfield(3)=at_inp%elecfield(3)
@@ -1215,6 +1221,9 @@ subroutine atom_copy_old(at_inp,at_out,str_message,sat,rat,ratim,vat,amass,fat,b
         at_out%dpm(1)=at_inp%dpm(1)
         at_out%dpm(2)=at_inp%dpm(2)
         at_out%dpm(3)=at_inp%dpm(3)
+        at_out%fakegw=at_inp%fakegw
+        at_out%fakeindex=at_inp%fakeindex
+        at_out%fakecoeff=at_inp%fakecoeff
         at_out%elecfield(1)=at_inp%elecfield(1)
         at_out%elecfield(2)=at_inp%elecfield(2)
         at_out%elecfield(3)=at_inp%elecfield(3)

@@ -626,6 +626,9 @@ subroutine read_data_yaml(parini,filename_list,atoms_arr)
             atoms_arr_t%atoms(atoms_arr_t%nconf)%epot=atoms_arr_of%atoms(iconf)%epot
             atoms_arr_t%atoms(atoms_arr_t%nconf)%qtot=atoms_arr_of%atoms(iconf)%qtot
             atoms_arr_t%atoms(atoms_arr_t%nconf)%dpm(1:3)=atoms_arr_of%atoms(iconf)%dpm(1:3)
+            atoms_arr_t%atoms(atoms_arr_t%nconf)%fakegw=atoms_arr_of%atoms(iconf)%fakegw
+            atoms_arr_t%atoms(atoms_arr_t%nconf)%fakeindex=atoms_arr_of%atoms(iconf)%fakeindex
+            atoms_arr_t%atoms(atoms_arr_t%nconf)%fakecoeff=atoms_arr_of%atoms(iconf)%fakecoeff
             atoms_arr_t%atoms(atoms_arr_t%nconf)%elecfield(1:3)=atoms_arr_of%atoms(iconf)%elecfield(1:3)
             atoms_arr_t%atoms(atoms_arr_t%nconf)%boundcond=trim(atoms_arr_of%atoms(iconf)%boundcond)
             atoms_arr_t%atoms(atoms_arr_t%nconf)%cellvec(1:3,1:3)=atoms_arr_of%atoms(iconf)%cellvec(1:3,1:3)
