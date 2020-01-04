@@ -1,0 +1,19 @@
+ main:
+   task: single_point
+   types: Na Cl
+ potential:
+   potential: forcefield
+   component_ff: coulomb
+   ewald:
+     psolver: p3d
+     cell_ortho: True
+     ecut: 10.0
+     ecutz: 12.0
+     alpha: 2.0
+     rcut: 15.0
+     rgcut: 6.0
+     nsp: 10000
+     ewald: True
+ single_point:
+   print_force: True
+   format: (a5,2x,3f12.8,2x,3l1)

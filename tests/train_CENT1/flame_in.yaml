@@ -1,0 +1,22 @@
+main:
+    task        : ann
+    seed        : 6731916
+    types       : Na Cl
+    verbosity   : 2
+    rng_type: only_for_tests #Do not use this value, only useful for developers
+
+ann:
+    subtask       : train
+    optimizer     : rivals
+    approach      : cent1
+    nstep_opt     : 15
+    nconf_rmse     : 400
+    ampl_rand     :   0.020
+    symfunc       : only_calculate
+    prefit        : False
+    print_energy  : True
+
+potential:
+    potential: ann
+    ewald:
+        ewald: False

@@ -1,0 +1,280 @@
+---
+Default tolerances:
+ Epsilon: 1.e-13
+
+Keys to ignore:
+ - Code logo
+ - Timestamp of this run
+ - CPU time
+ - Walltime since initialization
+ - Tot. No. of Allocations
+ - Max No. of dictionaries used
+ - Memory Consumption Report
+ - Tot. No. of Deallocations
+ - random number generator
+ - mpi started
+ - mpi finalized
+
+Patterns to ignore:
+ - Timestamp
+ - memory
+ - FLAGS
+ - input_guess
+
+testforces_FD:
+ Keys to ignore:
+  - epot_diff_x
+  - epot_diff_y
+  - epot_diff_z
+  - fnrm
+  - fsum_x
+  - fsum_y
+  - fsum_z
+ epot: 1.e-13
+ epot_l_x: 1.e-13
+ epot_l_y: 1.e-13
+ epot_l_z: 1.e-13
+ epot_r_x: 1.e-13
+ epot_r_y: 1.e-13
+ epot_r_z: 1.e-13
+ F_x: 1.e-13
+ F_y: 1.e-13
+ F_z: 1.e-13
+ err_x: 1.e-9
+ err_y: 1.e-9
+ err_z: 1.e-9
+
+SP_QSC:
+ Keys to ignore:
+  - conf. number
+ epot: 1.e-13
+ diff w.r.t. first conf: 1.e-6
+ diff w.r.t. prev. conf: 1.e-6
+
+geopt_FIRE:
+ Keys to ignore:
+  - iproc
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ dt_start: 1.e-5
+ epot: 1.e-11
+ fnrm: 1.e-11
+ fmax: 1.e-11
+
+geopt_BFGS:
+ Keys to ignore:
+  - iproc
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ epot: 1.e-11
+ fnrm: 1.e-11
+ fmax: 1.e-11
+
+geopt_SQNM:
+ Keys to ignore:
+  - iproc
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ epot: 1.e-09
+ fnrm: 1.e-11
+ fmax: 1.e-11
+ ndim: 1.e-13
+
+posout.ref.yaml:
+ Epsilon: 1.e-10
+ force: 1.e-07
+ coord: 1.e-07
+
+minhopp_LJ:
+ Keys to ignore:
+  - iproc
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ dt_start: 1.e-5
+ epot: 1.e-10
+ fnrm: 1.e-11
+ fmax: 1.e-11
+ en0000: 1.e-5
+
+saddle_1s_Si64Bulk:
+ Keys to ignore:
+  - iproc
+ Epsilon: 1.e-9
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ epot: 1.e-7
+ fnrm: 5.e-7
+ fmax: 5.e-7
+ ndim: 1.e-9
+ curv0: 5.e-7
+ curv: 5.e-7
+ cosangle: 2.e-6
+ cosangletol: 1.e-9
+ bh0: 1.e-9
+ bh1: 1.e-9
+ bh2: 1.e-9
+
+posmin1.ref.yaml:
+ Epsilon: 1.e-9
+ coord: 5.e-9
+
+posmin2.ref.yaml:
+ Epsilon: 1.e-9
+ coord: 5.e-9
+
+saddle_2s_splsad:
+ Keys to ignore:
+  - iproc
+ Epsilon: 1.e-11
+
+saddle_2s_neb:
+ Keys to ignore:
+  - iproc
+ Epsilon: 1.e-11
+
+saddle_1s_barsad:
+ Keys to ignore:
+  - iproc
+  - xmax
+ Epsilon: 1.e-11
+ fmax: 5.e-8
+ fnrm: 5.e-8
+
+saddle_1s_barsad_dir:
+ Keys to ignore:
+  - iproc
+  - xmax
+ Epsilon: 1.e-11
+ fmax: 1.e-9
+ fnrm: 1.e-9
+
+SP_CENT1_bulk:
+ Keys to ignore:
+  - conf. number
+  - Timing of CENT1
+ epot: 1.e-13
+ diff w.r.t. first conf: 1.e-6
+ diff w.r.t. prev. conf: 1.e-6
+ epot_es: 1.e-11
+ de: 1.e-11
+ gnrm: 1.e-11
+ stepsize: 1.e-11
+
+SP_CENT1_free:
+ Keys to ignore:
+  - conf. number
+  - Timing of CENT1
+ Epsilon: 1.e-10
+ epot: 1.e-10
+ diff w.r.t. first conf: 1.e-6
+ diff w.r.t. prev. conf: 1.e-6
+
+SP_CENT1_slab:
+ Keys to ignore:
+  - conf. number
+  - Timing of CENT1
+ Epsilon: 1.e-13
+ epot: 1.e-13
+ diff w.r.t. first conf: 1.e-6
+ diff w.r.t. prev. conf: 1.e-6
+ epot_es: 1.e-11
+ de: 1.e-11
+ gnrm: 1.e-11
+ stepsize: 1.e-11
+ inside get_beta_grid: 1.e-10
+
+minhocao_CENT1:
+ Keys to ignore:
+  - kid
+ Epsilon: 1.e-10
+ Velocity of CM: 2.e-8
+
+minhocao_LTB:
+ Keys to ignore:
+  - kid
+ Epsilon: 1.e-11
+
+minhocao_LTB_fixkpt:
+ Keys to ignore:
+  - kid
+ Epsilon: 1.e-11
+
+SP_PP_p3d:
+ Keys to ignore:
+  - conf. number
+  - Status of the memory at finalization
+  - Memory Consumption Report
+  - Remaining Memory (B)
+ Epsilon: 1.e-11
+ epot: 1.e-11
+
+SP_PP_p3dbias:
+ Keys to ignore:
+  - conf. number
+ Epsilon: 1.e-11
+ epot: 1.e-13
+
+geopt_CENT1_slab_fixed_efield:
+ Keys to ignore:
+  - iproc
+  - Timing of CENT1
+ Epsilon: 1.e-11
+ alphax: 1.e-5
+ fmaxtol: 1.e-5
+ dxmax: 1.e-5
+ condnum: 1.e-5
+ fnrmtolsatur: 1.e-5
+ epot: 1.e-10
+ fnrm: 1.e-11
+ fmax: 1.e-11
+ ndim: 1.e-11
+ inside get_beta_grid: 1.e-10
+ epot_es: 1.e-11
+
+vibfreq_fourpoints:
+ Keys to ignore:
+  - mode_00052
+  - mode_00053
+  - mode_00054
+  - mode_00055
+  - mode_00056
+  - mode_00057
+ Epsilon: 1.e-6
+ vibrational frequencies: 5.e-6
+
+train_atombased:
+ Keys to ignore:
+  - TIMING evaluation symmetry functions for train
+  - TIMING evaluation symmetry functions for valid
+ Epsilon: 1.e-10
+
+train_output.ref.yaml:
+ Epsilon: 1.e-10
+
+train_CENT1:
+ Keys to ignore:
+  - TIMING evaluation symmetry functions for train
+  - TIMING evaluation symmetry functions for valid
+  - Timing of CENT1
+ Epsilon: 1.e-10
+
+train_CENTT:
+ Keys to ignore:
+  - TIMING evaluation symmetry functions for train
+  - TIMING evaluation symmetry functions for valid
+ Epsilon: 1.e-10

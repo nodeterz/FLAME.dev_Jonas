@@ -1,0 +1,32 @@
+main:
+    task: dynamics
+    types: Na Cl
+
+potential:
+    potential: forcefield
+    component_ff: coulomb:tosifumi
+    add_repulsive: False
+    ewald:
+        psolver   : p3d
+        cell_ortho: True
+        ewald: True
+        ecut : 5.0
+        ecutz : 7.0
+        rgcut : 5.0 
+        alpha: 2.26767135342053
+        rcut: 15.684726861158667
+        nsp : 10000
+
+dynamics:
+    md_method : nvt_nose
+    #md_method : nvt_langev
+    #restart : .true.
+    nfreq : 100
+    dt : 2             #  fs
+    nmd : 10000
+    temp : 300          # K
+    init_temp : 300     # K
+    ntherm : 2
+    highest_freq : 10   # THz
+        # If highest_freq is too small, the temperature can fluctuate wildly; 
+        # If it is too large, the temperature will take a very long time to equilibrate.

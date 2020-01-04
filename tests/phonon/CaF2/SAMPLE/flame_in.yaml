@@ -1,0 +1,24 @@
+main:
+    task: single_point
+    verbosity: 2
+    types: Ca F
+
+potential:
+    potential: ann
+    print_force : True
+    ewald:
+        ewald: False
+        psolver: kwald 
+        ecut: 10.132118364233778
+        #ecut: 22.797266319526
+single_point:
+    print_force : True
+ann:
+    #subtask: train
+    #optimizer: behler
+    #optimizer: rivals
+    #optimizer: rivals_tmp
+    #optimizer: lm
+    syslinsolver : operator
+    approach: eem1
+    #symfunc: write

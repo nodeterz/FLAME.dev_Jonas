@@ -1,0 +1,2836 @@
+---
+ Code logo:
+   "__________________ Fully-Loaded Atomistic Modeling Environment
+           .
+          .M
+         ,MM
+         MM:
+     .   YMM,
+     M   `MMM,     .
+     M.   `MMM    .M
+     MM,  ,MMM   ,MM
+     `MM, MMM`  ,MM` .
+     ,MMM./MMMM.MMM, M
+     MMMMMM MMMMMMMMMMI  FFFFFF LL        AA    M        M EEEEEE
+     MMMMMM   MMMMMMMMM  F      LL       A  A   MM      MM E
+     `MMMM     MMMMMMM`  FFFFFF LL      A    A  M M    M M EEEEEE
+      /MMMMM   MMMMMM`   F      LL      AAAAAA  M  M  M  M E
+       MMMMMM  MMMMM`    F      LLLLLL A      A M   MM   M EEEEEE
+   ________________________________________ www.flame-code.org   "
+ Reference Paper                       : To Be Added Later.
+ Timestamp of this run                 : 2019-08-17 10:06:12.483
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MERGED INPUT FILE
+ main:
+   task                                : minhopp
+   types                               : LJ
+   two_level_geopt                     : True
+   verbosity                           : 0
+   verbose                             : 3
+   rng_type                            : only_for_tests
+   seed                                : -2
+   nrun_lammps                         : 0
+   nat                                 : 0
+   pressure                            : 0.0
+   findsym                             : False
+   finddos                             : False
+   params_new                          : False
+ minhopp:
+   nstep                               : 100
+   nsoften                             : 20
+   mdmin                               : 3
+   minter                              : 1
+   nrandoff                            : 5
+   npminx                              : 5000
+   etoler                              : 1.E-3
+   eref                                : -44.325801
+   ekinmax                             : 1.E20
+   alpha1                              : 0.9803921568627451
+   alpha2                              : 1.02d0
+   beta1                               : 1.05d0
+   beta2                               : 1.05d0
+   beta3                               : 0.9523809523809523
+   trajectory                          : True
+   print_force                         : True
+   auto_soft                           : False
+   alpha_lat                           : 1.0
+   alpha_at                            : 1.0
+   mol_soften                          : False
+ geopt:
+   method                              : BFGS
+   fmaxtol                             : 1.E-3
+   alphax                              : 3.E-3
+   condnum                             : 20.0
+   precaution                          : normal
+   lprint                              : True
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+   hesslat                             : 1.0
+   hessat                              : 1.0
+   geoext                              : False
+   qbfgsndim                           : 1
+   qbfgstri                            : 0.5
+   qbfgstrmin                          : 1.E-3
+   qbfgstrmax                          : 0.5
+   qbfgsw1                             : 0.01
+   qbfgsw2                             : 0.5
+   maxrise                             : 1.E-6
+   sqnmcutoff                          : 1.E-4
+   sqnmsteep                           : 1.0
+   sqnmtrustr                          : 0.1
+ geopt_prec:
+   method                              : SD
+   fmaxtol                             : 1.0
+   alphax                              : 1.E-3
+   condnum                             : 10.0
+   precaution                          : normal
+   lprint                              : True
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+ saddle_opt:
+   method                              : unknown
+   fmaxtol                             : -1.0
+   alphax                              : -1.0
+   condnum                             : 10.0
+   precaution                          : normal
+   lprint                              : False
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+ saddle:
+   method                              : unknown
+   list_random_displace                : None
+   dimsep                              : -1.0
+   ampl                                : -1.0
+   np_splsad                           : 2
+   np_neb                              : 2
+   ns2                                 : 0
+   vdtol                               : 0.1
+   dt                                  : 0.03
+   htol                                : 0.02
+   alphax                              : 0.5
+   hybrid                              : no
+   docineb                             : no
+   doneb                               : unknown
+   pickbestanchorpoints                : unknown
+   runstat                             : new
+   typintpol                           : cubic
+   fcalls_max                          : 100
+   fmaxtol_splsad                      : 2.E-4
+   fmaxtol_neb                         : 2.E-2
+   opt_method                          : SD
+   dbar                                : 0.1
+   stepsize                            : 20.0
+   fnrmtol_coarse                      : 1.E-2
+   nstep                               : 1000
+   bar_contract                        : True
+   dbar_contracted                     : 1.E-3
+   fnrmtol_contracted                  : 2.E-4
+   nstep_contract                      : 20
+ potential:
+   potential                           : lj
+   cal_charge                          : False
+   potential_sec                       : unknown
+   boundary                            : 1
+   ann_boundcheck                      : none
+   component_ff                        : no
+   sockinet                            : 0
+   sockport                            : 3141
+   sockhost                            : mh-driver
+   ipiinet                             : 0
+   ipiport                             : 3141
+   ipihost                             : mh-driver
+   ipiecutwf: [1.0, 1.0]
+   sockecutwf: [1.0, 1.0]
+   drift                               : False
+   add_repulsive                       : True
+   voids                               : False
+   core_rep                            : False
+   usewfgeo                            : False
+   usewfsoft                           : False
+   usewfmd                             : False
+   auto_kpt                            : True
+   kptmesh: [1, 1, 1]
+   kptden: [0.04, 0.06]
+   ewald:
+     hx                                : -1.0
+     hy                                : -1.0
+     hz                                : -1.0
+     alpha                             : -1.0
+     ecut                              : -1.0
+     ecutz                             : -1.0
+     ecut_auto                         : False
+     rcut                              : -1.0
+     rgcut                             : -1.0
+     nsp                               : -1
+     plane_voltageu                    : 0.0
+     plane_voltagel                    : 0.0
+     plane_voltageu_ac                 : 0.0
+     frequency                         : 0.0
+     gnrmtol                           : 1.E-7
+     psolver                           : unknown
+     ewald                             : False
+     cell_ortho                        : False
+     ewald_tol                         : 1.E-6
+     bias_type                         : no
+     external_field                    : 0.0
+     dielec_const                      : 1.0
+     dielec_const1                     : 1.0
+     dielec_const2                     : 1.0
+     cal_polar                         : False
+   confine:
+     confinement                       : False
+     nconfine                          : 0
+     cartred                           : C
+     dim                               : 1
+     exp                               : 4
+     prefac                            : 0.01
+     cut                               : 1.0
+     av                                : 2
+     eq                                : 0
+     nat                               : 0
+     atoms                             : all
+ ann:
+   subtask                             : unknown
+   optimizer                           : unknown
+   approach                            : atombased
+   symfunc                             : only_calculate
+   nstep_opt                           : 100
+   nstep_cep                           : 200
+   alphax_q                            : 1.0
+   alphax_r                            : 0.05
+   nconf_rmse                          : 0
+   ampl_rand                           : 1.0
+   symfunc_type                        : behler
+   syslinsolver                        : direct
+   rgnrmtol                            : 5.E-4
+   qgnrmtol                            : 5.E-4
+   etol                                : 1.0
+   dtol                                : 1.0
+   ftol                                : 1.E-4
+   normalization                       : False
+   bondbased                           : False
+   prefit                              : False
+   prefit_centt                        : False
+   read_forces                         : True
+   restart_param                       : False
+   restart_iter                        : 0
+   print_energy                        : False
+   fit_hoppint                         : False
+   save_symfunc_force                  : False
+   weight_hardness                     : 0.001
+   save_symfunc_behnam                 : False
+   freeBC_direct                       : False
+ dynamics:
+   nmd                                 : 300
+   nfreq                               : 0
+   dt                                  : -1.0
+   temp                                : 0.0
+   init_temp                           : 0.0
+   md_method                           : unknown
+   print_force                         : False
+   restart                             : False
+   algo                                : 1
+   integrator                          : 3
+   presscomp                           : 0.0
+   cellmass                            : 1.0
+   auto_mdmin                          : False
+   mdmin_init                          : 2
+   mdmin_min                           : 2
+   mdmin_max                           : 2
+   auto_mddt                           : False
+   dt_init                             : 20.0
+   nit_per_min                         : 25
+   encon                               : False
+   highest_freq                        : 10.0
+   ntherm                              : 2
+ bader:
+   method                              : unknown
+   filename                            : total_density.cube
+   vacuum                              : yes
+ genconf:
+   subtask                             : unknown
+   cal_pot                             : no
+   nat_add                             : 0
+   sat                                 : unknown
+   amargin                             : 0.0
+   dmin                                : 1.0
+   dmax                                : -1.0
+   npoint                              : 0
+   fbmin                               : -1.0
+   fbmax                               : -1.0
+   variable_cell                       : False
+   nonorthogonal                       : False
+ conf_comp:
+   tol                                 : 1.0
+ testforces:
+   method                              : unknown
+ single_point:
+   print_force                         : False
+   format                              : unknown
+   usesocket                           : no
+   sockinet                            : 0
+   sockport                            : 0
+   sockhost                            : 0
+ misc:
+   subtask                             : unknown
+   gaussian_width                      : -1.0
+   boundcond                           : unknown
+   posinp                              : unknown
+ fit_elecpot:
+   ngto                                : 1
+   iat_plot                            : 1
+   gwe_per_type                        : -1.0
+   q_per_type                          : -1.0
+   alphax_q                            : -1.0
+   alphax_a                            : -1.0
+   alphax_r                            : -1.0
+   pot_rmse_tol                        : 1.E-6
+   cutoff_fit_elecpot                  : True
+ fingerprint:
+   method                              : OGANOV
+   rcut                                : 15.0
+   dbin                                : 0.05
+   sigma                               : 0.02
+   nl                                  : 6
+   power                               : 3
+   gaussfac1                           : 1.0
+   gaussfac2                           : 1.5
+   atnmax                              : 10000
+   natx                                : 75
+   orbital                             : S
+   nexcut                              : 3
+   principleev                         : 6
+   molecules                           : 1
+   expa                                : 4
+   molsphere                           : 50
+   widthcut                            : 1.0
+   widthover                           : 1.0
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ system info: {ntypat:  1, LJ:  1}
+ mpi started: {iproc_world:  0, nproc_world:  1, iproc:  0, nproc:  1}
+ random number generator: {iproc:  0}
+ minhopp parameters: {beta1:  1.05000, beta2:  1.05000, beta3:  0.95238, alpha1:  0.98039, 
+                     alpha2:  1.02000,    p1:  5.000E-01,  p2:  5.000E-01, 
+    critical ratio (.ge. 1):  1.0000E+00,               mdmin:  3, npminx:  5000, minter:  1}
+  #master proc reads input parameters from input.minhopp and sends to all.
+ input minima info: {nlmin:  0, nlminx:  101, eref: -44.325801}
+  #This is a new run.
+ number of sets for input parameters in input.minhopp:  1
+ other minhopp parameters: {iproc:  0, ediff:  1.1, ekin:  8.9999999999999997E-002, 
+                               dt:  1.0E-002}
+  #reading cellvec sizes and atomic positions from posinp.acf
+ Number of configurations read: {filename: posinp.yaml, nconf:  1}
+ ndof                                  :  39
+ MH steps:
+ - optimization parameters:
+     method                            : SD
+     precaution                        : normal
+     alphax                            :  0.001000
+     fmaxtol                           :  1.000000
+     dxmax                             :  0.100000
+     condnum                           :  10.000000
+     fnrmtolsatur                      :  8.000000
+     dt_start                          : -1.000000
+     nsatur                            :  5
+     nit                               :  1000
+     lprint                            :  T
+   SD optimization iterations:
+   - SD: {iter:  0, epot: -3.641954282774E+01, de:  0.0E+00, fmax:  3.228E+00, 
+          fnrm:  1.190E+01,          alpha/alphax:  0.0000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  1, epot: -3.650165640999E+01, de: -8.2E-02, fmax:  2.974E+00, 
+          fnrm:  1.110E+01,          alpha/alphax:  0.6000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  2, epot: -3.658675836679E+01, de: -8.5E-02, fmax:  2.716E+00, 
+          fnrm:  1.018E+01,          alpha/alphax:  0.7200E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  3, epot: -3.667168827286E+01, de: -8.5E-02, fmax:  2.427E+00, 
+          fnrm:  9.123E+00,          alpha/alphax:  0.8640E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  4, epot: -3.675239310380E+01, de: -8.1E-02, fmax:  2.104E+00, 
+          fnrm:  7.934E+00,          alpha/alphax:  0.1037E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  5, epot: -3.682434895752E+01, de: -7.2E-02, fmax:  1.798E+00, 
+          fnrm:  6.637E+00,          alpha/alphax:  0.1244E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  6, epot: -3.688342589383E+01, de: -5.9E-02, fmax:  1.519E+00, 
+          fnrm:  5.282E+00,          alpha/alphax:  0.1493E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  7, epot: -3.692710713608E+01, de: -4.4E-02, fmax:  1.222E+00, 
+          fnrm:  3.953E+00,          alpha/alphax:  0.1792E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  8, epot: -3.695393669557E+01, de: -2.7E-02, fmax:  9.512E-01, 
+          fnrm:  2.849E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD FINISHED:
+       success                         :  Yes
+       iter                            :  8
+       epot                            : -3.695393669557E+01
+       fnrm                            :  2.84876E+00
+       fmax                            :  9.51205E-01
+   BFGS optimization iterations:
+   - BFGS: {iter:  0, epot: -3.695393669557E+01, de:  0.0E+00, fmax:  9.512E-01, 
+            fnrm:  2.849E+00,                 alpha:  8.0000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  1, epot: -3.697153829632E+01, de: -1.8E-02, fmax:  6.767E-01, 
+            fnrm:  1.874E+00,                 alpha:  8.8000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  2, epot: -3.697860778784E+01, de: -7.1E-03, fmax:  5.371E-01, 
+            fnrm:  1.433E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  3, epot: -3.698309417279E+01, de: -4.5E-03, fmax:  5.261E-01, 
+            fnrm:  1.168E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  4, epot: -3.698628744351E+01, de: -3.2E-03, fmax:  5.109E-01, 
+            fnrm:  1.008E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  5, epot: -3.698878349974E+01, de: -2.5E-03, fmax:  4.927E-01, 
+            fnrm:  9.050E-01,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  6, epot: -3.699085359860E+01, de: -2.1E-03, fmax:  4.722E-01, 
+            fnrm:  8.300E-01,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  7, epot: -3.699262555274E+01, de: -1.8E-03, fmax:  4.503E-01, 
+            fnrm:  7.691E-01,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  8, epot: -3.699416467575E+01, de: -1.5E-03, fmax:  4.276E-01, 
+            fnrm:  7.158E-01,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  9, epot: -3.699677705506E+01, de: -2.6E-03, fmax:  3.828E-01, 
+            fnrm:  6.217E-01,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  10, epot: -3.699879400961E+01, de: -2.0E-03, fmax:  3.375E-01, 
+            fnrm:  5.397E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  11, epot: -3.700033650056E+01, de: -1.5E-03, fmax:  2.941E-01, 
+            fnrm:  4.660E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  12, epot: -3.700192227309E+01, de: -1.6E-03, fmax:  2.385E-01, 
+            fnrm:  3.784E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  13, epot: -3.700296840016E+01, de: -1.0E-03, fmax:  1.901E-01, 
+            fnrm:  3.050E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  14, epot: -3.700364757718E+01, de: -6.8E-04, fmax:  1.498E-01, 
+            fnrm:  2.455E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  15, epot: -3.700417403925E+01, de: -5.3E-04, fmax:  1.091E-01, 
+            fnrm:  1.887E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  16, epot: -3.700447441931E+01, de: -3.0E-04, fmax:  7.840E-02, 
+            fnrm:  1.459E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  17, epot: -3.700464728653E+01, de: -1.7E-04, fmax:  5.570E-02, 
+            fnrm:  1.136E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  18, epot: -3.700476017263E+01, de: -1.1E-04, fmax:  3.629E-02, 
+            fnrm:  8.564E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  19, epot: -3.700482043709E+01, de: -6.0E-05, fmax:  2.380E-02, 
+            fnrm:  6.464E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  20, epot: -3.700485313211E+01, de: -3.3E-05, fmax:  1.953E-02, 
+            fnrm:  4.841E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  21, epot: -3.700487217451E+01, de: -1.9E-05, fmax:  1.516E-02, 
+            fnrm:  3.488E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  22, epot: -3.700488169251E+01, de: -9.5E-06, fmax:  1.124E-02, 
+            fnrm:  2.479E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  23, epot: -3.700488637374E+01, de: -4.7E-06, fmax:  7.980E-03, 
+            fnrm:  1.740E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  24, epot: -3.700488870780E+01, de: -2.3E-06, fmax:  5.340E-03, 
+            fnrm:  1.195E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  25, epot: -3.700488974975E+01, de: -1.0E-06, fmax:  3.481E-03, 
+            fnrm:  8.301E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  26, epot: -3.700489021829E+01, de: -4.7E-07, fmax:  2.155E-03, 
+            fnrm:  5.844E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  27, epot: -3.700489043946E+01, de: -2.2E-07, fmax:  1.373E-03, 
+            fnrm:  4.104E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  28, epot: -3.700489054266E+01, de: -1.0E-07, fmax:  1.020E-03, 
+            fnrm:  2.869E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  29, epot: -3.700489059226E+01, de: -5.0E-08, fmax:  8.098E-04, 
+            fnrm:  1.981E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS FINISHED:
+       success                         :  Yes
+       iter                            :  29
+       epot                            : -3.700489059226E+01
+       fnrm                            :  1.98090E-03
+       fmax                            :  8.09792E-04
+   input structure relaxed: {iproc:  0, epot: -3.700489059225553E+01}
+   re_sm                               : -3.700489059226E+01
+   minhopp iteration info: {iproc:  0, istep:  0, ihopp:  0, nlmin:  1, escaped:  Yes, 
+                         accepted:  Yes,           epot: -3.700489059226E+01}
+ - escaped: {iproc:  0, nlmin:  1, nlmin_old:  1, minter:  1}
+   SOFTEN:
+   - SOFT: {iter:  1, curv:  99.324, fd2:  99.581, de:  0.020, res:  1.591, eps_v:  0.020}
+   - SOFT: {iter:  2, curv:  81.631, fd2:  81.863, de:  0.016, res:  1.385, eps_v:  0.020}
+   - SOFT: {iter:  3, curv:  68.473, fd2:  68.638, de:  0.014, res:  1.168, eps_v:  0.020}
+   - SOFT: {iter:  4, curv:  59.211, fd2:  59.302, de:  0.012, res:  0.971, eps_v:  0.020}
+   - SOFT: {iter:  5, curv:  52.824, fd2:  52.851, de:  0.011, res:  0.808, eps_v:  0.020}
+   - SOFT: {iter:  6, curv:  48.378, fd2:  48.351, de:  0.010, res:  0.682, eps_v:  0.020}
+   - SOFT: {iter:  7, curv:  45.184, fd2:  45.115, de:  0.009, res:  0.588, eps_v:  0.020}
+   - SOFT: {iter:  8, curv:  42.790, fd2:  42.687, de:  0.009, res:  0.518, eps_v:  0.020}
+   - SOFT: {iter:  9, curv:  40.914, fd2:  40.783, de:  0.008, res:  0.466, eps_v:  0.020}
+   - SOFT: {iter:  10, curv:  39.383, fd2:  39.230, de:  0.008, res:  0.426, eps_v:  0.020}
+   - SOFT: {iter:  11, curv:  38.093, fd2:  37.922, de:  0.008, res:  0.395, eps_v:  0.020}
+   - SOFT: {iter:  12, curv:  36.979, fd2:  36.794, de:  0.007, res:  0.369, eps_v:  0.020}
+   - SOFT: {iter:  13, curv:  35.997, fd2:  35.802, de:  0.007, res:  0.348, eps_v:  0.020}
+   - SOFT: {iter:  14, curv:  35.121, fd2:  34.918, de:  0.007, res:  0.330, eps_v:  0.020}
+   - SOFT: {iter:  15, curv:  34.332, fd2:  34.123, de:  0.007, res:  0.314, eps_v:  0.020}
+   - SOFT: {iter:  16, curv:  33.615, fd2:  33.403, de:  0.007, res:  0.299, eps_v:  0.020}
+   - SOFT: {iter:  17, curv:  32.959, fd2:  32.746, de:  0.007, res:  0.286, eps_v:  0.020}
+   - SOFT: {iter:  18, curv:  32.357, fd2:  32.144, de:  0.006, res:  0.275, eps_v:  0.020}
+   - SOFT: {iter:  19, curv:  31.801, fd2:  31.590, de:  0.006, res:  0.264, eps_v:  0.020}
+   - SOFT: {iter:  20, curv:  31.288, fd2:  31.079, de:  0.006, res:  0.253, eps_v:  0.020}
+   MD escape:
+   - MDEs: {iter:  001, en0000:  0.99533E-02, rkin:  0.32400E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  002, en0000:  0.40373E-01, rkin:  0.32300E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  003, en0000:  0.91875E-01, rkin:  0.31995E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  004, en0000:  0.16468E+00, rkin:  0.31479E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  005, en0000:  0.25851E+00, rkin:  0.30751E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  006, en0000:  0.37246E+00, rkin:  0.29813E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  007, en0000:  0.50486E+00, rkin:  0.28675E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  008, en0000:  0.65315E+00, rkin:  0.27352E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  009, en0000:  0.81388E+00, rkin:  0.25871E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  010, en0000:  0.98272E+00, rkin:  0.24267E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  011, en0000:  0.11547E+01, rkin:  0.22581E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  012, en0000:  0.13247E+01, rkin:  0.20864E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  013, en0000:  0.14876E+01, rkin:  0.19168E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  014, en0000:  0.16390E+01, rkin:  0.17542E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  015, en0000:  0.17756E+01, rkin:  0.16030E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  016, en0000:  0.18952E+01, rkin:  0.14666E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  017, en0000:  0.19969E+01, rkin:  0.13470E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  018, en0000:  0.20807E+01, rkin:  0.12454E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  019, en0000:  0.21476E+01, rkin:  0.11615E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  020, en0000:  0.21990E+01, rkin:  0.10945E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  021, en0000:  0.22366E+01, rkin:  0.10430E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  022, en0000:  0.22619E+01, rkin:  0.10053E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  023, en0000:  0.22768E+01, rkin:  0.97985E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  024, en0000:  0.22826E+01, rkin:  0.96490E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  025, en0000:  0.22808E+01, rkin:  0.95899E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  026, en0000:  0.22724E+01, rkin:  0.96079E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  027, en0000:  0.22584E+01, rkin:  0.96914E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  028, en0000:  0.22399E+01, rkin:  0.98302E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  029, en0000:  0.22174E+01, rkin:  0.10015E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  030, en0000:  0.21917E+01, rkin:  0.10239E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  031, en0000:  0.21634E+01, rkin:  0.10496E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  032, en0000:  0.21329E+01, rkin:  0.10779E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  033, en0000:  0.21007E+01, rkin:  0.11084E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  034, en0000:  0.20675E+01, rkin:  0.11405E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  035, en0000:  0.20340E+01, rkin:  0.11737E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  036, en0000:  0.20011E+01, rkin:  0.12071E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  037, en0000:  0.19698E+01, rkin:  0.12400E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  038, en0000:  0.19413E+01, rkin:  0.12712E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  039, en0000:  0.19169E+01, rkin:  0.12996E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  040, en0000:  0.18980E+01, rkin:  0.13238E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  041, en0000:  0.18857E+01, rkin:  0.13427E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  042, en0000:  0.18812E+01, rkin:  0.13548E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  043, en0000:  0.18854E+01, rkin:  0.13592E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  044, en0000:  0.18988E+01, rkin:  0.13550E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  045, en0000:  0.19218E+01, rkin:  0.13415E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  046, en0000:  0.19545E+01, rkin:  0.13184E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  047, en0000:  0.19963E+01, rkin:  0.12858E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  048, en0000:  0.20460E+01, rkin:  0.12440E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  049, en0000:  0.21016E+01, rkin:  0.11944E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  050, en0000:  0.21598E+01, rkin:  0.11389E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  051, en0000:  0.22165E+01, rkin:  0.10809E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  052, en0000:  0.22668E+01, rkin:  0.10245E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  053, en0000:  0.23056E+01, rkin:  0.97453E+00, nmax:  1, nmin:  1}
+   - MDEs: {iter:  054, en0000:  0.23282E+01, rkin:  0.93603E+00, nmax:  1, nmin:  1}
+   - MDEs: {iter:  055, en0000:  0.23314E+01, rkin:  0.91354E+00, nmax:  1, nmin:  1}
+   - MDEs: {iter:  056, en0000:  0.23133E+01, rkin:  0.91045E+00, nmax:  2, nmin:  1}
+   - MDEs: {iter:  057, en0000:  0.22741E+01, rkin:  0.92853E+00, nmax:  2, nmin:  1}
+   - MDEs: {iter:  058, en0000:  0.22161E+01, rkin:  0.96758E+00, nmax:  2, nmin:  1}
+   - MDEs: {iter:  059, en0000:  0.21434E+01, rkin:  0.10254E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  060, en0000:  0.20617E+01, rkin:  0.10977E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  061, en0000:  0.19772E+01, rkin:  0.11791E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  062, en0000:  0.18960E+01, rkin:  0.12632E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  063, en0000:  0.18236E+01, rkin:  0.13440E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  064, en0000:  0.17635E+01, rkin:  0.14163E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  065, en0000:  0.17179E+01, rkin:  0.14763E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  066, en0000:  0.16872E+01, rkin:  0.15218E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  067, en0000:  0.16705E+01, rkin:  0.15526E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  068, en0000:  0.16662E+01, rkin:  0.15695E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  069, en0000:  0.16724E+01, rkin:  0.15739E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  070, en0000:  0.16874E+01, rkin:  0.15679E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  071, en0000:  0.17098E+01, rkin:  0.15529E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  072, en0000:  0.17385E+01, rkin:  0.15305E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  073, en0000:  0.17719E+01, rkin:  0.15019E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  074, en0000:  0.18077E+01, rkin:  0.14687E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  075, en0000:  0.18428E+01, rkin:  0.14331E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  076, en0000:  0.18737E+01, rkin:  0.13982E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  077, en0000:  0.18975E+01, rkin:  0.13675E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  078, en0000:  0.19129E+01, rkin:  0.13438E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  079, en0000:  0.19208E+01, rkin:  0.13284E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  080, en0000:  0.19247E+01, rkin:  0.13202E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  081, en0000:  0.19291E+01, rkin:  0.13161E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  082, en0000:  0.19388E+01, rkin:  0.13114E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  083, en0000:  0.19576E+01, rkin:  0.13014E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  084, en0000:  0.19870E+01, rkin:  0.12826E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  085, en0000:  0.20268E+01, rkin:  0.12531E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  086, en0000:  0.20745E+01, rkin:  0.12135E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  087, en0000:  0.21263E+01, rkin:  0.11661E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  088, en0000:  0.21778E+01, rkin:  0.11145E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  089, en0000:  0.22243E+01, rkin:  0.10632E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  090, en0000:  0.22617E+01, rkin:  0.10170E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  091, en0000:  0.22866E+01, rkin:  0.97986E+00, nmax:  2, nmin:  2}
+   - MDEs: {iter:  092, en0000:  0.22975E+01, rkin:  0.95500E+00, nmax:  2, nmin:  2}
+   - MDEs: {iter:  093, en0000:  0.22939E+01, rkin:  0.94418E+00, nmax:  3, nmin:  2}
+   - MDEs: {iter:  094, en0000:  0.22771E+01, rkin:  0.94766E+00, nmax:  3, nmin:  2}
+   - MDEs: {iter:  095, en0000:  0.22492E+01, rkin:  0.96431E+00, nmax:  3, nmin:  2}
+   - MDEs: {iter:  096, en0000:  0.22129E+01, rkin:  0.99200E+00, nmax:  3, nmin:  2}
+   - MDEs: {iter:  097, en0000:  0.21705E+01, rkin:  0.10282E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  098, en0000:  0.21238E+01, rkin:  0.10705E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  099, en0000:  0.20737E+01, rkin:  0.11171E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  100, en0000:  0.20201E+01, rkin:  0.11673E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  101, en0000:  0.19625E+01, rkin:  0.12209E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  102, en0000:  0.19001E+01, rkin:  0.12786E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  103, en0000:  0.18325E+01, rkin:  0.13410E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  104, en0000:  0.17597E+01, rkin:  0.14086E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  105, en0000:  0.16824E+01, rkin:  0.14814E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  106, en0000:  0.16020E+01, rkin:  0.15586E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  107, en0000:  0.15203E+01, rkin:  0.16388E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  108, en0000:  0.14390E+01, rkin:  0.17204E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  109, en0000:  0.13596E+01, rkin:  0.18016E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  110, en0000:  0.12833E+01, rkin:  0.18809E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  111, en0000:  0.12111E+01, rkin:  0.19571E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  112, en0000:  0.11438E+01, rkin:  0.20293E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  113, en0000:  0.10830E+01, rkin:  0.20965E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  114, en0000:  0.10310E+01, rkin:  0.21571E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  115, en0000:  0.99117E+00, rkin:  0.22089E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  116, en0000:  0.96768E+00, rkin:  0.22484E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  117, en0000:  0.96478E+00, rkin:  0.22715E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  118, en0000:  0.98579E+00, rkin:  0.22741E+01, nmax:  3, nmin:  3}
+   SD optimization iterations:
+   - SD: {iter:  0, epot: -3.601910331578E+01, de:  0.0E+00, fmax:  5.121E+00, 
+          fnrm:  1.408E+01,          alpha/alphax:  0.0000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  1, epot: -3.613016368928E+01, de: -1.1E-01, fmax:  4.453E+00, 
+          fnrm:  1.226E+01,          alpha/alphax:  0.6000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  2, epot: -3.623074675190E+01, de: -1.0E-01, fmax:  3.809E+00, 
+          fnrm:  1.057E+01,          alpha/alphax:  0.7200E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  3, epot: -3.632010294937E+01, de: -8.9E-02, fmax:  3.194E+00, 
+          fnrm:  9.040E+00,          alpha/alphax:  0.8640E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  4, epot: -3.639818842425E+01, de: -7.8E-02, fmax:  2.613E+00, 
+          fnrm:  7.682E+00,          alpha/alphax:  0.1037E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  5, epot: -3.646578166890E+01, de: -6.8E-02, fmax:  2.248E+00, 
+          fnrm:  6.528E+00,          alpha/alphax:  0.1244E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  6, epot: -3.652455009871E+01, de: -5.9E-02, fmax:  2.179E+00, 
+          fnrm:  5.602E+00,          alpha/alphax:  0.1493E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  7, epot: -3.657691581874E+01, de: -5.2E-02, fmax:  2.080E+00, 
+          fnrm:  4.901E+00,          alpha/alphax:  0.1792E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  8, epot: -3.662238425696E+01, de: -4.5E-02, fmax:  1.963E+00, 
+          fnrm:  4.420E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  9, epot: -3.665993581230E+01, de: -3.8E-02, fmax:  1.849E+00, 
+          fnrm:  4.097E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  10, epot: -3.669244475420E+01, de: -3.3E-02, fmax:  1.743E+00, 
+          fnrm:  3.849E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  11, epot: -3.672125354454E+01, de: -2.9E-02, fmax:  1.645E+00, 
+          fnrm:  3.642E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  12, epot: -3.674711219442E+01, de: -2.6E-02, fmax:  1.556E+00, 
+          fnrm:  3.462E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  13, epot: -3.677050846859E+01, de: -2.3E-02, fmax:  1.474E+00, 
+          fnrm:  3.300E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  14, epot: -3.679179292468E+01, de: -2.1E-02, fmax:  1.400E+00, 
+          fnrm:  3.152E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  15, epot: -3.681123228056E+01, de: -1.9E-02, fmax:  1.331E+00, 
+          fnrm:  3.016E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  16, epot: -3.682903604509E+01, de: -1.8E-02, fmax:  1.267E+00, 
+          fnrm:  2.888E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  17, epot: -3.684537211613E+01, de: -1.6E-02, fmax:  1.207E+00, 
+          fnrm:  2.768E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  18, epot: -3.686037717925E+01, de: -1.5E-02, fmax:  1.150E+00, 
+          fnrm:  2.653E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  19, epot: -3.687416425782E+01, de: -1.4E-02, fmax:  1.095E+00, 
+          fnrm:  2.543E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  20, epot: -3.688682846042E+01, de: -1.3E-02, fmax:  1.043E+00, 
+          fnrm:  2.437E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  21, epot: -3.689845144648E+01, de: -1.2E-02, fmax:  9.926E-01, 
+          fnrm:  2.333E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD FINISHED:
+       success                         :  Yes
+       iter                            :  21
+       epot                            : -3.689845144648E+01
+       fnrm                            :  2.33327E+00
+       fmax                            :  9.92634E-01
+   BFGS optimization iterations:
+   - BFGS: {iter:  0, epot: -3.689845144648E+01, de:  0.0E+00, fmax:  9.926E-01, 
+            fnrm:  2.333E+00,                 alpha:  8.0000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  1, epot: -3.691241310837E+01, de: -1.4E-02, fmax:  9.278E-01, 
+            fnrm:  2.200E+00,                 alpha:  8.8000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  2, epot: -3.692408676152E+01, de: -1.2E-02, fmax:  8.696E-01, 
+            fnrm:  2.078E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  3, epot: -3.693510749449E+01, de: -1.1E-02, fmax:  8.097E-01, 
+            fnrm:  1.952E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  4, epot: -3.694507955712E+01, de: -1.0E-02, fmax:  7.504E-01, 
+            fnrm:  1.826E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  5, epot: -3.695391640805E+01, de: -8.8E-03, fmax:  6.926E-01, 
+            fnrm:  1.703E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  6, epot: -3.696164889022E+01, de: -7.7E-03, fmax:  6.371E-01, 
+            fnrm:  1.583E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  7, epot: -3.696835395086E+01, de: -6.7E-03, fmax:  5.841E-01, 
+            fnrm:  1.468E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  8, epot: -3.697412629720E+01, de: -5.8E-03, fmax:  5.339E-01, 
+            fnrm:  1.357E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  9, epot: -3.698422853698E+01, de: -1.0E-02, fmax:  4.281E-01, 
+            fnrm:  1.128E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  10, epot: -3.699125108204E+01, de: -7.0E-03, fmax:  3.631E-01, 
+            fnrm:  9.267E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  11, epot: -3.699598364245E+01, de: -4.7E-03, fmax:  3.030E-01, 
+            fnrm:  7.553E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  12, epot: -3.700022970955E+01, de: -4.2E-03, fmax:  2.301E-01, 
+            fnrm:  5.528E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  13, epot: -3.700246723452E+01, de: -2.2E-03, fmax:  1.701E-01, 
+            fnrm:  4.023E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  14, epot: -3.700362635723E+01, de: -1.2E-03, fmax:  1.235E-01, 
+            fnrm:  2.923E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  15, epot: -3.700432668284E+01, de: -7.0E-04, fmax:  8.228E-02, 
+            fnrm:  1.971E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  16, epot: -3.700463122246E+01, de: -3.0E-04, fmax:  5.401E-02, 
+            fnrm:  1.340E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  17, epot: -3.700476512873E+01, de: -1.3E-04, fmax:  3.536E-02, 
+            fnrm:  9.273E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  18, epot: -3.700483124117E+01, de: -6.6E-05, fmax:  2.184E-02, 
+            fnrm:  6.326E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  19, epot: -3.700485928227E+01, de: -2.8E-05, fmax:  1.461E-02, 
+            fnrm:  4.531E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  20, epot: -3.700487245156E+01, de: -1.3E-05, fmax:  1.161E-02, 
+            fnrm:  3.397E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  21, epot: -3.700487981772E+01, de: -7.4E-06, fmax:  9.337E-03, 
+            fnrm:  2.581E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  22, epot: -3.700488406595E+01, de: -4.2E-06, fmax:  7.674E-03, 
+            fnrm:  1.983E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  23, epot: -3.700488672830E+01, de: -2.7E-06, fmax:  6.395E-03, 
+            fnrm:  1.505E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  24, epot: -3.700488842839E+01, de: -1.7E-06, fmax:  5.316E-03, 
+            fnrm:  1.113E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  25, epot: -3.700488939648E+01, de: -9.7E-07, fmax:  4.442E-03, 
+            fnrm:  8.231E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  26, epot: -3.700488991376E+01, de: -5.2E-07, fmax:  3.712E-03, 
+            fnrm:  6.272E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  27, epot: -3.700489019886E+01, de: -2.9E-07, fmax:  3.055E-03, 
+            fnrm:  4.961E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  28, epot: -3.700489036339E+01, de: -1.6E-07, fmax:  2.469E-03, 
+            fnrm:  4.030E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  29, epot: -3.700489047058E+01, de: -1.1E-07, fmax:  1.926E-03, 
+            fnrm:  3.248E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  30, epot: -3.700489054535E+01, de: -7.5E-08, fmax:  1.410E-03, 
+            fnrm:  2.510E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  31, epot: -3.700489059328E+01, de: -4.8E-08, fmax:  9.589E-04, 
+            fnrm:  1.826E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS FINISHED:
+       success                         :  Yes
+       iter                            :  31
+       epot                            : -3.700489059328E+01
+       fnrm                            :  1.82582E-03
+       fmax                            :  9.58944E-04
+   minhopp iteration info: {iproc:  0, istep:  1, ihopp:  0, nlmin:  1, escaped:  No, 
+                         accepted:  Yes,           epot: -3.700489059226E+01}
+ - SOFTEN:
+   - SOFT: {iter:  1, curv:  147.743, fd2:  148.216, de:  0.030, res:  2.090, eps_v:  0.020}
+   - SOFT: {iter:  2, curv:  116.150, fd2:  116.628, de:  0.023, res:  1.950, eps_v:  0.020}
+   - SOFT: {iter:  3, curv:  89.651, fd2:  90.121, de:  0.018, res:  1.682, eps_v:  0.020}
+   - SOFT: {iter:  4, curv:  70.516, fd2:  70.967, de:  0.014, res:  1.363, eps_v:  0.020}
+   - SOFT: {iter:  5, curv:  58.170, fd2:  58.591, de:  0.012, res:  1.066, eps_v:  0.020}
+   - SOFT: {iter:  6, curv:  50.670, fd2:  51.054, de:  0.010, res:  0.827, eps_v:  0.020}
+   - SOFT: {iter:  7, curv:  46.148, fd2:  46.493, de:  0.009, res:  0.651, eps_v:  0.020}
+   - SOFT: {iter:  8, curv:  43.323, fd2:  43.630, de:  0.009, res:  0.528, eps_v:  0.020}
+   - SOFT: {iter:  9, curv:  41.438, fd2:  41.712, de:  0.008, res:  0.446, eps_v:  0.020}
+   - SOFT: {iter:  10, curv:  40.078, fd2:  40.322, de:  0.008, res:  0.391, eps_v:  0.020}
+   - SOFT: {iter:  11, curv:  39.017, fd2:  39.236, de:  0.008, res:  0.354, eps_v:  0.020}
+   - SOFT: {iter:  12, curv:  38.137, fd2:  38.333, de:  0.008, res:  0.328, eps_v:  0.020}
+   - SOFT: {iter:  13, curv:  37.371, fd2:  37.548, de:  0.008, res:  0.310, eps_v:  0.020}
+   - SOFT: {iter:  14, curv:  36.682, fd2:  36.843, de:  0.007, res:  0.296, eps_v:  0.020}
+   - SOFT: {iter:  15, curv:  36.051, fd2:  36.197, de:  0.007, res:  0.285, eps_v:  0.020}
+   - SOFT: {iter:  16, curv:  35.463, fd2:  35.597, de:  0.007, res:  0.276, eps_v:  0.020}
+   - SOFT: {iter:  17, curv:  34.912, fd2:  35.034, de:  0.007, res:  0.268, eps_v:  0.020}
+   - SOFT: {iter:  18, curv:  34.393, fd2:  34.504, de:  0.007, res:  0.260, eps_v:  0.020}
+   - SOFT: {iter:  19, curv:  33.901, fd2:  34.003, de:  0.007, res:  0.253, eps_v:  0.020}
+   - SOFT: {iter:  20, curv:  33.434, fd2:  33.528, de:  0.007, res:  0.247, eps_v:  0.020}
+   MD escape:
+   - MDEs: {iter:  001, en0000:  0.11236E-01, rkin:  0.34020E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  002, en0000:  0.44528E-01, rkin:  0.33908E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  003, en0000:  0.99078E-01, rkin:  0.33576E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  004, en0000:  0.17381E+00, rkin:  0.33031E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  005, en0000:  0.26734E+00, rkin:  0.32285E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  006, en0000:  0.37791E+00, rkin:  0.31350E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  007, en0000:  0.50336E+00, rkin:  0.30246E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  008, en0000:  0.64110E+00, rkin:  0.28993E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  009, en0000:  0.78811E+00, rkin:  0.27618E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  010, en0000:  0.94102E+00, rkin:  0.26150E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  011, en0000:  0.10963E+01, rkin:  0.24623E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  012, en0000:  0.12503E+01, rkin:  0.23073E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  013, en0000:  0.13997E+01, rkin:  0.21535E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  014, en0000:  0.15418E+01, rkin:  0.20043E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  015, en0000:  0.16743E+01, rkin:  0.18623E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  016, en0000:  0.17960E+01, rkin:  0.17299E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  017, en0000:  0.19061E+01, rkin:  0.16083E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  018, en0000:  0.20045E+01, rkin:  0.14982E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  019, en0000:  0.20917E+01, rkin:  0.13997E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  020, en0000:  0.21684E+01, rkin:  0.13125E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  021, en0000:  0.22352E+01, rkin:  0.12358E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  022, en0000:  0.22933E+01, rkin:  0.11689E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  023, en0000:  0.23435E+01, rkin:  0.11108E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  024, en0000:  0.23871E+01, rkin:  0.10605E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  025, en0000:  0.24250E+01, rkin:  0.10168E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  026, en0000:  0.24584E+01, rkin:  0.97884E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  027, en0000:  0.24880E+01, rkin:  0.94545E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  028, en0000:  0.25148E+01, rkin:  0.91573E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  029, en0000:  0.25392E+01, rkin:  0.88893E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  030, en0000:  0.25616E+01, rkin:  0.86451E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  031, en0000:  0.25821E+01, rkin:  0.84213E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  032, en0000:  0.26007E+01, rkin:  0.82163E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  033, en0000:  0.26173E+01, rkin:  0.80302E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  034, en0000:  0.26318E+01, rkin:  0.78642E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  035, en0000:  0.26439E+01, rkin:  0.77197E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  036, en0000:  0.26537E+01, rkin:  0.75982E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  037, en0000:  0.26610E+01, rkin:  0.75006E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  038, en0000:  0.26661E+01, rkin:  0.74270E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  039, en0000:  0.26690E+01, rkin:  0.73764E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  040, en0000:  0.26702E+01, rkin:  0.73467E+00, nmax:  0, nmin:  0}
+   - MDEs: {iter:  041, en0000:  0.26699E+01, rkin:  0.73348E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  042, en0000:  0.26686E+01, rkin:  0.73372E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  043, en0000:  0.26666E+01, rkin:  0.73499E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  044, en0000:  0.26640E+01, rkin:  0.73698E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  045, en0000:  0.26609E+01, rkin:  0.73953E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  046, en0000:  0.26569E+01, rkin:  0.74267E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  047, en0000:  0.26516E+01, rkin:  0.74668E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  048, en0000:  0.26444E+01, rkin:  0.75201E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  049, en0000:  0.26349E+01, rkin:  0.75918E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  050, en0000:  0.26229E+01, rkin:  0.76864E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  051, en0000:  0.26085E+01, rkin:  0.78060E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  052, en0000:  0.25919E+01, rkin:  0.79501E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  053, en0000:  0.25732E+01, rkin:  0.81162E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  054, en0000:  0.25526E+01, rkin:  0.83024E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  055, en0000:  0.25293E+01, rkin:  0.85095E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  056, en0000:  0.25024E+01, rkin:  0.87428E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  057, en0000:  0.24708E+01, rkin:  0.90120E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  058, en0000:  0.24334E+01, rkin:  0.93289E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  059, en0000:  0.23896E+01, rkin:  0.97038E+00, nmax:  1, nmin:  0}
+   - MDEs: {iter:  060, en0000:  0.23398E+01, rkin:  0.10142E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  061, en0000:  0.22852E+01, rkin:  0.10639E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  062, en0000:  0.22279E+01, rkin:  0.11183E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  063, en0000:  0.21700E+01, rkin:  0.11755E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  064, en0000:  0.21136E+01, rkin:  0.12333E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  065, en0000:  0.20604E+01, rkin:  0.12896E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  066, en0000:  0.20113E+01, rkin:  0.13427E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  067, en0000:  0.19667E+01, rkin:  0.13917E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  068, en0000:  0.19260E+01, rkin:  0.14364E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  069, en0000:  0.18885E+01, rkin:  0.14772E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  070, en0000:  0.18531E+01, rkin:  0.15147E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  071, en0000:  0.18185E+01, rkin:  0.15502E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  072, en0000:  0.17834E+01, rkin:  0.15848E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  073, en0000:  0.17462E+01, rkin:  0.16201E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  074, en0000:  0.17055E+01, rkin:  0.16574E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  075, en0000:  0.16601E+01, rkin:  0.16981E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  076, en0000:  0.16086E+01, rkin:  0.17436E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  077, en0000:  0.15505E+01, rkin:  0.17951E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  078, en0000:  0.14856E+01, rkin:  0.18533E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  079, en0000:  0.14146E+01, rkin:  0.19181E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  080, en0000:  0.13394E+01, rkin:  0.19890E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  081, en0000:  0.12621E+01, rkin:  0.20641E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  082, en0000:  0.11859E+01, rkin:  0.21411E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  083, en0000:  0.11139E+01, rkin:  0.22171E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  084, en0000:  0.10490E+01, rkin:  0.22889E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  085, en0000:  0.99366E+00, rkin:  0.23536E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  086, en0000:  0.94921E+00, rkin:  0.24089E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  087, en0000:  0.91583E+00, rkin:  0.24533E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  088, en0000:  0.89220E+00, rkin:  0.24867E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  089, en0000:  0.87555E+00, rkin:  0.25105E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  090, en0000:  0.86204E+00, rkin:  0.25273E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  091, en0000:  0.84734E+00, rkin:  0.25411E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  092, en0000:  0.82771E+00, rkin:  0.25560E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  093, en0000:  0.80104E+00, rkin:  0.25757E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  094, en0000:  0.76787E+00, rkin:  0.26023E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  095, en0000:  0.73177E+00, rkin:  0.26351E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  096, en0000:  0.69898E+00, rkin:  0.26707E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  097, en0000:  0.67714E+00, rkin:  0.27029E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  098, en0000:  0.67315E+00, rkin:  0.27242E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  099, en0000:  0.69078E+00, rkin:  0.27278E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  100, en0000:  0.72831E+00, rkin:  0.27101E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  101, en0000:  0.77718E+00, rkin:  0.26730E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  102, en0000:  0.82247E+00, rkin:  0.26250E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  103, en0000:  0.84574E+00, rkin:  0.25809E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  104, en0000:  0.82990E+00, rkin:  0.25587E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  105, en0000:  0.76469E+00, rkin:  0.25752E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  106, en0000:  0.65049E+00, rkin:  0.26404E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  107, en0000:  0.49872E+00, rkin:  0.27539E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  108, en0000:  0.32895E+00, rkin:  0.29044E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  109, en0000:  0.16397E+00, rkin:  0.30728E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  110, en0000:  0.25007E-01, rkin:  0.32364E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  111, en0000: -0.71520E-01, rkin:  0.33744E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  112, en0000: -0.11532E+00, rkin:  0.34703E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  113, en0000: -0.10190E+00, rkin:  0.35139E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  114, en0000: -0.31530E-01, rkin:  0.35005E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  115, en0000:  0.91967E-01, rkin:  0.34303E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  116, en0000:  0.26188E+00, rkin:  0.33072E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  117, en0000:  0.46869E+00, rkin:  0.31378E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  118, en0000:  0.69977E+00, rkin:  0.29316E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  119, en0000:  0.93915E+00, rkin:  0.27015E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  120, en0000:  0.11682E+01, rkin:  0.24632E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  121, en0000:  0.13673E+01, rkin:  0.22353E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  122, en0000:  0.15194E+01, rkin:  0.20373E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  123, en0000:  0.16129E+01, rkin:  0.18859E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  124, en0000:  0.16443E+01, rkin:  0.17926E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  125, en0000:  0.16189E+01, rkin:  0.17608E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  126, en0000:  0.15496E+01, rkin:  0.17855E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  127, en0000:  0.14548E+01, rkin:  0.18537E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  128, en0000:  0.13548E+01, rkin:  0.19472E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  129, en0000:  0.12681E+01, rkin:  0.20461E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  130, en0000:  0.12081E+01, rkin:  0.21320E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  131, en0000:  0.11816E+01, rkin:  0.21917E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  132, en0000:  0.11884E+01, rkin:  0.22182E+01, nmax:  3, nmin:  3}
+   SD optimization iterations:
+   - SD: {iter:  0, epot: -3.581652194498E+01, de:  0.0E+00, fmax:  6.912E+00, 
+          fnrm:  1.780E+01,          alpha/alphax:  0.0000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  1, epot: -3.599870872033E+01, de: -1.8E-01, fmax:  6.608E+00, 
+          fnrm:  1.639E+01,          alpha/alphax:  0.6000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  2, epot: -3.618435008377E+01, de: -1.9E-01, fmax:  6.260E+00, 
+          fnrm:  1.514E+01,          alpha/alphax:  0.7200E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  3, epot: -3.637470656767E+01, de: -1.9E-01, fmax:  5.891E+00, 
+          fnrm:  1.402E+01,          alpha/alphax:  0.8640E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  4, epot: -3.657066790067E+01, de: -2.0E-01, fmax:  5.665E+00, 
+          fnrm:  1.299E+01,          alpha/alphax:  0.1037E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  5, epot: -3.677208850307E+01, de: -2.0E-01, fmax:  5.371E+00, 
+          fnrm:  1.198E+01,          alpha/alphax:  0.1244E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  6, epot: -3.697715821089E+01, de: -2.1E-01, fmax:  4.992E+00, 
+          fnrm:  1.097E+01,          alpha/alphax:  0.1493E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  7, epot: -3.718224010565E+01, de: -2.1E-01, fmax:  4.513E+00, 
+          fnrm:  9.930E+00,          alpha/alphax:  0.1792E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  8, epot: -3.736950933344E+01, de: -1.9E-01, fmax:  3.974E+00, 
+          fnrm:  8.964E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  9, epot: -3.752299999688E+01, de: -1.5E-01, fmax:  3.565E+00, 
+          fnrm:  8.193E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  10, epot: -3.765207104150E+01, de: -1.3E-01, fmax:  3.490E+00, 
+          fnrm:  7.591E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  11, epot: -3.776356399486E+01, de: -1.1E-01, fmax:  3.421E+00, 
+          fnrm:  7.122E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  12, epot: -3.786226310642E+01, de: -9.9E-02, fmax:  3.349E+00, 
+          fnrm:  6.753E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  13, epot: -3.795136257309E+01, de: -8.9E-02, fmax:  3.271E+00, 
+          fnrm:  6.452E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  14, epot: -3.803290732467E+01, de: -8.2E-02, fmax:  3.182E+00, 
+          fnrm:  6.194E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  15, epot: -3.810815822420E+01, de: -7.5E-02, fmax:  3.081E+00, 
+          fnrm:  5.960E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  16, epot: -3.817786640529E+01, de: -7.0E-02, fmax:  2.967E+00, 
+          fnrm:  5.738E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  17, epot: -3.824246773082E+01, de: -6.5E-02, fmax:  2.840E+00, 
+          fnrm:  5.520E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  18, epot: -3.830221720811E+01, de: -6.0E-02, fmax:  2.703E+00, 
+          fnrm:  5.302E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  19, epot: -3.835728091542E+01, de: -5.5E-02, fmax:  2.556E+00, 
+          fnrm:  5.082E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  20, epot: -3.840779753034E+01, de: -5.1E-02, fmax:  2.402E+00, 
+          fnrm:  4.858E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  21, epot: -3.845391705458E+01, de: -4.6E-02, fmax:  2.245E+00, 
+          fnrm:  4.634E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  22, epot: -3.849582178000E+01, de: -4.2E-02, fmax:  2.088E+00, 
+          fnrm:  4.409E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  23, epot: -3.853373350680E+01, de: -3.8E-02, fmax:  1.934E+00, 
+          fnrm:  4.188E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  24, epot: -3.856791075548E+01, de: -3.4E-02, fmax:  1.785E+00, 
+          fnrm:  3.972E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  25, epot: -3.859863959449E+01, de: -3.1E-02, fmax:  1.644E+00, 
+          fnrm:  3.764E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  26, epot: -3.862622138808E+01, de: -2.8E-02, fmax:  1.512E+00, 
+          fnrm:  3.565E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  27, epot: -3.865096016413E+01, de: -2.5E-02, fmax:  1.389E+00, 
+          fnrm:  3.376E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  28, epot: -3.867315149874E+01, de: -2.2E-02, fmax:  1.282E+00, 
+          fnrm:  3.198E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  29, epot: -3.869307397486E+01, de: -2.0E-02, fmax:  1.220E+00, 
+          fnrm:  3.032E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  30, epot: -3.871098354675E+01, de: -1.8E-02, fmax:  1.160E+00, 
+          fnrm:  2.876E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  31, epot: -3.872711061927E+01, de: -1.6E-02, fmax:  1.101E+00, 
+          fnrm:  2.731E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  32, epot: -3.874165935032E+01, de: -1.5E-02, fmax:  1.043E+00, 
+          fnrm:  2.596E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  33, epot: -3.875480857323E+01, de: -1.3E-02, fmax:  9.865E-01, 
+          fnrm:  2.470E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD FINISHED:
+       success                         :  Yes
+       iter                            :  33
+       epot                            : -3.875480857323E+01
+       fnrm                            :  2.46973E+00
+       fmax                            :  9.86515E-01
+   BFGS optimization iterations:
+   - BFGS: {iter:  0, epot: -3.875480857323E+01, de:  0.0E+00, fmax:  9.865E-01, 
+            fnrm:  2.470E+00,                 alpha:  8.0000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  1, epot: -3.877039775273E+01, de: -1.6E-02, fmax:  9.144E-01, 
+            fnrm:  2.313E+00,                 alpha:  8.8000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  2, epot: -3.878327110642E+01, de: -1.3E-02, fmax:  8.500E-01, 
+            fnrm:  2.179E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  3, epot: -3.879536626635E+01, de: -1.2E-02, fmax:  7.851E-01, 
+            fnrm:  2.046E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  4, epot: -3.880631623486E+01, de: -1.1E-02, fmax:  7.221E-01, 
+            fnrm:  1.918E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  5, epot: -3.881607749215E+01, de: -9.8E-03, fmax:  6.621E-01, 
+            fnrm:  1.798E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  6, epot: -3.882471549657E+01, de: -8.6E-03, fmax:  6.056E-01, 
+            fnrm:  1.684E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  7, epot: -3.883232874972E+01, de: -7.6E-03, fmax:  5.528E-01, 
+            fnrm:  1.577E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  8, epot: -3.883902174285E+01, de: -6.7E-03, fmax:  5.036E-01, 
+            fnrm:  1.476E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  9, epot: -3.885113995620E+01, de: -1.2E-02, fmax:  4.307E-01, 
+            fnrm:  1.270E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  10, epot: -3.886016706981E+01, de: -9.0E-03, fmax:  3.764E-01, 
+            fnrm:  1.090E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  11, epot: -3.886680543752E+01, de: -6.6E-03, fmax:  3.220E-01, 
+            fnrm:  9.368E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  12, epot: -3.887351539279E+01, de: -6.7E-03, fmax:  2.628E-01, 
+            fnrm:  7.517E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  13, epot: -3.887770260517E+01, de: -4.2E-03, fmax:  2.134E-01, 
+            fnrm:  6.097E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  14, epot: -3.888035214415E+01, de: -2.6E-03, fmax:  1.959E-01, 
+            fnrm:  5.005E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  15, epot: -3.888240017655E+01, de: -2.0E-03, fmax:  1.774E-01, 
+            fnrm:  3.995E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  16, epot: -3.888362057272E+01, de: -1.2E-03, fmax:  1.611E-01, 
+            fnrm:  3.257E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  17, epot: -3.888439676980E+01, de: -7.8E-04, fmax:  1.466E-01, 
+            fnrm:  2.704E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  18, epot: -3.888497897161E+01, de: -5.8E-04, fmax:  1.314E-01, 
+            fnrm:  2.244E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  19, epot: -3.888537328055E+01, de: -3.9E-04, fmax:  1.172E-01, 
+            fnrm:  1.907E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  20, epot: -3.888566205390E+01, de: -2.9E-04, fmax:  1.036E-01, 
+            fnrm:  1.651E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  21, epot: -3.888590071132E+01, de: -2.4E-04, fmax:  8.927E-02, 
+            fnrm:  1.437E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  22, epot: -3.888608499563E+01, de: -1.8E-04, fmax:  7.568E-02, 
+            fnrm:  1.266E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  23, epot: -3.888623019549E+01, de: -1.5E-04, fmax:  6.302E-02, 
+            fnrm:  1.123E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  24, epot: -3.888635255558E+01, de: -1.2E-04, fmax:  5.052E-02, 
+            fnrm:  1.005E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  25, epot: -3.888644904352E+01, de: -9.6E-05, fmax:  3.958E-02, 
+            fnrm:  9.165E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  26, epot: -3.888652840518E+01, de: -7.9E-05, fmax:  3.019E-02, 
+            fnrm:  8.579E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  27, epot: -3.888660185096E+01, de: -7.3E-05, fmax:  2.938E-02, 
+            fnrm:  8.297E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  28, epot: -3.888667094048E+01, de: -6.9E-05, fmax:  3.069E-02, 
+            fnrm:  8.312E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  29, epot: -3.888674307030E+01, de: -7.2E-05, fmax:  3.254E-02, 
+            fnrm:  8.641E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  30, epot: -3.888683093036E+01, de: -8.8E-05, fmax:  4.036E-02, 
+            fnrm:  9.426E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  31, epot: -3.888694339339E+01, de: -1.1E-04, fmax:  5.136E-02, 
+            fnrm:  1.073E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  32, epot: -3.888710218703E+01, de: -1.6E-04, fmax:  6.468E-02, 
+            fnrm:  1.269E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  33, epot: -3.888734555610E+01, de: -2.4E-04, fmax:  8.094E-02, 
+            fnrm:  1.547E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  34, epot: -3.888741421509E+01, de: -6.9E-05, fmax:  8.121E-02, 
+            fnrm:  1.571E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  35, epot: -3.888747760941E+01, de: -6.3E-05, fmax:  8.193E-02, 
+            fnrm:  1.601E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  36, epot: -3.888754744628E+01, de: -7.0E-05, fmax:  8.298E-02, 
+            fnrm:  1.638E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  37, epot: -3.888770472689E+01, de: -1.6E-04, fmax:  8.559E-02, 
+            fnrm:  1.729E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  38, epot: -3.888789566902E+01, de: -1.9E-04, fmax:  8.930E-02, 
+            fnrm:  1.844E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  39, epot: -3.888811976312E+01, de: -2.2E-04, fmax:  9.400E-02, 
+            fnrm:  1.978E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  40, epot: -3.888838059516E+01, de: -2.6E-04, fmax:  9.963E-02, 
+            fnrm:  2.128E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  41, epot: -3.888851186721E+01, de: -1.3E-04, fmax:  1.035E-01, 
+            fnrm:  2.200E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  42, epot: -3.888863733262E+01, de: -1.3E-04, fmax:  1.070E-01, 
+            fnrm:  2.266E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  43, epot: -3.888877839370E+01, de: -1.4E-04, fmax:  1.106E-01, 
+            fnrm:  2.339E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  44, epot: -3.888910501691E+01, de: -3.3E-04, fmax:  1.187E-01, 
+            fnrm:  2.498E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  45, epot: -3.888951032373E+01, de: -4.1E-04, fmax:  1.278E-01, 
+            fnrm:  2.681E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  46, epot: -3.888999213747E+01, de: -4.8E-04, fmax:  1.376E-01, 
+            fnrm:  2.881E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  47, epot: -3.889055616768E+01, de: -5.6E-04, fmax:  1.481E-01, 
+            fnrm:  3.098E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  48, epot: -3.889083405056E+01, de: -2.8E-04, fmax:  1.528E-01, 
+            fnrm:  3.198E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  49, epot: -3.889109889478E+01, de: -2.6E-04, fmax:  1.571E-01, 
+            fnrm:  3.290E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  50, epot: -3.889139582974E+01, de: -3.0E-04, fmax:  1.618E-01, 
+            fnrm:  3.390E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  51, epot: -3.889207992001E+01, de: -6.8E-04, fmax:  1.719E-01, 
+            fnrm:  3.607E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  52, epot: -3.889292233466E+01, de: -8.4E-04, fmax:  1.835E-01, 
+            fnrm:  3.853E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  53, epot: -3.889391431616E+01, de: -9.9E-04, fmax:  1.959E-01, 
+            fnrm:  4.118E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  54, epot: -3.889506257301E+01, de: -1.1E-03, fmax:  2.092E-01, 
+            fnrm:  4.399E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  55, epot: -3.889562218498E+01, de: -5.6E-04, fmax:  2.153E-01, 
+            fnrm:  4.527E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  56, epot: -3.889615187408E+01, de: -5.3E-04, fmax:  2.209E-01, 
+            fnrm:  4.644E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  57, epot: -3.889674206856E+01, de: -5.9E-04, fmax:  2.268E-01, 
+            fnrm:  4.769E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  58, epot: -3.889808719535E+01, de: -1.3E-03, fmax:  2.394E-01, 
+            fnrm:  5.035E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  59, epot: -3.889971829397E+01, de: -1.6E-03, fmax:  2.534E-01, 
+            fnrm:  5.331E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  60, epot: -3.890160406158E+01, de: -1.9E-03, fmax:  2.680E-01, 
+            fnrm:  5.639E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  61, epot: -3.890374112720E+01, de: -2.1E-03, fmax:  2.828E-01, 
+            fnrm:  5.953E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  62, epot: -3.890476307254E+01, de: -1.0E-03, fmax:  2.894E-01, 
+            fnrm:  6.092E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  63, epot: -3.890571848945E+01, de: -9.6E-04, fmax:  2.951E-01, 
+            fnrm:  6.216E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  64, epot: -3.890677136001E+01, de: -1.1E-03, fmax:  3.012E-01, 
+            fnrm:  6.345E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  65, epot: -3.890912565704E+01, de: -2.4E-03, fmax:  3.137E-01, 
+            fnrm:  6.612E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  66, epot: -3.891190461978E+01, de: -2.8E-03, fmax:  3.268E-01, 
+            fnrm:  6.891E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  67, epot: -3.891501742477E+01, de: -3.1E-03, fmax:  3.396E-01, 
+            fnrm:  7.162E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  68, epot: -3.892026332002E+01, de: -5.2E-03, fmax:  3.573E-01, 
+            fnrm:  7.533E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  69, epot: -3.892615481819E+01, de: -5.9E-03, fmax:  3.718E-01, 
+            fnrm:  7.836E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  70, epot: -3.893253118780E+01, de: -6.4E-03, fmax:  3.815E-01, 
+            fnrm:  8.048E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  71, epot: -3.893920027053E+01, de: -6.7E-03, fmax:  3.852E-01, 
+            fnrm:  8.152E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  72, epot: -3.894827717174E+01, de: -9.1E-03, fmax:  3.810E-01, 
+            fnrm:  8.129E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  73, epot: -3.895690629591E+01, de: -8.6E-03, fmax:  3.627E-01, 
+            fnrm:  7.953E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  74, epot: -3.896459435097E+01, de: -7.7E-03, fmax:  3.312E-01, 
+            fnrm:  7.709E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  75, epot: -3.897252097032E+01, de: -7.9E-03, fmax:  3.029E-01, 
+            fnrm:  7.520E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  76, epot: -3.897855075228E+01, de: -6.0E-03, fmax:  3.125E-01, 
+            fnrm:  7.386E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  77, epot: -3.898333008512E+01, de: -4.8E-03, fmax:  3.131E-01, 
+            fnrm:  7.191E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  78, epot: -3.898803063819E+01, de: -4.7E-03, fmax:  3.062E-01, 
+            fnrm:  6.932E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  79, epot: -3.899249639590E+01, de: -4.5E-03, fmax:  2.862E-01, 
+            fnrm:  6.389E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  80, epot: -3.899688406210E+01, de: -4.4E-03, fmax:  2.577E-01, 
+            fnrm:  5.773E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  81, epot: -3.900137688183E+01, de: -4.5E-03, fmax:  2.258E-01, 
+            fnrm:  5.196E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  82, epot: -3.900535793936E+01, de: -4.0E-03, fmax:  1.928E-01, 
+            fnrm:  4.653E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  83, epot: -3.900877280810E+01, de: -3.4E-03, fmax:  1.647E-01, 
+            fnrm:  4.164E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  84, epot: -3.901197362415E+01, de: -3.2E-03, fmax:  1.400E-01, 
+            fnrm:  3.752E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  85, epot: -3.901466440379E+01, de: -2.7E-03, fmax:  1.299E-01, 
+            fnrm:  3.431E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  86, epot: -3.901695636238E+01, de: -2.3E-03, fmax:  1.222E-01, 
+            fnrm:  3.180E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  87, epot: -3.901914994419E+01, de: -2.2E-03, fmax:  1.171E-01, 
+            fnrm:  3.001E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  88, epot: -3.902107616293E+01, de: -1.9E-03, fmax:  1.126E-01, 
+            fnrm:  2.881E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS: {iter:  89, epot: -3.902281164886E+01, de: -1.7E-03, fmax:  1.101E-01, 
+            fnrm:  2.798E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  90, epot: -3.902456765759E+01, de: -1.8E-03, fmax:  1.101E-01, 
+            fnrm:  2.763E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  56}
+   - BFGS: {iter:  91, epot: -3.902621952904E+01, de: -1.7E-03, fmax:  1.107E-01, 
+            fnrm:  2.758E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  58}
+   - BFGS: {iter:  92, epot: -3.902781380557E+01, de: -1.6E-03, fmax:  1.159E-01, 
+            fnrm:  2.774E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  60}
+   - BFGS: {iter:  93, epot: -3.902952495399E+01, de: -1.7E-03, fmax:  1.280E-01, 
+            fnrm:  2.833E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  62}
+   - BFGS: {iter:  94, epot: -3.903124691387E+01, de: -1.7E-03, fmax:  1.406E-01, 
+            fnrm:  2.916E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  64}
+   - BFGS: {iter:  95, epot: -3.903301679369E+01, de: -1.8E-03, fmax:  1.529E-01, 
+            fnrm:  3.020E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  96, epot: -3.903501280844E+01, de: -2.0E-03, fmax:  1.683E-01, 
+            fnrm:  3.177E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  97, epot: -3.903713604754E+01, de: -2.1E-03, fmax:  1.842E-01, 
+            fnrm:  3.367E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  98, epot: -3.903943656203E+01, de: -2.3E-03, fmax:  2.008E-01, 
+            fnrm:  3.591E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  99, epot: -3.904198412596E+01, de: -2.5E-03, fmax:  2.186E-01, 
+            fnrm:  3.861E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  100, epot: -3.904240531696E+01, de: -4.2E-04, fmax:  2.150E-01, 
+            fnrm:  3.803E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  101, epot: -3.904276941782E+01, de: -3.6E-04, fmax:  2.135E-01, 
+            fnrm:  3.769E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  102, epot: -3.904314824497E+01, de: -3.8E-04, fmax:  2.114E-01, 
+            fnrm:  3.743E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  103, epot: -3.904392350988E+01, de: -7.8E-04, fmax:  2.071E-01, 
+            fnrm:  3.705E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  104, epot: -3.904475435329E+01, de: -8.3E-04, fmax:  2.022E-01, 
+            fnrm:  3.689E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  105, epot: -3.904560816050E+01, de: -8.5E-04, fmax:  1.974E-01, 
+            fnrm:  3.691E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  106, epot: -3.904691224819E+01, de: -1.3E-03, fmax:  1.907E-01, 
+            fnrm:  3.725E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  107, epot: -3.904826731846E+01, de: -1.4E-03, fmax:  1.865E-01, 
+            fnrm:  3.790E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  108, epot: -3.904967570569E+01, de: -1.4E-03, fmax:  1.895E-01, 
+            fnrm:  3.882E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  109, epot: -3.905164844233E+01, de: -2.0E-03, fmax:  1.943E-01, 
+            fnrm:  4.041E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  110, epot: -3.905376648140E+01, de: -2.1E-03, fmax:  2.005E-01, 
+            fnrm:  4.234E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  111, epot: -3.905606550734E+01, de: -2.3E-03, fmax:  2.082E-01, 
+            fnrm:  4.451E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  112, epot: -3.905858537115E+01, de: -2.5E-03, fmax:  2.173E-01, 
+            fnrm:  4.688E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  113, epot: -3.906136797512E+01, de: -2.8E-03, fmax:  2.279E-01, 
+            fnrm:  4.938E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  114, epot: -3.906445555202E+01, de: -3.1E-03, fmax:  2.398E-01, 
+            fnrm:  5.197E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  115, epot: -3.906522643780E+01, de: -7.7E-04, fmax:  2.474E-01, 
+            fnrm:  5.215E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  116, epot: -3.906591823424E+01, de: -6.9E-04, fmax:  2.525E-01, 
+            fnrm:  5.239E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  117, epot: -3.906665772715E+01, de: -7.4E-04, fmax:  2.573E-01, 
+            fnrm:  5.270E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  118, epot: -3.906823536043E+01, de: -1.6E-03, fmax:  2.668E-01, 
+            fnrm:  5.344E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  119, epot: -3.907000406187E+01, de: -1.8E-03, fmax:  2.761E-01, 
+            fnrm:  5.435E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  120, epot: -3.907189600962E+01, de: -1.9E-03, fmax:  2.848E-01, 
+            fnrm:  5.535E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  121, epot: -3.907492213071E+01, de: -3.0E-03, fmax:  2.979E-01, 
+            fnrm:  5.695E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  122, epot: -3.907818405437E+01, de: -3.3E-03, fmax:  3.100E-01, 
+            fnrm:  5.861E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  123, epot: -3.908164759454E+01, de: -3.5E-03, fmax:  3.210E-01, 
+            fnrm:  6.026E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  124, epot: -3.908655353437E+01, de: -4.9E-03, fmax:  3.348E-01, 
+            fnrm:  6.246E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  125, epot: -3.909173650139E+01, de: -5.2E-03, fmax:  3.461E-01, 
+            fnrm:  6.455E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  126, epot: -3.909713441894E+01, de: -5.4E-03, fmax:  3.544E-01, 
+            fnrm:  6.648E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  127, epot: -3.910406550521E+01, de: -6.9E-03, fmax:  3.612E-01, 
+            fnrm:  6.890E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  128, epot: -3.911104969207E+01, de: -7.0E-03, fmax:  3.623E-01, 
+            fnrm:  7.109E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  129, epot: -3.911795938137E+01, de: -6.9E-03, fmax:  3.577E-01, 
+            fnrm:  7.290E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  130, epot: -3.912591373259E+01, de: -8.0E-03, fmax:  3.457E-01, 
+            fnrm:  7.520E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  131, epot: -3.913343032547E+01, de: -7.5E-03, fmax:  3.472E-01, 
+            fnrm:  7.629E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  132, epot: -3.914053028730E+01, de: -7.1E-03, fmax:  3.460E-01, 
+            fnrm:  7.549E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  133, epot: -3.914808107033E+01, de: -7.6E-03, fmax:  3.343E-01, 
+            fnrm:  7.350E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  134, epot: -3.915501559967E+01, de: -6.9E-03, fmax:  2.968E-01, 
+            fnrm:  6.824E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  135, epot: -3.916123646714E+01, de: -6.2E-03, fmax:  2.415E-01, 
+            fnrm:  6.110E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  136, epot: -3.916707025263E+01, de: -5.8E-03, fmax:  1.919E-01, 
+            fnrm:  5.415E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  137, epot: -3.917169618973E+01, de: -4.6E-03, fmax:  1.878E-01, 
+            fnrm:  4.703E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  138, epot: -3.917520084656E+01, de: -3.5E-03, fmax:  1.762E-01, 
+            fnrm:  4.064E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  139, epot: -3.917798786099E+01, de: -2.8E-03, fmax:  1.571E-01, 
+            fnrm:  3.486E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  140, epot: -3.917990944091E+01, de: -1.9E-03, fmax:  1.342E-01, 
+            fnrm:  2.933E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS: {iter:  141, epot: -3.918120698009E+01, de: -1.3E-03, fmax:  1.184E-01, 
+            fnrm:  2.450E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  142, epot: -3.918213076897E+01, de: -9.2E-04, fmax:  1.047E-01, 
+            fnrm:  2.019E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  56}
+   - BFGS: {iter:  143, epot: -3.918271672244E+01, de: -5.9E-04, fmax:  9.014E-02, 
+            fnrm:  1.651E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  58}
+   - BFGS: {iter:  144, epot: -3.918308687154E+01, de: -3.7E-04, fmax:  7.677E-02, 
+            fnrm:  1.352E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  60}
+   - BFGS: {iter:  145, epot: -3.918333381497E+01, de: -2.5E-04, fmax:  6.320E-02, 
+            fnrm:  1.104E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  62}
+   - BFGS: {iter:  146, epot: -3.918348570091E+01, de: -1.5E-04, fmax:  5.109E-02, 
+            fnrm:  9.099E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  64}
+   - BFGS: {iter:  147, epot: -3.918358096472E+01, de: -9.5E-05, fmax:  3.996E-02, 
+            fnrm:  7.541E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  148, epot: -3.918364433319E+01, de: -6.3E-05, fmax:  3.027E-02, 
+            fnrm:  6.222E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  68}
+   - BFGS: {iter:  149, epot: -3.918368448573E+01, de: -4.0E-05, fmax:  2.123E-02, 
+            fnrm:  5.091E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  70}
+   - BFGS: {iter:  150, epot: -3.918371026384E+01, de: -2.6E-05, fmax:  1.596E-02, 
+            fnrm:  4.106E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  72}
+   - BFGS: {iter:  151, epot: -3.918372694157E+01, de: -1.7E-05, fmax:  1.229E-02, 
+            fnrm:  3.205E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  74}
+   - BFGS: {iter:  152, epot: -3.918373686773E+01, de: -9.9E-06, fmax:  1.050E-02, 
+            fnrm:  2.526E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  76}
+   - BFGS: {iter:  153, epot: -3.918374245725E+01, de: -5.6E-06, fmax:  9.001E-03, 
+            fnrm:  1.872E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  78}
+   - BFGS: {iter:  154, epot: -3.918374548736E+01, de: -3.0E-06, fmax:  5.573E-03, 
+            fnrm:  1.337E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  80}
+   - BFGS: {iter:  155, epot: -3.918374673269E+01, de: -1.2E-06, fmax:  4.515E-03, 
+            fnrm:  9.907E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  82}
+   - BFGS: {iter:  156, epot: -3.918374735475E+01, de: -6.2E-07, fmax:  3.830E-03, 
+            fnrm:  8.148E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  84}
+   - BFGS: {iter:  157, epot: -3.918374777876E+01, de: -4.2E-07, fmax:  3.209E-03, 
+            fnrm:  6.678E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  86}
+   - BFGS: {iter:  158, epot: -3.918374809773E+01, de: -3.2E-07, fmax:  2.628E-03, 
+            fnrm:  5.428E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  88}
+   - BFGS: {iter:  159, epot: -3.918374833236E+01, de: -2.3E-07, fmax:  2.082E-03, 
+            fnrm:  4.434E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  90}
+   - BFGS: {iter:  160, epot: -3.918374849559E+01, de: -1.6E-07, fmax:  1.589E-03, 
+            fnrm:  3.711E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  92}
+   - BFGS: {iter:  161, epot: -3.918374860598E+01, de: -1.1E-07, fmax:  1.252E-03, 
+            fnrm:  3.174E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  94}
+   - BFGS: {iter:  162, epot: -3.918374868295E+01, de: -7.7E-08, fmax:  1.105E-03, 
+            fnrm:  2.711E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  96}
+   - BFGS: {iter:  163, epot: -3.918374873866E+01, de: -5.6E-08, fmax:  8.810E-04, 
+            fnrm:  2.278E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  98}
+   - BFGS FINISHED:
+       success                         :  Yes
+       iter                            :  163
+       epot                            : -3.918374873866E+01
+       fnrm                            :  2.27786E-03
+       fmax                            :  8.81038E-04
+   new lowest: {iproc:  0, nlmin:  1, erathopp: -3.918374873866E+01, de: -2.17886}
+   minhopp iteration info: {iproc:  0, istep:  2, ihopp:  1, nlmin:  2, escaped:  Yes, 
+                         accepted:  Yes,           epot: -3.918374873866E+01}
+ - escaped: {iproc:  0, nlmin:  2, nlmin_old:  1, minter:  1}
+   writing minhopp results: {iproc:  0, nlmin:  2}
+    #master proc wrote poslow.xyz
+    #master proc wrote energies in earr.dat, can be used in a restart run.
+    #master proc wrote input/output parameters in input.minhopp.
+   SOFTEN:
+   - SOFT: {iter:  1, curv:  159.748, fd2:  158.778, de:  0.032, res:  2.236, eps_v:  0.020}
+   - SOFT: {iter:  2, curv:  125.532, fd2:  125.121, de:  0.025, res:  1.810, eps_v:  0.020}
+   - SOFT: {iter:  3, curv:  103.533, fd2:  103.374, de:  0.021, res:  1.426, eps_v:  0.020}
+   - SOFT: {iter:  4, curv:  89.830, fd2:  89.735, de:  0.018, res:  1.152, eps_v:  0.020}
+   - SOFT: {iter:  5, curv:  80.747, fd2:  80.644, de:  0.016, res:  0.972, eps_v:  0.020}
+   - SOFT: {iter:  6, curv:  74.169, fd2:  74.046, de:  0.015, res:  0.851, eps_v:  0.020}
+   - SOFT: {iter:  7, curv:  69.045, fd2:  68.906, de:  0.014, res:  0.766, eps_v:  0.020}
+   - SOFT: {iter:  8, curv:  64.840, fd2:  64.695, de:  0.013, res:  0.704, eps_v:  0.020}
+   - SOFT: {iter:  9, curv:  61.257, fd2:  61.115, de:  0.012, res:  0.657, eps_v:  0.020}
+   - SOFT: {iter:  10, curv:  58.112, fd2:  57.979, de:  0.012, res:  0.620, eps_v:  0.020}
+   - SOFT: {iter:  11, curv:  55.285, fd2:  55.165, de:  0.011, res:  0.592, eps_v:  0.020}
+   - SOFT: {iter:  12, curv:  52.691, fd2:  52.586, de:  0.011, res:  0.571, eps_v:  0.020}
+   - SOFT: {iter:  13, curv:  50.269, fd2:  50.182, de:  0.010, res:  0.554, eps_v:  0.020}
+   - SOFT: {iter:  14, curv:  47.975, fd2:  47.906, de:  0.010, res:  0.542, eps_v:  0.020}
+   - SOFT: {iter:  15, curv:  45.776, fd2:  45.725, de:  0.009, res:  0.532, eps_v:  0.020}
+   - SOFT: {iter:  16, curv:  43.648, fd2:  43.616, de:  0.009, res:  0.525, eps_v:  0.020}
+   - SOFT: {iter:  17, curv:  41.577, fd2:  41.563, de:  0.008, res:  0.519, eps_v:  0.020}
+   - SOFT: {iter:  18, curv:  39.551, fd2:  39.554, de:  0.008, res:  0.514, eps_v:  0.020}
+   - SOFT: {iter:  19, curv:  37.566, fd2:  37.586, de:  0.008, res:  0.509, eps_v:  0.020}
+   - SOFT: {iter:  20, curv:  35.621, fd2:  35.657, de:  0.007, res:  0.503, eps_v:  0.020}
+   MD escape:
+   - MDEs: {iter:  001, en0000:  0.15996E-01, rkin:  0.32400E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  002, en0000:  0.63306E-01, rkin:  0.32241E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  003, en0000:  0.14036E+00, rkin:  0.31769E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  004, en0000:  0.24464E+00, rkin:  0.30999E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  005, en0000:  0.37231E+00, rkin:  0.29959E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  006, en0000:  0.51797E+00, rkin:  0.28686E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  007, en0000:  0.67460E+00, rkin:  0.27233E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  008, en0000:  0.83388E+00, rkin:  0.25672E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  009, en0000:  0.98699E+00, rkin:  0.24085E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  010, en0000:  0.11257E+01, rkin:  0.22559E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  011, en0000:  0.12437E+01, rkin:  0.21176E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  012, en0000:  0.13372E+01, rkin:  0.19999E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  013, en0000:  0.14055E+01, rkin:  0.19065E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  014, en0000:  0.14507E+01, rkin:  0.18380E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  015, en0000:  0.14769E+01, rkin:  0.17925E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  016, en0000:  0.14895E+01, rkin:  0.17659E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  017, en0000:  0.14942E+01, rkin:  0.17530E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  018, en0000:  0.14970E+01, rkin:  0.17478E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  019, en0000:  0.15034E+01, rkin:  0.17446E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  020, en0000:  0.15185E+01, rkin:  0.17379E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  021, en0000:  0.15473E+01, rkin:  0.17223E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  022, en0000:  0.15933E+01, rkin:  0.16933E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  023, en0000:  0.16586E+01, rkin:  0.16470E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  024, en0000:  0.17417E+01, rkin:  0.15816E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  025, en0000:  0.18354E+01, rkin:  0.14988E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  026, en0000:  0.19257E+01, rkin:  0.14058E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  027, en0000:  0.19933E+01, rkin:  0.13167E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  028, en0000:  0.20195E+01, rkin:  0.12503E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  029, en0000:  0.19950E+01, rkin:  0.12247E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  030, en0000:  0.19254E+01, rkin:  0.12489E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  031, en0000:  0.18296E+01, rkin:  0.13172E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  032, en0000:  0.17312E+01, rkin:  0.14115E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  033, en0000:  0.16503E+01, rkin:  0.15087E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  034, en0000:  0.15986E+01, rkin:  0.15889E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  035, en0000:  0.15795E+01, rkin:  0.16405E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  036, en0000:  0.15902E+01, rkin:  0.16598E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  037, en0000:  0.16243E+01, rkin:  0.16496E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  038, en0000:  0.16739E+01, rkin:  0.16161E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  039, en0000:  0.17311E+01, rkin:  0.15670E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  040, en0000:  0.17885E+01, rkin:  0.15102E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  041, en0000:  0.18396E+01, rkin:  0.14532E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  042, en0000:  0.18786E+01, rkin:  0.14025E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  043, en0000:  0.19020E+01, rkin:  0.13636E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  044, en0000:  0.19088E+01, rkin:  0.13403E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  045, en0000:  0.19021E+01, rkin:  0.13333E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  046, en0000:  0.18890E+01, rkin:  0.13395E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  047, en0000:  0.18789E+01, rkin:  0.13520E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  048, en0000:  0.18811E+01, rkin:  0.13614E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  049, en0000:  0.19020E+01, rkin:  0.13588E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  050, en0000:  0.19430E+01, rkin:  0.13377E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  051, en0000:  0.19999E+01, rkin:  0.12969E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  052, en0000:  0.20637E+01, rkin:  0.12405E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  053, en0000:  0.21221E+01, rkin:  0.11774E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  054, en0000:  0.21618E+01, rkin:  0.11198E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  055, en0000:  0.21714E+01, rkin:  0.10809E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  056, en0000:  0.21457E+01, rkin:  0.10716E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  057, en0000:  0.20881E+01, rkin:  0.10971E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  058, en0000:  0.20100E+01, rkin:  0.11540E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  059, en0000:  0.19262E+01, rkin:  0.12312E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  060, en0000:  0.18496E+01, rkin:  0.13143E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  061, en0000:  0.17873E+01, rkin:  0.13905E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  062, en0000:  0.17402E+01, rkin:  0.14529E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  063, en0000:  0.17052E+01, rkin:  0.15002E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  064, en0000:  0.16767E+01, rkin:  0.15357E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  065, en0000:  0.16495E+01, rkin:  0.15646E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  066, en0000:  0.16190E+01, rkin:  0.15921E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  067, en0000:  0.15822E+01, rkin:  0.16227E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  068, en0000:  0.15376E+01, rkin:  0.16596E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  069, en0000:  0.14857E+01, rkin:  0.17042E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  070, en0000:  0.14289E+01, rkin:  0.17560E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  071, en0000:  0.13721E+01, rkin:  0.18124E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  072, en0000:  0.13215E+01, rkin:  0.18688E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  073, en0000:  0.12837E+01, rkin:  0.19190E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  074, en0000:  0.12647E+01, rkin:  0.19563E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  075, en0000:  0.12683E+01, rkin:  0.19750E+01, nmax:  3, nmin:  3}
+   SD optimization iterations:
+   - SD: {iter:  0, epot: -3.791549038992E+01, de:  0.0E+00, fmax:  5.932E+00, 
+          fnrm:  1.371E+01,          alpha/alphax:  0.0000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  1, epot: -3.802236253081E+01, de: -1.1E-01, fmax:  4.999E+00, 
+          fnrm:  1.235E+01,          alpha/alphax:  0.6000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  2, epot: -3.812672474918E+01, de: -1.0E-01, fmax:  4.223E+00, 
+          fnrm:  1.117E+01,          alpha/alphax:  0.7200E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  3, epot: -3.822921999744E+01, de: -1.0E-01, fmax:  3.672E+00, 
+          fnrm:  1.011E+01,          alpha/alphax:  0.8640E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  4, epot: -3.832996719494E+01, de: -1.0E-01, fmax:  3.308E+00, 
+          fnrm:  9.144E+00,          alpha/alphax:  0.1037E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  5, epot: -3.842864160179E+01, de: -9.9E-02, fmax:  2.972E+00, 
+          fnrm:  8.242E+00,          alpha/alphax:  0.1244E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  6, epot: -3.852468619162E+01, de: -9.6E-02, fmax:  2.831E+00, 
+          fnrm:  7.405E+00,          alpha/alphax:  0.1493E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  7, epot: -3.861757840730E+01, de: -9.3E-02, fmax:  2.637E+00, 
+          fnrm:  6.636E+00,          alpha/alphax:  0.1792E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  8, epot: -3.870110884371E+01, de: -8.4E-02, fmax:  2.407E+00, 
+          fnrm:  5.981E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  9, epot: -3.876946838932E+01, de: -6.8E-02, fmax:  2.179E+00, 
+          fnrm:  5.464E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  10, epot: -3.882672779011E+01, de: -5.7E-02, fmax:  1.960E+00, 
+          fnrm:  5.025E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  11, epot: -3.887525126686E+01, de: -4.9E-02, fmax:  1.793E+00, 
+          fnrm:  4.636E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  12, epot: -3.891657247760E+01, de: -4.1E-02, fmax:  1.674E+00, 
+          fnrm:  4.281E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  13, epot: -3.895181435466E+01, de: -3.5E-02, fmax:  1.558E+00, 
+          fnrm:  3.954E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  14, epot: -3.898187947852E+01, de: -3.0E-02, fmax:  1.446E+00, 
+          fnrm:  3.652E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  15, epot: -3.900753234885E+01, de: -2.6E-02, fmax:  1.340E+00, 
+          fnrm:  3.374E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  16, epot: -3.902943429530E+01, de: -2.2E-02, fmax:  1.239E+00, 
+          fnrm:  3.119E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  17, epot: -3.904815927391E+01, de: -1.9E-02, fmax:  1.145E+00, 
+          fnrm:  2.886E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  18, epot: -3.906420287767E+01, de: -1.6E-02, fmax:  1.057E+00, 
+          fnrm:  2.674E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  19, epot: -3.907798952087E+01, de: -1.4E-02, fmax:  9.759E-01, 
+          fnrm:  2.482E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD FINISHED:
+       success                         :  Yes
+       iter                            :  19
+       epot                            : -3.907798952087E+01
+       fnrm                            :  2.48240E+00
+       fmax                            :  9.75948E-01
+   BFGS optimization iterations:
+   - BFGS: {iter:  0, epot: -3.907798952087E+01, de:  0.0E+00, fmax:  9.759E-01, 
+            fnrm:  2.482E+00,                 alpha:  8.0000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  1, epot: -3.909349881086E+01, de: -1.6E-02, fmax:  8.773E-01, 
+            fnrm:  2.254E+00,                 alpha:  8.8000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  2, epot: -3.910547084799E+01, de: -1.2E-02, fmax:  7.958E-01, 
+            fnrm:  2.068E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  3, epot: -3.911614810069E+01, de: -1.1E-02, fmax:  7.186E-01, 
+            fnrm:  1.895E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  4, epot: -3.912537013976E+01, de: -9.2E-03, fmax:  6.482E-01, 
+            fnrm:  1.740E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  5, epot: -3.913326224100E+01, de: -7.9E-03, fmax:  5.903E-01, 
+            fnrm:  1.601E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  6, epot: -3.914001485570E+01, de: -6.8E-03, fmax:  5.485E-01, 
+            fnrm:  1.479E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  7, epot: -3.914581270458E+01, de: -5.8E-03, fmax:  5.105E-01, 
+            fnrm:  1.371E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  8, epot: -3.915081528213E+01, de: -5.0E-03, fmax:  4.759E-01, 
+            fnrm:  1.275E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  9, epot: -3.915957640849E+01, de: -8.8E-03, fmax:  4.054E-01, 
+            fnrm:  1.094E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  10, epot: -3.916610778105E+01, de: -6.5E-03, fmax:  3.485E-01, 
+            fnrm:  9.516E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  11, epot: -3.917105327547E+01, de: -4.9E-03, fmax:  3.011E-01, 
+            fnrm:  8.358E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  12, epot: -3.917628068202E+01, de: -5.2E-03, fmax:  2.413E-01, 
+            fnrm:  7.016E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  13, epot: -3.917990072875E+01, de: -3.6E-03, fmax:  1.958E-01, 
+            fnrm:  5.939E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  14, epot: -3.918245607904E+01, de: -2.6E-03, fmax:  1.593E-01, 
+            fnrm:  5.024E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  15, epot: -3.918465207787E+01, de: -2.2E-03, fmax:  1.241E-01, 
+            fnrm:  4.073E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  16, epot: -3.918606546504E+01, de: -1.4E-03, fmax:  9.797E-02, 
+            fnrm:  3.271E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  17, epot: -3.918696944869E+01, de: -9.0E-04, fmax:  8.672E-02, 
+            fnrm:  2.605E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  18, epot: -3.918761747376E+01, de: -6.5E-04, fmax:  7.682E-02, 
+            fnrm:  2.005E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  19, epot: -3.918798961262E+01, de: -3.7E-04, fmax:  6.601E-02, 
+            fnrm:  1.564E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  20, epot: -3.918820651334E+01, de: -2.2E-04, fmax:  5.574E-02, 
+            fnrm:  1.257E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  21, epot: -3.918834970951E+01, de: -1.4E-04, fmax:  4.608E-02, 
+            fnrm:  1.030E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  22, epot: -3.918843739213E+01, de: -8.8E-05, fmax:  3.776E-02, 
+            fnrm:  8.777E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  23, epot: -3.918849772378E+01, de: -6.0E-05, fmax:  3.058E-02, 
+            fnrm:  7.624E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  24, epot: -3.918854600088E+01, de: -4.8E-05, fmax:  2.393E-02, 
+            fnrm:  6.560E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  25, epot: -3.918858366274E+01, de: -3.8E-05, fmax:  2.075E-02, 
+            fnrm:  5.517E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  26, epot: -3.918861268441E+01, de: -2.9E-05, fmax:  1.776E-02, 
+            fnrm:  4.466E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  27, epot: -3.918863399509E+01, de: -2.1E-05, fmax:  1.426E-02, 
+            fnrm:  3.447E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  28, epot: -3.918864697104E+01, de: -1.3E-05, fmax:  1.087E-02, 
+            fnrm:  2.601E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  29, epot: -3.918865405060E+01, de: -7.1E-06, fmax:  8.088E-03, 
+            fnrm:  1.978E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  30, epot: -3.918865786581E+01, de: -3.8E-06, fmax:  5.631E-03, 
+            fnrm:  1.539E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  31, epot: -3.918865983416E+01, de: -2.0E-06, fmax:  3.657E-03, 
+            fnrm:  1.241E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS: {iter:  32, epot: -3.918866096422E+01, de: -1.1E-06, fmax:  3.274E-03, 
+            fnrm:  1.022E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  33, epot: -3.918866171952E+01, de: -7.6E-07, fmax:  3.080E-03, 
+            fnrm:  8.449E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  56}
+   - BFGS: {iter:  34, epot: -3.918866225691E+01, de: -5.4E-07, fmax:  2.830E-03, 
+            fnrm:  6.985E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  58}
+   - BFGS: {iter:  35, epot: -3.918866265773E+01, de: -4.0E-07, fmax:  2.517E-03, 
+            fnrm:  5.789E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  60}
+   - BFGS: {iter:  36, epot: -3.918866295561E+01, de: -3.0E-07, fmax:  2.145E-03, 
+            fnrm:  4.842E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  62}
+   - BFGS: {iter:  37, epot: -3.918866316341E+01, de: -2.1E-07, fmax:  1.799E-03, 
+            fnrm:  4.087E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  64}
+   - BFGS: {iter:  38, epot: -3.918866330332E+01, de: -1.4E-07, fmax:  1.508E-03, 
+            fnrm:  3.415E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  39, epot: -3.918866339645E+01, de: -9.3E-08, fmax:  1.173E-03, 
+            fnrm:  2.756E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  68}
+   - BFGS: {iter:  40, epot: -3.918866345493E+01, de: -5.8E-08, fmax:  8.379E-04, 
+            fnrm:  2.114E-03,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  70}
+   - BFGS FINISHED:
+       success                         :  Yes
+       iter                            :  40
+       epot                            : -3.918866345493E+01
+       fnrm                            :  2.11440E-03
+       fmax                            :  8.37853E-04
+   new lowest: {iproc:  0, nlmin:  2, erathopp: -3.918866345493E+01, de: -0.00491}
+   minhopp iteration info: {iproc:  0, istep:  3, ihopp:  2, nlmin:  3, escaped:  Yes, 
+                         accepted:  Yes,           epot: -3.918866345493E+01}
+ - escaped: {iproc:  0, nlmin:  3, nlmin_old:  2, minter:  1}
+   writing minhopp results: {iproc:  0, nlmin:  3}
+    #master proc wrote poslow.xyz
+    #master proc wrote energies in earr.dat, can be used in a restart run.
+    #master proc wrote input/output parameters in input.minhopp.
+   SOFTEN:
+   - SOFT: {iter:  1, curv:  139.667, fd2:  137.875, de:  0.028, res:  2.042, eps_v:  0.020}
+   - SOFT: {iter:  2, curv:  109.688, fd2:  108.484, de:  0.022, res:  1.815, eps_v:  0.020}
+   - SOFT: {iter:  3, curv:  86.541, fd2:  85.759, de:  0.017, res:  1.543, eps_v:  0.020}
+   - SOFT: {iter:  4, curv:  69.992, fd2:  69.458, de:  0.014, res:  1.292, eps_v:  0.020}
+   - SOFT: {iter:  5, curv:  58.404, fd2:  58.000, de:  0.012, res:  1.089, eps_v:  0.020}
+   - SOFT: {iter:  6, curv:  50.120, fd2:  49.781, de:  0.010, res:  0.935, eps_v:  0.020}
+   - SOFT: {iter:  7, curv:  43.970, fd2:  43.667, de:  0.009, res:  0.817, eps_v:  0.020}
+   - SOFT: {iter:  8, curv:  39.237, fd2:  38.956, de:  0.008, res:  0.725, eps_v:  0.020}
+   - SOFT: {iter:  9, curv:  35.491, fd2:  35.227, de:  0.007, res:  0.650, eps_v:  0.020}
+   - SOFT: {iter:  10, curv:  32.468, fd2:  32.219, de:  0.006, res:  0.587, eps_v:  0.020}
+   - SOFT: {iter:  11, curv:  29.997, fd2:  29.761, de:  0.006, res:  0.532, eps_v:  0.020}
+   - SOFT: {iter:  12, curv:  27.958, fd2:  27.735, de:  0.006, res:  0.484, eps_v:  0.020}
+   - SOFT: {iter:  13, curv:  26.265, fd2:  26.054, de:  0.005, res:  0.442, eps_v:  0.020}
+   - SOFT: {iter:  14, curv:  24.851, fd2:  24.651, de:  0.005, res:  0.405, eps_v:  0.020}
+   - SOFT: {iter:  15, curv:  23.666, fd2:  23.475, de:  0.005, res:  0.371, eps_v:  0.020}
+   - SOFT: {iter:  16, curv:  22.667, fd2:  22.486, de:  0.004, res:  0.341, eps_v:  0.020}
+   - SOFT: {iter:  17, curv:  21.823, fd2:  21.650, de:  0.004, res:  0.314, eps_v:  0.020}
+   - SOFT: {iter:  18, curv:  21.107, fd2:  20.941, de:  0.004, res:  0.289, eps_v:  0.020}
+   - SOFT: {iter:  19, curv:  20.497, fd2:  20.337, de:  0.004, res:  0.267, eps_v:  0.020}
+   - SOFT: {iter:  20, curv:  19.975, fd2:  19.822, de:  0.004, res:  0.247, eps_v:  0.020}
+   MD escape:
+   - MDEs: {iter:  001, en0000:  0.86402E-02, rkin:  0.30857E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  002, en0000:  0.35085E-01, rkin:  0.30770E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  003, en0000:  0.79908E-01, rkin:  0.30505E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  004, en0000:  0.14332E+00, rkin:  0.30056E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  005, en0000:  0.22488E+00, rkin:  0.29422E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  006, en0000:  0.32309E+00, rkin:  0.28607E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  007, en0000:  0.43506E+00, rkin:  0.27627E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  008, en0000:  0.55636E+00, rkin:  0.26510E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  009, en0000:  0.68113E+00, rkin:  0.25300E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  010, en0000:  0.80283E+00, rkin:  0.24057E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  011, en0000:  0.91517E+00, rkin:  0.22844E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  012, en0000:  0.10134E+01, rkin:  0.21724E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  013, en0000:  0.10950E+01, rkin:  0.20743E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  014, en0000:  0.11599E+01, rkin:  0.19927E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  015, en0000:  0.12095E+01, rkin:  0.19278E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  016, en0000:  0.12460E+01, rkin:  0.18780E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  017, en0000:  0.12712E+01, rkin:  0.18414E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  018, en0000:  0.12860E+01, rkin:  0.18161E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  019, en0000:  0.12908E+01, rkin:  0.18013E+01, nmax:  0, nmin:  0}
+   - MDEs: {iter:  020, en0000:  0.12858E+01, rkin:  0.17965E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  021, en0000:  0.12717E+01, rkin:  0.18014E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  022, en0000:  0.12511E+01, rkin:  0.18153E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  023, en0000:  0.12283E+01, rkin:  0.18356E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  024, en0000:  0.12106E+01, rkin:  0.18578E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  025, en0000:  0.12081E+01, rkin:  0.18747E+01, nmax:  1, nmin:  0}
+   - MDEs: {iter:  026, en0000:  0.12335E+01, rkin:  0.18762E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  027, en0000:  0.13001E+01, rkin:  0.18497E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  028, en0000:  0.14165E+01, rkin:  0.17821E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  029, en0000:  0.15779E+01, rkin:  0.16655E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  030, en0000:  0.17561E+01, rkin:  0.15055E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  031, en0000:  0.18996E+01, rkin:  0.13304E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  032, en0000:  0.19554E+01, rkin:  0.11903E+01, nmax:  1, nmin:  1}
+   - MDEs: {iter:  033, en0000:  0.19045E+01, rkin:  0.11358E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  034, en0000:  0.17799E+01, rkin:  0.11845E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  035, en0000:  0.16452E+01, rkin:  0.13050E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  036, en0000:  0.15573E+01, rkin:  0.14361E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  037, en0000:  0.15437E+01, rkin:  0.15225E+01, nmax:  2, nmin:  1}
+   - MDEs: {iter:  038, en0000:  0.16007E+01, rkin:  0.15365E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  039, en0000:  0.17020E+01, rkin:  0.14813E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  040, en0000:  0.18093E+01, rkin:  0.13825E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  041, en0000:  0.18856E+01, rkin:  0.12775E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  042, en0000:  0.19089E+01, rkin:  0.12026E+01, nmax:  2, nmin:  2}
+   - MDEs: {iter:  043, en0000:  0.18804E+01, rkin:  0.11792E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  044, en0000:  0.18203E+01, rkin:  0.12063E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  045, en0000:  0.17546E+01, rkin:  0.12648E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  046, en0000:  0.17034E+01, rkin:  0.13293E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  047, en0000:  0.16754E+01, rkin:  0.13800E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  048, en0000:  0.16699E+01, rkin:  0.14082E+01, nmax:  3, nmin:  2}
+   - MDEs: {iter:  049, en0000:  0.16815E+01, rkin:  0.14142E+01, nmax:  3, nmin:  3}
+   SD optimization iterations:
+   - SD: {iter:  0, epot: -3.750720852395E+01, de:  0.0E+00, fmax:  9.393E+00, 
+          fnrm:  1.717E+01,          alpha/alphax:  0.0000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  1, epot: -3.766983183383E+01, de: -1.6E-01, fmax:  7.688E+00, 
+          fnrm:  1.452E+01,          alpha/alphax:  0.6000E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  2, epot: -3.780969134873E+01, de: -1.4E-01, fmax:  6.307E+00, 
+          fnrm:  1.236E+01,          alpha/alphax:  0.7200E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  3, epot: -3.793176599965E+01, de: -1.2E-01, fmax:  5.193E+00, 
+          fnrm:  1.061E+01,          alpha/alphax:  0.8640E+00, isatur:  0, xmoved:  T}
+   - SD: {iter:  4, epot: -3.804033540320E+01, de: -1.1E-01, fmax:  4.303E+00, 
+          fnrm:  9.216E+00,          alpha/alphax:  0.1037E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  5, epot: -3.813917872704E+01, de: -9.9E-02, fmax:  4.017E+00, 
+          fnrm:  8.109E+00,          alpha/alphax:  0.1244E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  6, epot: -3.823163569538E+01, de: -9.2E-02, fmax:  3.854E+00, 
+          fnrm:  7.234E+00,          alpha/alphax:  0.1493E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  7, epot: -3.832048940633E+01, de: -8.9E-02, fmax:  3.643E+00, 
+          fnrm:  6.530E+00,          alpha/alphax:  0.1792E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  8, epot: -3.840189669988E+01, de: -8.1E-02, fmax:  3.388E+00, 
+          fnrm:  5.970E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  9, epot: -3.847048631314E+01, de: -6.9E-02, fmax:  3.122E+00, 
+          fnrm:  5.535E+00,          alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  10, epot: -3.852969916639E+01, de: -5.9E-02, fmax:  2.856E+00, 
+          fnrm:  5.172E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  11, epot: -3.858155267686E+01, de: -5.2E-02, fmax:  2.600E+00, 
+          fnrm:  4.860E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  12, epot: -3.862745268617E+01, de: -4.6E-02, fmax:  2.361E+00, 
+          fnrm:  4.590E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  13, epot: -3.866847044472E+01, de: -4.1E-02, fmax:  2.143E+00, 
+          fnrm:  4.353E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  14, epot: -3.870545133409E+01, de: -3.7E-02, fmax:  1.948E+00, 
+          fnrm:  4.147E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  15, epot: -3.873906980120E+01, de: -3.4E-02, fmax:  1.775E+00, 
+          fnrm:  3.965E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  16, epot: -3.876986586819E+01, de: -3.1E-02, fmax:  1.623E+00, 
+          fnrm:  3.805E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  17, epot: -3.879827322063E+01, de: -2.8E-02, fmax:  1.489E+00, 
+          fnrm:  3.663E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  18, epot: -3.882464156788E+01, de: -2.6E-02, fmax:  1.372E+00, 
+          fnrm:  3.537E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  19, epot: -3.884925433301E+01, de: -2.5E-02, fmax:  1.270E+00, 
+          fnrm:  3.424E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  20, epot: -3.887234251012E+01, de: -2.3E-02, fmax:  1.183E+00, 
+          fnrm:  3.322E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  21, epot: -3.889409548011E+01, de: -2.2E-02, fmax:  1.139E+00, 
+          fnrm:  3.229E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  22, epot: -3.891466946981E+01, de: -2.1E-02, fmax:  1.099E+00, 
+          fnrm:  3.144E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  23, epot: -3.893419419956E+01, de: -2.0E-02, fmax:  1.061E+00, 
+          fnrm:  3.067E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  24, epot: -3.895277813224E+01, de: -1.9E-02, fmax:  1.027E+00, 
+          fnrm:  2.995E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD: {iter:  25, epot: -3.897051263290E+01, de: -1.8E-02, fmax:  9.952E-01, 
+          fnrm:  2.928E+00,           alpha/alphax:  0.2000E+01, isatur:  0, xmoved:  T}
+   - SD FINISHED:
+       success                         :  Yes
+       iter                            :  25
+       epot                            : -3.897051263290E+01
+       fnrm                            :  2.92806E+00
+       fmax                            :  9.95205E-01
+   BFGS optimization iterations:
+   - BFGS: {iter:  0, epot: -3.897051263290E+01, de:  0.0E+00, fmax:  9.952E-01, 
+            fnrm:  2.928E+00,                 alpha:  8.0000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  1, epot: -3.899282493343E+01, de: -2.2E-02, fmax:  9.563E-01, 
+            fnrm:  2.846E+00,                 alpha:  8.8000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  2, epot: -3.901281803959E+01, de: -2.0E-02, fmax:  9.233E-01, 
+            fnrm:  2.775E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  3, epot: -3.903300736169E+01, de: -2.0E-02, fmax:  8.909E-01, 
+            fnrm:  2.705E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  4, epot: -3.905271545492E+01, de: -2.0E-02, fmax:  8.602E-01, 
+            fnrm:  2.637E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  5, epot: -3.907171654748E+01, de: -1.9E-02, fmax:  8.511E-01, 
+            fnrm:  2.573E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  6, epot: -3.908995110704E+01, de: -1.8E-02, fmax:  8.516E-01, 
+            fnrm:  2.513E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  7, epot: -3.910742236128E+01, de: -1.7E-02, fmax:  8.510E-01, 
+            fnrm:  2.456E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  8, epot: -3.912415770579E+01, de: -1.7E-02, fmax:  8.493E-01, 
+            fnrm:  2.402E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  9, epot: -3.915923130203E+01, de: -3.5E-02, fmax:  8.461E-01, 
+            fnrm:  2.285E+00,                 alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  10, epot: -3.919126183114E+01, de: -3.2E-02, fmax:  8.379E-01, 
+            fnrm:  2.179E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  11, epot: -3.922035358105E+01, de: -2.9E-02, fmax:  8.214E-01, 
+            fnrm:  2.079E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  12, epot: -3.925930265740E+01, de: -3.9E-02, fmax:  7.846E-01, 
+            fnrm:  1.937E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  13, epot: -3.929214178161E+01, de: -3.3E-02, fmax:  7.300E-01, 
+            fnrm:  1.797E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  14, epot: -3.931929672347E+01, de: -2.7E-02, fmax:  6.547E-01, 
+            fnrm:  1.654E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  15, epot: -3.934703676796E+01, de: -2.8E-02, fmax:  5.300E-01, 
+            fnrm:  1.473E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  16, epot: -3.936669326470E+01, de: -2.0E-02, fmax:  4.720E-01, 
+            fnrm:  1.303E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  17, epot: -3.938049882653E+01, de: -1.4E-02, fmax:  4.481E-01, 
+            fnrm:  1.160E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  18, epot: -3.939198183235E+01, de: -1.1E-02, fmax:  4.185E-01, 
+            fnrm:  1.047E+00,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  19, epot: -3.940074003263E+01, de: -8.8E-03, fmax:  3.797E-01, 
+            fnrm:  9.574E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  20, epot: -3.940846928293E+01, de: -7.7E-03, fmax:  3.376E-01, 
+            fnrm:  8.858E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  21, epot: -3.941632574938E+01, de: -7.9E-03, fmax:  3.434E-01, 
+            fnrm:  8.321E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  22, epot: -3.942368411229E+01, de: -7.4E-03, fmax:  3.505E-01, 
+            fnrm:  7.842E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  23, epot: -3.943046780755E+01, de: -6.8E-03, fmax:  3.427E-01, 
+            fnrm:  7.305E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  24, epot: -3.943711212981E+01, de: -6.6E-03, fmax:  3.207E-01, 
+            fnrm:  6.659E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  25, epot: -3.944272970518E+01, de: -5.6E-03, fmax:  2.861E-01, 
+            fnrm:  5.915E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  26, epot: -3.944726030363E+01, de: -4.5E-03, fmax:  2.462E-01, 
+            fnrm:  5.125E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  27, epot: -3.945107355113E+01, de: -3.8E-03, fmax:  2.052E-01, 
+            fnrm:  4.314E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  28, epot: -3.945378760308E+01, de: -2.7E-03, fmax:  1.659E-01, 
+            fnrm:  3.559E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  29, epot: -3.945563435206E+01, de: -1.8E-03, fmax:  1.317E-01, 
+            fnrm:  2.890E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  30, epot: -3.945693947260E+01, de: -1.3E-03, fmax:  1.024E-01, 
+            fnrm:  2.292E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  31, epot: -3.945772881801E+01, de: -7.9E-04, fmax:  7.814E-02, 
+            fnrm:  1.807E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS: {iter:  32, epot: -3.945819589994E+01, de: -4.7E-04, fmax:  5.919E-02, 
+            fnrm:  1.435E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  33, epot: -3.945848757873E+01, de: -2.9E-04, fmax:  4.408E-02, 
+            fnrm:  1.151E-01,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  56}
+   - BFGS: {iter:  34, epot: -3.945865367301E+01, de: -1.7E-04, fmax:  3.249E-02, 
+            fnrm:  9.565E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  58}
+   - BFGS: {iter:  35, epot: -3.945875375217E+01, de: -1.0E-04, fmax:  3.430E-02, 
+            fnrm:  8.318E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  60}
+   - BFGS: {iter:  36, epot: -3.945882319105E+01, de: -6.9E-05, fmax:  3.706E-02, 
+            fnrm:  7.535E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  62}
+   - BFGS: {iter:  37, epot: -3.945887530216E+01, de: -5.2E-05, fmax:  3.904E-02, 
+            fnrm:  7.069E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  64}
+   - BFGS: {iter:  38, epot: -3.945892242084E+01, de: -4.7E-05, fmax:  4.039E-02, 
+            fnrm:  6.801E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  66}
+   - BFGS: {iter:  39, epot: -3.945897324466E+01, de: -5.1E-05, fmax:  4.121E-02, 
+            fnrm:  6.662E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  68}
+   - BFGS: {iter:  40, epot: -3.945903121162E+01, de: -5.8E-05, fmax:  4.119E-02, 
+            fnrm:  6.593E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  70}
+   - BFGS: {iter:  41, epot: -3.945909768186E+01, de: -6.6E-05, fmax:  4.024E-02, 
+            fnrm:  6.577E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  72}
+   - BFGS: {iter:  42, epot: -3.945917224694E+01, de: -7.5E-05, fmax:  3.849E-02, 
+            fnrm:  6.620E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  74}
+   - BFGS: {iter:  43, epot: -3.945924818861E+01, de: -7.6E-05, fmax:  3.702E-02, 
+            fnrm:  6.649E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  76}
+   - BFGS: {iter:  44, epot: -3.945932238059E+01, de: -7.4E-05, fmax:  4.160E-02, 
+            fnrm:  6.669E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  78}
+   - BFGS: {iter:  45, epot: -3.945939761643E+01, de: -7.5E-05, fmax:  4.536E-02, 
+            fnrm:  6.711E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  80}
+   - BFGS: {iter:  46, epot: -3.945947067864E+01, de: -7.3E-05, fmax:  4.791E-02, 
+            fnrm:  6.725E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  82}
+   - BFGS: {iter:  47, epot: -3.945954282843E+01, de: -7.2E-05, fmax:  4.934E-02, 
+            fnrm:  6.719E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  84}
+   - BFGS: {iter:  48, epot: -3.945961878124E+01, de: -7.6E-05, fmax:  4.997E-02, 
+            fnrm:  6.716E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  86}
+   - BFGS: {iter:  49, epot: -3.945969570213E+01, de: -7.7E-05, fmax:  4.955E-02, 
+            fnrm:  6.668E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  88}
+   - BFGS: {iter:  50, epot: -3.945977423975E+01, de: -7.9E-05, fmax:  4.815E-02, 
+            fnrm:  6.570E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  90}
+   - BFGS: {iter:  51, epot: -3.945985817058E+01, de: -8.4E-05, fmax:  4.603E-02, 
+            fnrm:  6.439E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  92}
+   - BFGS: {iter:  52, epot: -3.945994309947E+01, de: -8.5E-05, fmax:  4.314E-02, 
+            fnrm:  6.244E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  94}
+   - BFGS: {iter:  53, epot: -3.946002810787E+01, de: -8.5E-05, fmax:  3.969E-02, 
+            fnrm:  5.995E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  96}
+   - BFGS: {iter:  54, epot: -3.946011205527E+01, de: -8.4E-05, fmax:  3.595E-02, 
+            fnrm:  5.706E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  98}
+   - BFGS: {iter:  55, epot: -3.946019392572E+01, de: -8.2E-05, fmax:  3.217E-02, 
+            fnrm:  5.404E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  56, epot: -3.946027309107E+01, de: -7.9E-05, fmax:  2.857E-02, 
+            fnrm:  5.115E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  57, epot: -3.946034938915E+01, de: -7.6E-05, fmax:  2.532E-02, 
+            fnrm:  4.859E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  58, epot: -3.946042303793E+01, de: -7.4E-05, fmax:  2.248E-02, 
+            fnrm:  4.652E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  59, epot: -3.946049448431E+01, de: -7.1E-05, fmax:  2.005E-02, 
+            fnrm:  4.499E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  60, epot: -3.946056427340E+01, de: -7.0E-05, fmax:  1.803E-02, 
+            fnrm:  4.395E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  61, epot: -3.946063296961E+01, de: -6.9E-05, fmax:  1.757E-02, 
+            fnrm:  4.336E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  62, epot: -3.946070112290E+01, de: -6.8E-05, fmax:  1.784E-02, 
+            fnrm:  4.313E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  63, epot: -3.946076926215E+01, de: -6.8E-05, fmax:  1.810E-02, 
+            fnrm:  4.319E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  64, epot: -3.946083790154E+01, de: -6.9E-05, fmax:  1.836E-02, 
+            fnrm:  4.347E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  65, epot: -3.946090755199E+01, de: -7.0E-05, fmax:  1.863E-02, 
+            fnrm:  4.391E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  66, epot: -3.946097873438E+01, de: -7.1E-05, fmax:  1.892E-02, 
+            fnrm:  4.449E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  67, epot: -3.946105199356E+01, de: -7.3E-05, fmax:  1.924E-02, 
+            fnrm:  4.518E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  68, epot: -3.946112791340E+01, de: -7.6E-05, fmax:  1.990E-02, 
+            fnrm:  4.598E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  69, epot: -3.946120713338E+01, de: -7.9E-05, fmax:  2.080E-02, 
+            fnrm:  4.687E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  70, epot: -3.946129036785E+01, de: -8.3E-05, fmax:  2.168E-02, 
+            fnrm:  4.788E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  71, epot: -3.946137842879E+01, de: -8.8E-05, fmax:  2.254E-02, 
+            fnrm:  4.901E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  72, epot: -3.946147225366E+01, de: -9.4E-05, fmax:  2.341E-02, 
+            fnrm:  5.029E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  73, epot: -3.946157294005E+01, de: -1.0E-04, fmax:  2.431E-02, 
+            fnrm:  5.175E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  74, epot: -3.946168178919E+01, de: -1.1E-04, fmax:  2.526E-02, 
+            fnrm:  5.343E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  75, epot: -3.946180036162E+01, de: -1.2E-04, fmax:  2.628E-02, 
+            fnrm:  5.537E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  76, epot: -3.946193054893E+01, de: -1.3E-04, fmax:  2.740E-02, 
+            fnrm:  5.762E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  77, epot: -3.946207466736E+01, de: -1.4E-04, fmax:  2.865E-02, 
+            fnrm:  6.024E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  78, epot: -3.946223558099E+01, de: -1.6E-04, fmax:  3.007E-02, 
+            fnrm:  6.331E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  79, epot: -3.946241686590E+01, de: -1.8E-04, fmax:  3.170E-02, 
+            fnrm:  6.690E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  80, epot: -3.946262303078E+01, de: -2.1E-04, fmax:  3.358E-02, 
+            fnrm:  7.111E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  81, epot: -3.946285981693E+01, de: -2.4E-04, fmax:  3.577E-02, 
+            fnrm:  7.607E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  99}
+   - BFGS: {iter:  82, epot: -3.946287608438E+01, de: -1.6E-05, fmax:  3.434E-02, 
+            fnrm:  7.443E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  83, epot: -3.946289001626E+01, de: -1.4E-05, fmax:  3.372E-02, 
+            fnrm:  7.376E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  84, epot: -3.946290452124E+01, de: -1.5E-05, fmax:  3.399E-02, 
+            fnrm:  7.331E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  85, epot: -3.946293427438E+01, de: -3.0E-05, fmax:  3.447E-02, 
+            fnrm:  7.275E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  86, epot: -3.946296631256E+01, de: -3.2E-05, fmax:  3.493E-02, 
+            fnrm:  7.254E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  87, epot: -3.946299932812E+01, de: -3.3E-05, fmax:  3.537E-02, 
+            fnrm:  7.257E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  88, epot: -3.946304972880E+01, de: -5.0E-05, fmax:  3.608E-02, 
+            fnrm:  7.294E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  89, epot: -3.946310173032E+01, de: -5.2E-05, fmax:  3.680E-02, 
+            fnrm:  7.358E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  90, epot: -3.946315498665E+01, de: -5.3E-05, fmax:  3.754E-02, 
+            fnrm:  7.441E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  91, epot: -3.946322789782E+01, de: -7.3E-05, fmax:  3.858E-02, 
+            fnrm:  7.583E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  92, epot: -3.946330331883E+01, de: -7.5E-05, fmax:  3.964E-02, 
+            fnrm:  7.743E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  93, epot: -3.946338148170E+01, de: -7.8E-05, fmax:  4.073E-02, 
+            fnrm:  7.917E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  94, epot: -3.946348331793E+01, de: -1.0E-04, fmax:  4.213E-02, 
+            fnrm:  8.163E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  95, epot: -3.946359043519E+01, de: -1.1E-04, fmax:  4.357E-02, 
+            fnrm:  8.423E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  96, epot: -3.946370354786E+01, de: -1.1E-04, fmax:  4.506E-02, 
+            fnrm:  8.696E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  97, epot: -3.946384777449E+01, de: -1.4E-04, fmax:  4.690E-02, 
+            fnrm:  9.054E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  98, epot: -3.946400280535E+01, de: -1.6E-04, fmax:  4.880E-02, 
+            fnrm:  9.428E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  99, epot: -3.946417017043E+01, de: -1.7E-04, fmax:  5.078E-02, 
+            fnrm:  9.819E-02,                  alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  100, epot: -3.946438238231E+01, de: -2.1E-04, fmax:  5.318E-02, 
+            fnrm:  1.031E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  101, epot: -3.946461618282E+01, de: -2.3E-04, fmax:  5.570E-02, 
+            fnrm:  1.083E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  102, epot: -3.946487494988E+01, de: -2.6E-04, fmax:  5.835E-02, 
+            fnrm:  1.139E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  103, epot: -3.946516257079E+01, de: -2.9E-04, fmax:  6.113E-02, 
+            fnrm:  1.198E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  104, epot: -3.946520346463E+01, de: -4.1E-05, fmax:  6.166E-02, 
+            fnrm:  1.199E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  105, epot: -3.946523992854E+01, de: -3.6E-05, fmax:  6.202E-02, 
+            fnrm:  1.200E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  106, epot: -3.946527863410E+01, de: -3.9E-05, fmax:  6.237E-02, 
+            fnrm:  1.203E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  107, epot: -3.946536020047E+01, de: -8.2E-05, fmax:  6.308E-02, 
+            fnrm:  1.209E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  108, epot: -3.946545010800E+01, de: -9.0E-05, fmax:  6.379E-02, 
+            fnrm:  1.217E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  109, epot: -3.946554454841E+01, de: -9.4E-05, fmax:  6.449E-02, 
+            fnrm:  1.227E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  110, epot: -3.946569247179E+01, de: -1.5E-04, fmax:  6.556E-02, 
+            fnrm:  1.245E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  111, epot: -3.946584854602E+01, de: -1.6E-04, fmax:  6.662E-02, 
+            fnrm:  1.267E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  112, epot: -3.946601152515E+01, de: -1.6E-04, fmax:  6.769E-02, 
+            fnrm:  1.291E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  113, epot: -3.946624018799E+01, de: -2.3E-04, fmax:  6.915E-02, 
+            fnrm:  1.327E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  114, epot: -3.946648205302E+01, de: -2.4E-04, fmax:  7.063E-02, 
+            fnrm:  1.368E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  115, epot: -3.946673782976E+01, de: -2.6E-04, fmax:  7.214E-02, 
+            fnrm:  1.413E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  116, epot: -3.946707921215E+01, de: -3.4E-04, fmax:  7.409E-02, 
+            fnrm:  1.474E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  117, epot: -3.946744659726E+01, de: -3.7E-04, fmax:  7.612E-02, 
+            fnrm:  1.540E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  118, epot: -3.946784299764E+01, de: -4.0E-04, fmax:  7.822E-02, 
+            fnrm:  1.612E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  119, epot: -3.946836087711E+01, de: -5.2E-04, fmax:  8.081E-02, 
+            fnrm:  1.706E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  120, epot: -3.946893110953E+01, de: -5.7E-04, fmax:  8.355E-02, 
+            fnrm:  1.807E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  121, epot: -3.946956127262E+01, de: -6.3E-04, fmax:  8.642E-02, 
+            fnrm:  1.916E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  122, epot: -3.947026015582E+01, de: -7.0E-04, fmax:  8.944E-02, 
+            fnrm:  2.034E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  123, epot: -3.947037826021E+01, de: -1.2E-04, fmax:  9.063E-02, 
+            fnrm:  2.043E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  124, epot: -3.947048445372E+01, de: -1.1E-04, fmax:  9.138E-02, 
+            fnrm:  2.053E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  125, epot: -3.947059798432E+01, de: -1.1E-04, fmax:  9.215E-02, 
+            fnrm:  2.064E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  126, epot: -3.947084009036E+01, de: -2.4E-04, fmax:  9.372E-02, 
+            fnrm:  2.091E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  127, epot: -3.947111105049E+01, de: -2.7E-04, fmax:  9.539E-02, 
+            fnrm:  2.122E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  128, epot: -3.947140031139E+01, de: -2.9E-04, fmax:  9.712E-02, 
+            fnrm:  2.157E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  129, epot: -3.947186333200E+01, de: -4.6E-04, fmax:  9.984E-02, 
+            fnrm:  2.216E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  130, epot: -3.947236470494E+01, de: -5.0E-04, fmax:  1.027E-01, 
+            fnrm:  2.282E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  131, epot: -3.947290244970E+01, de: -5.4E-04, fmax:  1.057E-01, 
+            fnrm:  2.355E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  132, epot: -3.947368199766E+01, de: -7.8E-04, fmax:  1.097E-01, 
+            fnrm:  2.461E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  133, epot: -3.947453866073E+01, de: -8.6E-04, fmax:  1.139E-01, 
+            fnrm:  2.578E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  134, epot: -3.947548068079E+01, de: -9.4E-04, fmax:  1.182E-01, 
+            fnrm:  2.706E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  135, epot: -3.947679699214E+01, de: -1.3E-03, fmax:  1.236E-01, 
+            fnrm:  2.883E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  136, epot: -3.947828958417E+01, de: -1.5E-03, fmax:  1.291E-01, 
+            fnrm:  3.079E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  137, epot: -3.947998805739E+01, de: -1.7E-03, fmax:  1.345E-01, 
+            fnrm:  3.296E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  138, epot: -3.948192753220E+01, de: -1.9E-03, fmax:  1.399E-01, 
+            fnrm:  3.535E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  139, epot: -3.948228539164E+01, de: -3.6E-04, fmax:  1.422E-01, 
+            fnrm:  3.571E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  140, epot: -3.948261099969E+01, de: -3.3E-04, fmax:  1.438E-01, 
+            fnrm:  3.605E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  141, epot: -3.948296241548E+01, de: -3.5E-04, fmax:  1.454E-01, 
+            fnrm:  3.643E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  142, epot: -3.948372347851E+01, de: -7.6E-04, fmax:  1.486E-01, 
+            fnrm:  3.725E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  143, epot: -3.948459177605E+01, de: -8.7E-04, fmax:  1.519E-01, 
+            fnrm:  3.821E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  144, epot: -3.948553755208E+01, de: -9.5E-04, fmax:  1.551E-01, 
+            fnrm:  3.925E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  145, epot: -3.948709173777E+01, de: -1.6E-03, fmax:  1.625E-01, 
+            fnrm:  4.096E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  146, epot: -3.948882698883E+01, de: -1.7E-03, fmax:  1.713E-01, 
+            fnrm:  4.285E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  147, epot: -3.949074663712E+01, de: -1.9E-03, fmax:  1.807E-01, 
+            fnrm:  4.492E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  148, epot: -3.949363032006E+01, de: -2.9E-03, fmax:  1.941E-01, 
+            fnrm:  4.796E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  149, epot: -3.949692960142E+01, de: -3.3E-03, fmax:  2.085E-01, 
+            fnrm:  5.133E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  150, epot: -3.950070384325E+01, de: -3.8E-03, fmax:  2.238E-01, 
+            fnrm:  5.506E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  151, epot: -3.950502501611E+01, de: -4.3E-03, fmax:  2.398E-01, 
+            fnrm:  5.917E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  152, epot: -3.950603062913E+01, de: -1.0E-03, fmax:  2.451E-01, 
+            fnrm:  6.010E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  153, epot: -3.950695643313E+01, de: -9.3E-04, fmax:  2.490E-01, 
+            fnrm:  6.097E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  154, epot: -3.950796536960E+01, de: -1.0E-03, fmax:  2.532E-01, 
+            fnrm:  6.192E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  155, epot: -3.951018558865E+01, de: -2.2E-03, fmax:  2.620E-01, 
+            fnrm:  6.398E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  156, epot: -3.951277038880E+01, de: -2.6E-03, fmax:  2.717E-01, 
+            fnrm:  6.634E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  157, epot: -3.951564660485E+01, de: -2.9E-03, fmax:  2.819E-01, 
+            fnrm:  6.892E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  158, epot: -3.952050569163E+01, de: -4.9E-03, fmax:  2.977E-01, 
+            fnrm:  7.314E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  159, epot: -3.952610915523E+01, de: -5.6E-03, fmax:  3.144E-01, 
+            fnrm:  7.782E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  160, epot: -3.953251039315E+01, de: -6.4E-03, fmax:  3.314E-01, 
+            fnrm:  8.293E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  161, epot: -3.953979741669E+01, de: -7.3E-03, fmax:  3.486E-01, 
+            fnrm:  8.846E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  162, epot: -3.954204862822E+01, de: -2.3E-03, fmax:  3.571E-01, 
+            fnrm:  9.013E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  163, epot: -3.954413461965E+01, de: -2.1E-03, fmax:  3.635E-01, 
+            fnrm:  9.167E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  164, epot: -3.954641935539E+01, de: -2.3E-03, fmax:  3.703E-01, 
+            fnrm:  9.332E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  165, epot: -3.955148689802E+01, de: -5.1E-03, fmax:  3.841E-01, 
+            fnrm:  9.689E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  166, epot: -3.955744004451E+01, de: -6.0E-03, fmax:  3.989E-01, 
+            fnrm:  1.009E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  167, epot: -3.956411965957E+01, de: -6.7E-03, fmax:  4.139E-01, 
+            fnrm:  1.052E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  168, epot: -3.957550810172E+01, de: -1.1E-02, fmax:  4.351E-01, 
+            fnrm:  1.122E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  169, epot: -3.958873629689E+01, de: -1.3E-02, fmax:  4.668E-01, 
+            fnrm:  1.196E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  170, epot: -3.960389445264E+01, de: -1.5E-02, fmax:  5.048E-01, 
+            fnrm:  1.274E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  171, epot: -3.962112052575E+01, de: -1.7E-02, fmax:  5.458E-01, 
+            fnrm:  1.355E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  172, epot: -3.962639816185E+01, de: -5.3E-03, fmax:  5.482E-01, 
+            fnrm:  1.378E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  173, epot: -3.963126679087E+01, de: -4.9E-03, fmax:  5.543E-01, 
+            fnrm:  1.399E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  174, epot: -3.963657917281E+01, de: -5.3E-03, fmax:  5.619E-01, 
+            fnrm:  1.421E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  175, epot: -3.964828217404E+01, de: -1.2E-02, fmax:  5.803E-01, 
+            fnrm:  1.468E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  176, epot: -3.966188950812E+01, de: -1.4E-02, fmax:  6.033E-01, 
+            fnrm:  1.520E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  177, epot: -3.967696123318E+01, de: -1.5E-02, fmax:  6.293E-01, 
+            fnrm:  1.573E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  178, epot: -3.970217163546E+01, de: -2.5E-02, fmax:  6.744E-01, 
+            fnrm:  1.654E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  179, epot: -3.973066465071E+01, de: -2.8E-02, fmax:  7.242E-01, 
+            fnrm:  1.737E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  180, epot: -3.976228910816E+01, de: -3.2E-02, fmax:  7.774E-01, 
+            fnrm:  1.820E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  181, epot: -3.979697865471E+01, de: -3.5E-02, fmax:  8.325E-01, 
+            fnrm:  1.902E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  182, epot: -3.983468132045E+01, de: -3.8E-02, fmax:  8.884E-01, 
+            fnrm:  1.985E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  183, epot: -3.989001791186E+01, de: -5.5E-02, fmax:  9.766E-01, 
+            fnrm:  2.104E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  184, epot: -3.995033269311E+01, de: -6.0E-02, fmax:  1.059E+00, 
+            fnrm:  2.226E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  185, epot: -4.001525745380E+01, de: -6.5E-02, fmax:  1.130E+00, 
+            fnrm:  2.349E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  186, epot: -4.008434505858E+01, de: -6.9E-02, fmax:  1.185E+00, 
+            fnrm:  2.466E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  187, epot: -4.015694108114E+01, de: -7.3E-02, fmax:  1.214E+00, 
+            fnrm:  2.563E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  188, epot: -4.023189504686E+01, de: -7.5E-02, fmax:  1.207E+00, 
+            fnrm:  2.620E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  189, epot: -4.032453815088E+01, de: -9.3E-02, fmax:  1.162E+00, 
+            fnrm:  2.680E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  190, epot: -4.040992148428E+01, de: -8.5E-02, fmax:  1.072E+00, 
+            fnrm:  2.565E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  191, epot: -4.048024116385E+01, de: -7.0E-02, fmax:  9.260E-01, 
+            fnrm:  2.331E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  192, epot: -4.053746542851E+01, de: -5.7E-02, fmax:  9.492E-01, 
+            fnrm:  2.182E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  193, epot: -4.057395618898E+01, de: -3.6E-02, fmax:  8.272E-01, 
+            fnrm:  1.963E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  194, epot: -4.060234064143E+01, de: -2.8E-02, fmax:  7.693E-01, 
+            fnrm:  1.892E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  195, epot: -4.063187778236E+01, de: -3.0E-02, fmax:  6.875E-01, 
+            fnrm:  1.843E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  196, epot: -4.066348556332E+01, de: -3.2E-02, fmax:  6.803E-01, 
+            fnrm:  1.738E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  197, epot: -4.069649745152E+01, de: -3.3E-02, fmax:  5.932E-01, 
+            fnrm:  1.652E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS: {iter:  198, epot: -4.073103012225E+01, de: -3.5E-02, fmax:  6.475E-01, 
+            fnrm:  1.622E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  199, epot: -4.076134692242E+01, de: -3.0E-02, fmax:  1.283E+00, 
+            fnrm:  1.964E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  44}
+   - BFGS: {iter:  200, epot: -4.079170530109E+01, de: -3.0E-02, fmax:  5.548E-01, 
+            fnrm:  1.602E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  46}
+   - BFGS: {iter:  201, epot: -4.081404151893E+01, de: -2.2E-02, fmax:  5.193E-01, 
+            fnrm:  1.402E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  48}
+   - BFGS: {iter:  202, epot: -4.083249263763E+01, de: -1.8E-02, fmax:  5.596E-01, 
+            fnrm:  1.435E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  50}
+   - BFGS: {iter:  203, epot: -4.085021693490E+01, de: -1.8E-02, fmax:  6.460E-01, 
+            fnrm:  1.506E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  52}
+   - BFGS: {iter:  204, epot: -4.087225456921E+01, de: -2.2E-02, fmax:  6.843E-01, 
+            fnrm:  1.553E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  205, epot: -4.090345506852E+01, de: -3.1E-02, fmax:  7.908E-01, 
+            fnrm:  1.672E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  206, epot: -4.094573935525E+01, de: -4.2E-02, fmax:  8.792E-01, 
+            fnrm:  1.859E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  207, epot: -4.100098063155E+01, de: -5.5E-02, fmax:  9.849E-01, 
+            fnrm:  2.172E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  208, epot: -4.107293358614E+01, de: -7.2E-02, fmax:  1.065E+00, 
+            fnrm:  2.626E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  54}
+   - BFGS: {iter:  209, epot: -4.109196174101E+01, de: -1.9E-02, fmax:  1.165E+00, 
+            fnrm:  2.508E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  210, epot: -4.110772980678E+01, de: -1.6E-02, fmax:  1.211E+00, 
+            fnrm:  2.490E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  211, epot: -4.112432987605E+01, de: -1.7E-02, fmax:  1.264E+00, 
+            fnrm:  2.507E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  212, epot: -4.115969586549E+01, de: -3.5E-02, fmax:  1.358E+00, 
+            fnrm:  2.597E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  213, epot: -4.120129395531E+01, de: -4.2E-02, fmax:  1.448E+00, 
+            fnrm:  2.752E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  214, epot: -4.124945413481E+01, de: -4.8E-02, fmax:  1.526E+00, 
+            fnrm:  2.946E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  215, epot: -4.130523370070E+01, de: -5.6E-02, fmax:  1.596E+00, 
+            fnrm:  3.164E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  216, epot: -4.133349474503E+01, de: -2.8E-02, fmax:  1.634E+00, 
+            fnrm:  3.262E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  217, epot: -4.136368863468E+01, de: -3.0E-02, fmax:  1.667E+00, 
+            fnrm:  3.364E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  218, epot: -4.139592711986E+01, de: -3.2E-02, fmax:  1.699E+00, 
+            fnrm:  3.471E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  219, epot: -4.143032451821E+01, de: -3.4E-02, fmax:  1.730E+00, 
+            fnrm:  3.580E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  220, epot: -4.146699780648E+01, de: -3.7E-02, fmax:  1.762E+00, 
+            fnrm:  3.693E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  221, epot: -4.150606587848E+01, de: -3.9E-02, fmax:  1.793E+00, 
+            fnrm:  3.808E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  222, epot: -4.154764856425E+01, de: -4.2E-02, fmax:  1.824E+00, 
+            fnrm:  3.925E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  223, epot: -4.159186541218E+01, de: -4.4E-02, fmax:  1.854E+00, 
+            fnrm:  4.044E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  224, epot: -4.163883418555E+01, de: -4.7E-02, fmax:  1.884E+00, 
+            fnrm:  4.165E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  225, epot: -4.168866900494E+01, de: -5.0E-02, fmax:  1.914E+00, 
+            fnrm:  4.288E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  226, epot: -4.174147805460E+01, de: -5.3E-02, fmax:  1.943E+00, 
+            fnrm:  4.411E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  227, epot: -4.179736075972E+01, de: -5.6E-02, fmax:  2.019E+00, 
+            fnrm:  4.534E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  228, epot: -4.185640433231E+01, de: -5.9E-02, fmax:  2.096E+00, 
+            fnrm:  4.658E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  229, epot: -4.191867957804E+01, de: -6.2E-02, fmax:  2.173E+00, 
+            fnrm:  4.780E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  230, epot: -4.198423586126E+01, de: -6.6E-02, fmax:  2.249E+00, 
+            fnrm:  4.900E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  231, epot: -4.205309514685E+01, de: -6.9E-02, fmax:  2.323E+00, 
+            fnrm:  5.018E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  232, epot: -4.212524508875E+01, de: -7.2E-02, fmax:  2.393E+00, 
+            fnrm:  5.131E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  233, epot: -4.220063123066E+01, de: -7.5E-02, fmax:  2.459E+00, 
+            fnrm:  5.240E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  234, epot: -4.227914854446E+01, de: -7.9E-02, fmax:  2.517E+00, 
+            fnrm:  5.341E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  235, epot: -4.236063277386E+01, de: -8.1E-02, fmax:  2.567E+00, 
+            fnrm:  5.435E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  236, epot: -4.244485238510E+01, de: -8.4E-02, fmax:  2.605E+00, 
+            fnrm:  5.517E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  237, epot: -4.253150233540E+01, de: -8.7E-02, fmax:  2.630E+00, 
+            fnrm:  5.588E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  238, epot: -4.262020129128E+01, de: -8.9E-02, fmax:  2.638E+00, 
+            fnrm:  5.645E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  239, epot: -4.271049422581E+01, de: -9.0E-02, fmax:  2.628E+00, 
+            fnrm:  5.686E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  240, epot: -4.280186228165E+01, de: -9.1E-02, fmax:  2.597E+00, 
+            fnrm:  5.711E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  241, epot: -4.289374114185E+01, de: -9.2E-02, fmax:  2.543E+00, 
+            fnrm:  5.718E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  242, epot: -4.298554769723E+01, de: -9.2E-02, fmax:  2.483E+00, 
+            fnrm:  5.709E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  243, epot: -4.307671255269E+01, de: -9.1E-02, fmax:  2.546E+00, 
+            fnrm:  5.684E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  244, epot: -4.316671327754E+01, de: -9.0E-02, fmax:  2.601E+00, 
+            fnrm:  5.644E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  245, epot: -4.325510111288E+01, de: -8.8E-02, fmax:  2.643E+00, 
+            fnrm:  5.591E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  246, epot: -4.334151321604E+01, de: -8.6E-02, fmax:  2.672E+00, 
+            fnrm:  5.527E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  247, epot: -4.342566453075E+01, de: -8.4E-02, fmax:  2.683E+00, 
+            fnrm:  5.452E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  248, epot: -4.350731862469E+01, de: -8.2E-02, fmax:  2.674E+00, 
+            fnrm:  5.366E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  249, epot: -4.358624465927E+01, de: -7.9E-02, fmax:  2.643E+00, 
+            fnrm:  5.267E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  250, epot: -4.366217508903E+01, de: -7.6E-02, fmax:  2.589E+00, 
+            fnrm:  5.153E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  251, epot: -4.373478090567E+01, de: -7.3E-02, fmax:  2.509E+00, 
+            fnrm:  5.022E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  252, epot: -4.380367521347E+01, de: -6.9E-02, fmax:  2.406E+00, 
+            fnrm:  4.872E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  253, epot: -4.386844441396E+01, de: -6.5E-02, fmax:  2.279E+00, 
+            fnrm:  4.702E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  254, epot: -4.392869613815E+01, de: -6.0E-02, fmax:  2.132E+00, 
+            fnrm:  4.514E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  255, epot: -4.398410901750E+01, de: -5.5E-02, fmax:  1.969E+00, 
+            fnrm:  4.309E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  256, epot: -4.403447127582E+01, de: -5.0E-02, fmax:  1.834E+00, 
+            fnrm:  4.090E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  257, epot: -4.407970043250E+01, de: -4.5E-02, fmax:  1.767E+00, 
+            fnrm:  3.860E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  258, epot: -4.411984281851E+01, de: -4.0E-02, fmax:  1.688E+00, 
+            fnrm:  3.623E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  259, epot: -4.415505727647E+01, de: -3.5E-02, fmax:  1.599E+00, 
+            fnrm:  3.381E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  260, epot: -4.418559073447E+01, de: -3.1E-02, fmax:  1.499E+00, 
+            fnrm:  3.137E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  0}
+   - BFGS: {iter:  261, epot: -4.421175342523E+01, de: -2.6E-02, fmax:  1.392E+00, 
+            fnrm:  2.893E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  2}
+   - BFGS: {iter:  262, epot: -4.423389878294E+01, de: -2.2E-02, fmax:  1.278E+00, 
+            fnrm:  2.650E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  4}
+   - BFGS: {iter:  263, epot: -4.425240908564E+01, de: -1.9E-02, fmax:  1.160E+00, 
+            fnrm:  2.413E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  6}
+   - BFGS: {iter:  264, epot: -4.428273756305E+01, de: -3.0E-02, fmax:  9.027E-01, 
+            fnrm:  1.909E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  8}
+   - BFGS: {iter:  265, epot: -4.430093273103E+01, de: -1.8E-02, fmax:  6.540E-01, 
+            fnrm:  1.487E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  10}
+   - BFGS: {iter:  266, epot: -4.431161419119E+01, de: -1.1E-02, fmax:  4.545E-01, 
+            fnrm:  1.145E+00,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  12}
+   - BFGS: {iter:  267, epot: -4.431945266965E+01, de: -7.8E-03, fmax:  2.842E-01, 
+            fnrm:  8.037E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  14}
+   - BFGS: {iter:  268, epot: -4.432311985091E+01, de: -3.7E-03, fmax:  1.989E-01, 
+            fnrm:  5.723E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  16}
+   - BFGS: {iter:  269, epot: -4.432493570475E+01, de: -1.8E-03, fmax:  1.420E-01, 
+            fnrm:  4.144E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  18}
+   - BFGS: {iter:  270, epot: -4.432596765405E+01, de: -1.0E-03, fmax:  1.118E-01, 
+            fnrm:  2.896E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  20}
+   - BFGS: {iter:  271, epot: -4.432643908155E+01, de: -4.7E-04, fmax:  1.005E-01, 
+            fnrm:  2.150E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  22}
+   - BFGS: {iter:  272, epot: -4.432665355081E+01, de: -2.1E-04, fmax:  9.984E-02, 
+            fnrm:  1.756E-01,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  24}
+   - BFGS: {iter:  273, epot: -4.432676191212E+01, de: -1.1E-04, fmax:  2.884E-02, 
+            fnrm:  7.834E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  26}
+   - BFGS: {iter:  274, epot: -4.432678780563E+01, de: -2.6E-05, fmax:  5.486E-02, 
+            fnrm:  8.064E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  28}
+   - BFGS: {iter:  275, epot: -4.432679898803E+01, de: -1.1E-05, fmax:  9.493E-03, 
+            fnrm:  1.911E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  30}
+   - BFGS: {iter:  276, epot: -4.432680036063E+01, de: -1.4E-06, fmax:  5.165E-03, 
+            fnrm:  1.202E-02,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  32}
+   - BFGS: {iter:  277, epot: -4.432680093331E+01, de: -5.7E-07, fmax:  2.411E-03, 
+            fnrm:  7.571E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  34}
+   - BFGS: {iter:  278, epot: -4.432680119325E+01, de: -2.6E-07, fmax:  1.667E-03, 
+            fnrm:  4.817E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  36}
+   - BFGS: {iter:  279, epot: -4.432680130933E+01, de: -1.2E-07, fmax:  1.318E-03, 
+            fnrm:  3.321E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  38}
+   - BFGS: {iter:  280, epot: -4.432680136515E+01, de: -5.6E-08, fmax:  1.060E-03, 
+            fnrm:  2.634E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  40}
+   - BFGS: {iter:  281, epot: -4.432680139565E+01, de: -3.1E-08, fmax:  7.649E-04, 
+            fnrm:  1.866E-03,                   alpha:  9.5000E-01, zeta:  1.0000E+00, 
+          isatur:  42}
+   - BFGS FINISHED:
+       success                         :  Yes
+       iter                            :  281
+       epot                            : -4.432680139565E+01
+       fnrm                            :  1.86561E-03
+       fmax                            :  7.64866E-04
+   new lowest: {iproc:  0, nlmin:  3, erathopp: -4.432680139565E+01, de: -5.13814}
+   minhopp iteration info: {iproc:  0, istep:  4, ihopp:  3, nlmin:  4, escaped:  Yes, 
+                         accepted:  Yes,           epot: -4.432680139565E+01}
+ - success, eref is achieved by iproc  :  0
+ collecting accepted minima sent by other procs, final, iproc:  0
+ writing minhopp results: {iproc:  0, nlmin:  4}
+  #master proc wrote poslow.xyz
+  #master proc wrote energies in earr.dat, can be used in a restart run.
+  #master proc wrote input/output parameters in input.minhopp.
+ number of minima found by each processors: {iproc:  0, nlmin_l:  4, nlmin:  4}
+ ratio stuck: {same:  0.200E+00, old:  0.000E+00, new:  0.600E+00}
+ accepting/rejecting ratio: {iproc:  0, accept:  0.100E+01, reject:  0.000E+00}
+ force calls: {total:  1122.0, MD:  378.0, GEOPT:  660.0, SOFT:  84.0}
+ force calls all processes:
+   fcall_tot_all                       :  1122.0
+   fcall_tot_all_md                    :  378.0
+   fcall_tot_all_opt                   :  660.0
+   fcall_tot_all_soften                :  84.0
+   reached                             :  Yes
+ average minima hopping parameters: {iproc:  0, av_ediff:  1.057423866637518, 
+                               av_ekinetic:  7.2042857142857131E-002}
+ some minhopp results:
+   iproc                               :  0
+   most frequent visits                :  1
+   avg. numb. visits per minimum       :  0.100E+01
+   minimum energy separation           :  1.0000000000000000E+100
+   esep                                :  0.10E-08
+   ediff                               :  0.104E+01
+   ekin                                :  0.816E-01
+   dt                                  :  0.119E-01
+ CPU time: {iproc:  0, hrs:  0.107E-03, min:  0.640E-02, sec:  0.384E+00}
+ mpi finalized: {iproc_world:  0, nproc_world:  1}
+ Memory Consumption Report:
+   Tot. No. of Allocations             :  1253
+   Tot. No. of Deallocations           :  1253
+   Remaining Memory (B)                :  0
+   Memory occupation:
+     Peak Value (MB)                   :  762.952
+     for the array                     : wa_write_bin_conf_v1
+     in the routine                    : Main_program
+     Memory Peak of process            : 37.540 MB
+ Walltime since initialization         :  00:00:00.402132611
+ Max No. of dictionaries used          :  855 #( 185 still in use)
+ Number of dictionary folders allocated:  1

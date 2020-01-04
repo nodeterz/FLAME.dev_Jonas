@@ -1,0 +1,19 @@
+main:
+    task        : ann
+    seed        : 234511
+    types       : B
+    verbosity   : 1
+    rng_type: only_for_tests #Do not use this value, only useful for developers
+
+ann:
+    subtask       : train
+    optimizer     : rivals
+    approach      : atombased
+    nstep_opt     : 20
+    nconf_rmse    : 500
+    ampl_rand     : 0.005 
+    symfunc       : only_calculate
+    print_energy  : True
+
+potential:
+    potential: ann

@@ -1,0 +1,673 @@
+---
+ Code logo:
+   "__________________ Fully-Loaded Atomistic Modeling Environment
+           .
+          .M
+         ,MM
+         MM:
+     .   YMM,
+     M   `MMM,     .
+     M.   `MMM    .M
+     MM,  ,MMM   ,MM
+     `MM, MMM`  ,MM` .
+     ,MMM./MMMM.MMM, M
+     MMMMMM MMMMMMMMMMI  FFFFFF LL        AA    M        M EEEEEE
+     MMMMMM   MMMMMMMMM  F      LL       A  A   MM      MM E
+     `MMMM     MMMMMMM`  FFFFFF LL      A    A  M M    M M EEEEEE
+      /MMMMM   MMMMMM`   F      LL      AAAAAA  M  M  M  M E
+       MMMMMM  MMMMM`    F      LLLLLL A      A M   MM   M EEEEEE
+   ________________________________________ www.flame-code.org   "
+ Reference Paper                       : To Be Added Later.
+ Timestamp of this run                 : 2019-08-17 10:06:10.404
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MERGED INPUT FILE
+ main:
+   task                                : testforces
+   types                               : Si
+   two_level_geopt                     : False
+   verbosity                           : 0
+   verbose                             : 3
+   rng_type                            : intrinsic
+   seed                                : -2
+   nrun_lammps                         : 0
+   nat                                 : 0
+   pressure                            : 0.0
+   findsym                             : False
+   finddos                             : False
+   params_new                          : False
+ minhopp:
+   nstep                               : 0
+   nsoften                             : 7
+   mdmin                               : 3
+   minter                              : 1
+   nrandoff                            : 0
+   npminx                              : 1000
+   etoler                              : 1.E-2
+   eref                                : -1.E50
+   ekinmax                             : 1.E20
+   alpha1                              : 0.9803921568627451
+   alpha2                              : 1.02d0
+   beta1                               : 1.05d0
+   beta2                               : 1.05d0
+   beta3                               : 0.9523809523809523
+   trajectory                          : False
+   print_force                         : False
+   auto_soft                           : False
+   alpha_lat                           : 1.0
+   alpha_at                            : 1.0
+   mol_soften                          : False
+ geopt:
+   method                              : unknown
+   fmaxtol                             : -1.0
+   alphax                              : -1.0
+   condnum                             : 10.0
+   precaution                          : normal
+   lprint                              : False
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+   hesslat                             : 1.0
+   hessat                              : 1.0
+   geoext                              : False
+   qbfgsndim                           : 1
+   qbfgstri                            : 0.5
+   qbfgstrmin                          : 1.E-3
+   qbfgstrmax                          : 0.5
+   qbfgsw1                             : 0.01
+   qbfgsw2                             : 0.5
+   maxrise                             : 1.E-6
+   sqnmcutoff                          : 1.E-4
+   sqnmsteep                           : 1.0
+   sqnmtrustr                          : 0.1
+ geopt_prec:
+   method                              : unknown
+   fmaxtol                             : -1.0
+   alphax                              : -1.0
+   condnum                             : 10.0
+   precaution                          : normal
+   lprint                              : False
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+ saddle_opt:
+   method                              : unknown
+   fmaxtol                             : -1.0
+   alphax                              : -1.0
+   condnum                             : 10.0
+   precaution                          : normal
+   lprint                              : False
+   dt_start                            : -1.0
+   nit                                 : -1
+   dxmax                               : -1.0
+   anoise                              : -1.0
+   nsatur                              : -1
+   cellrelax                           : False
+   funits                              : -1.0
+   print_force                         : False
+   trajectory                          : False
+   nhist                               : 10
+   dt_min                              : 1.0
+   dt_max                              : 80.0
+   strfact                             : 100.0
+ saddle:
+   method                              : unknown
+   list_random_displace                : None
+   dimsep                              : -1.0
+   ampl                                : -1.0
+   np_splsad                           : 2
+   np_neb                              : 2
+   ns2                                 : 0
+   vdtol                               : 0.1
+   dt                                  : 0.03
+   htol                                : 0.02
+   alphax                              : 0.5
+   hybrid                              : no
+   docineb                             : no
+   doneb                               : unknown
+   pickbestanchorpoints                : unknown
+   runstat                             : new
+   typintpol                           : cubic
+   fcalls_max                          : 100
+   fmaxtol_splsad                      : 2.E-4
+   fmaxtol_neb                         : 2.E-2
+   opt_method                          : SD
+   dbar                                : 0.1
+   stepsize                            : 20.0
+   fnrmtol_coarse                      : 1.E-2
+   nstep                               : 1000
+   bar_contract                        : True
+   dbar_contracted                     : 1.E-3
+   fnrmtol_contracted                  : 2.E-4
+   nstep_contract                      : 20
+ potential:
+   potential                           : ltb
+   cal_charge                          : False
+   potential_sec                       : unknown
+   boundary                            : 1
+   ann_boundcheck                      : none
+   component_ff                        : no
+   sockinet                            : 0
+   sockport                            : 3141
+   sockhost                            : mh-driver
+   ipiinet                             : 0
+   ipiport                             : 3141
+   ipihost                             : mh-driver
+   ipiecutwf: [1.0, 1.0]
+   sockecutwf: [1.0, 1.0]
+   drift                               : False
+   add_repulsive                       : True
+   voids                               : False
+   core_rep                            : False
+   usewfgeo                            : False
+   usewfsoft                           : False
+   usewfmd                             : False
+   auto_kpt                            : True
+   kptmesh: [1, 1, 1]
+   kptden: [0.04, 0.06]
+   ewald:
+     hx                                : -1.0
+     hy                                : -1.0
+     hz                                : -1.0
+     alpha                             : -1.0
+     ecut                              : -1.0
+     ecutz                             : -1.0
+     ecut_auto                         : False
+     rcut                              : -1.0
+     rgcut                             : -1.0
+     nsp                               : -1
+     plane_voltageu                    : 0.0
+     plane_voltagel                    : 0.0
+     plane_voltageu_ac                 : 0.0
+     frequency                         : 0.0
+     gnrmtol                           : 1.E-7
+     psolver                           : unknown
+     ewald                             : False
+     cell_ortho                        : False
+     ewald_tol                         : 1.E-6
+     bias_type                         : no
+     external_field                    : 0.0
+     dielec_const                      : 1.0
+     dielec_const1                     : 1.0
+     dielec_const2                     : 1.0
+     cal_polar                         : False
+   confine:
+     confinement                       : False
+     nconfine                          : 0
+     cartred                           : C
+     dim                               : 1
+     exp                               : 4
+     prefac                            : 0.01
+     cut                               : 1.0
+     av                                : 2
+     eq                                : 0
+     nat                               : 0
+     atoms                             : all
+ ann:
+   subtask                             : unknown
+   optimizer                           : unknown
+   approach                            : atombased
+   symfunc                             : only_calculate
+   nstep_opt                           : 100
+   nstep_cep                           : 200
+   alphax_q                            : 1.0
+   alphax_r                            : 0.05
+   nconf_rmse                          : 0
+   ampl_rand                           : 1.0
+   symfunc_type                        : behler
+   syslinsolver                        : direct
+   rgnrmtol                            : 5.E-4
+   qgnrmtol                            : 5.E-4
+   etol                                : 1.0
+   dtol                                : 1.0
+   ftol                                : 1.E-4
+   normalization                       : False
+   bondbased                           : False
+   prefit                              : False
+   prefit_centt                        : False
+   read_forces                         : True
+   restart_param                       : False
+   restart_iter                        : 0
+   print_energy                        : False
+   fit_hoppint                         : False
+   save_symfunc_force                  : False
+   weight_hardness                     : 0.001
+   save_symfunc_behnam                 : False
+   freeBC_direct                       : False
+ dynamics:
+   nmd                                 : 300
+   nfreq                               : 0
+   dt                                  : -1.0
+   temp                                : 0.0
+   init_temp                           : 0.0
+   md_method                           : unknown
+   print_force                         : False
+   restart                             : False
+   algo                                : 1
+   integrator                          : 3
+   presscomp                           : 0.0
+   cellmass                            : 1.0
+   auto_mdmin                          : False
+   mdmin_init                          : 2
+   mdmin_min                           : 2
+   mdmin_max                           : 2
+   auto_mddt                           : False
+   dt_init                             : 20.0
+   nit_per_min                         : 25
+   encon                               : False
+   highest_freq                        : 10.0
+   ntherm                              : 2
+ bader:
+   method                              : unknown
+   filename                            : total_density.cube
+   vacuum                              : yes
+ genconf:
+   subtask                             : unknown
+   cal_pot                             : no
+   nat_add                             : 0
+   sat                                 : unknown
+   amargin                             : 0.0
+   dmin                                : 1.0
+   dmax                                : -1.0
+   npoint                              : 0
+   fbmin                               : -1.0
+   fbmax                               : -1.0
+   variable_cell                       : False
+   nonorthogonal                       : False
+ conf_comp:
+   tol                                 : 1.0
+ testforces:
+   method                              : finite_difference
+ single_point:
+   print_force                         : False
+   format                              : unknown
+   usesocket                           : no
+   sockinet                            : 0
+   sockport                            : 0
+   sockhost                            : 0
+ misc:
+   subtask                             : unknown
+   gaussian_width                      : -1.0
+   boundcond                           : unknown
+   posinp                              : unknown
+ fit_elecpot:
+   ngto                                : 1
+   iat_plot                            : 1
+   gwe_per_type                        : -1.0
+   q_per_type                          : -1.0
+   alphax_q                            : -1.0
+   alphax_a                            : -1.0
+   alphax_r                            : -1.0
+   pot_rmse_tol                        : 1.E-6
+   cutoff_fit_elecpot                  : True
+ fingerprint:
+   method                              : OGANOV
+   rcut                                : 15.0
+   dbin                                : 0.05
+   sigma                               : 0.02
+   nl                                  : 6
+   power                               : 3
+   gaussfac1                           : 1.0
+   gaussfac2                           : 1.5
+   atnmax                              : 10000
+   natx                                : 75
+   orbital                             : S
+   nexcut                              : 3
+   principleev                         : 6
+   molecules                           : 1
+   expa                                : 4
+   molsphere                           : 50
+   widthcut                            : 1.0
+   widthover                           : 1.0
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ system info: {ntypat:  1, Si:  1}
+ mpi started: {iproc_world:  0, nproc_world:  1, iproc:  0, nproc:  1}
+ random number generator: {iproc:  0, seed:  [  2147483562,  2147483398 ]}
+ Number of configurations read: {filename: posinp.yaml, nconf:  1}
+ LTB GAMMA POINT only                  : first call
+  #Reading spline potential coeff.cls
+ paircut                               :  9.9021649099E+00
+ finite difference step size           :  1.8897261278504419E-005
+ input structure info: &id001
+   epot                                : -2.600285014353943
+   fnrm                                :  4.813083886286209E-002
+   fsum_x                              : -5.1174342541315809E-017
+   fsum_y                              : -6.3317406873153459E-017
+   fsum_z                              : -1.9168694409543718E-016
+ force_error:
+ - epot_l_x                            : -2.600284723773521
+   epot_r_x                            : -2.600285304884185
+   epot_diff_x                         : -5.8111066358890184E-007
+   iat                                 :  1
+   F_x                                 :  1.5375526017005984E-002
+   err_x                               : -0.000000000034
+   epot_l_y                            : -2.600285118093703
+   epot_r_y                            : -2.600284910588455
+   epot_diff_y                         :  2.075052476513406E-007
+   F_y                                 : -5.4903524904749285E-003
+   err_y                               :  0.000000000090
+   epot_l_z                            : -2.600284882919083
+   epot_r_z                            : -2.600285145764704
+   epot_diff_z                         : -2.628456208242369E-007
+   F_z                                 :  6.9545955052593691E-003
+   err_z                               :  0.000000000109
+ - epot_l_x                            : -2.600284880013345
+   epot_r_x                            : -2.600285148631054
+   epot_diff_x                         : -2.6861770896502435E-007
+   iat                                 :  2
+   F_x                                 :  7.1073185021864153E-003
+   err_x                               : -0.000000000013
+   epot_l_y                            : -2.600284977083738
+   epot_r_y                            : -2.600285051598873
+   epot_diff_y                         : -7.4515134951269602E-008
+   F_y                                 :  1.9715855004611951E-003
+   err_y                               :  0.000000000060
+   epot_l_z                            : -2.600285067528844
+   epot_r_z                            : -2.60028496116348
+   epot_diff_z                         :  1.0636536362795823E-007
+   F_z                                 : -2.8143062420953784E-003
+   err_z                               : -0.000000000076
+ - epot_l_x                            : -2.60028495511915
+   epot_r_x                            : -2.600285073551355
+   epot_diff_x                         : -1.1843220448781722E-007
+   iat                                 :  3
+   F_x                                 :  3.1335812155610593E-003
+   err_x                               : -0.000000000038
+   epot_l_y                            : -2.600284966305924
+   epot_r_y                            : -2.600285062383289
+   epot_diff_y                         : -9.6077364286628608E-008
+   F_y                                 :  2.5420977017620036E-003
+   err_y                               : -0.000000000123
+   epot_l_z                            : -2.600285136953065
+   epot_r_z                            : -2.600284891732656
+   epot_diff_z                         :  2.4522040931174161E-007
+   F_z                                 : -6.4882524815382554E-003
+   err_z                               : -0.000000000120
+ - epot_l_x                            : -2.600285209139674
+   epot_r_x                            : -2.600284819554569
+   epot_diff_x                         :  3.8958510462094864E-007
+   iat                                 :  4
+   F_x                                 : -1.0307977908637571E-002
+   err_x                               : -0.000000000027
+   epot_l_y                            : -2.60028504953739
+   epot_r_y                            : -2.600284979153131
+   epot_diff_y                         :  7.0384258865630045E-008
+   F_y                                 : -1.8622872240107011E-003
+   err_y                               : -0.000000000063
+   epot_l_z                            : -2.600284949312242
+   epot_r_z                            : -2.600285079365226
+   epot_diff_z                         : -1.3005298482582361E-007
+   F_z                                 :  3.4410538210839204E-003
+   err_z                               : -0.000000000038
+ - epot_l_x                            : -2.600285329445158
+   epot_r_x                            : -2.600284699217573
+   epot_diff_x                         :  6.302275852299033E-007
+   iat                                 :  5
+   F_x                                 : -1.6675103789554488E-002
+   err_x                               :  0.000000000029
+   epot_l_y                            : -2.600284992073053
+   epot_r_y                            : -2.600285036615064
+   epot_diff_y                         : -4.4542010968484647E-008
+   F_y                                 :  1.1785308766534691E-003
+   err_y                               : -0.000000000022
+   epot_l_z                            : -2.600284984674854
+   epot_r_z                            : -2.600285044015147
+   epot_diff_z                         : -5.9340293123710808E-008
+   F_z                                 :  1.5700764227054495E-003
+   err_z                               :  0.000000000115
+ - epot_l_x                            : -2.600285136711838
+   epot_r_x                            : -2.600284891977421
+   epot_diff_x                         :  2.4473441717631772E-007
+   iat                                 :  6
+   F_x                                 : -6.4753938797337532E-003
+   err_x                               :  0.000000000076
+   epot_l_y                            : -2.600285018788454
+   epot_r_y                            : -2.600285009886798
+   epot_diff_y                         :  8.9016554127852032E-009
+   F_y                                 : -2.3552777157734555E-004
+   err_y                               :  0.000000000113
+   epot_l_z                            : -2.60028498290342
+   epot_r_z                            : -2.600285045784341
+   epot_diff_z                         : -6.2880920914665239E-008
+   F_z                                 :  1.6637575354555229E-003
+   err_z                               : -0.000000000021
+ - epot_l_x                            : -2.600284991986441
+   epot_r_x                            : -2.600285036701146
+   epot_diff_x                         : -4.471470482769746E-008
+   iat                                 :  7
+   F_x                                 :  1.1831000735268156E-003
+   err_x                               :  0.000000000064
+   epot_l_y                            : -2.600284991111607
+   epot_r_y                            : -2.60028503756148
+   epot_diff_y                         : -4.6449873281062537E-008
+   F_y                                 :  1.2290108797648593E-003
+   err_y                               : -0.000000000162
+   epot_l_z                            : -2.600284957479647
+   epot_r_z                            : -2.600285071212228
+   epot_diff_z                         : -1.1373258113067664E-007
+   F_z                                 :  3.0092344067273328E-003
+   err_z                               :  0.000000000092
+ - epot_l_x                            : -2.600285028652044
+   epot_r_x                            : -2.600285000036322
+   epot_diff_x                         :  2.8615721792135673E-008
+   iat                                 :  8
+   F_x                                 : -7.5713936948322959E-004
+   err_x                               : -0.000000000022
+   epot_l_y                            : -2.600285049630806
+   epot_r_y                            : -2.60028497904648
+   epot_diff_y                         :  7.0584325495559597E-008
+   F_y                                 : -1.8675808709098874E-003
+   err_y                               :  0.000000000049
+   epot_l_z                            : -2.600285189131792
+   epot_r_z                            : -2.600284839554367
+   epot_diff_z                         :  3.4957742522934154E-007
+   F_z                                 : -9.2494204263963761E-003
+   err_z                               :  0.000000000098
+ - epot_l_x                            : -2.600285041634794
+   epot_r_x                            : -2.600284987038191
+   epot_diff_x                         :  5.4596603682455225E-008
+   iat                                 :  9
+   F_x                                 : -1.4445639724978655E-003
+   err_x                               :  0.000000000052
+   epot_l_y                            : -2.600284986117008
+   epot_r_y                            : -2.600285042559658
+   epot_diff_y                         : -5.6442649665200406E-008
+   F_y                                 :  1.4934080544821726E-003
+   err_y                               :  0.000000000139
+   epot_l_z                            : -2.600285023669619
+   epot_r_z                            : -2.600285005028139
+   epot_diff_z                         :  1.8641479915260106E-008
+   F_z                                 : -4.9323228752342686E-004
+   err_z                               : -0.000000000029
+ - epot_l_x                            : -2.600284956310438
+   epot_r_x                            : -2.600285072382219
+   epot_diff_x                         : -1.1607178107553295E-007
+   iat                                 :  10
+   F_x                                 :  3.0711270774692588E-003
+   err_x                               : -0.000000000014
+   epot_l_y                            : -2.600285022056594
+   epot_r_y                            : -2.600285006636566
+   epot_diff_y                         :  1.5420027921209112E-008
+   F_y                                 : -4.079963665574305E-004
+   err_y                               : -0.000000000001
+   epot_l_z                            : -2.600285036596089
+   epot_r_z                            : -2.600284992090199
+   epot_diff_z                         :  4.4505890084423072E-008
+   F_z                                 : -1.1775751661640185E-003
+   err_z                               :  0.000000000029
+ - epot_l_x                            : -2.600284974292223
+   epot_r_x                            : -2.600285054397225
+   epot_diff_x                         : -8.010500263111453E-008
+   iat                                 :  11
+   F_x                                 :  2.1194870756235063E-003
+   err_x                               :  0.000000000014
+   epot_l_y                            : -2.600285050730268
+   epot_r_y                            : -2.600284977958446
+   epot_diff_y                         :  7.2771821901795875E-008
+   F_y                                 : -1.9254596037205458E-003
+   err_y                               :  0.000000000120
+   epot_l_z                            : -2.600285073723661
+   epot_r_z                            : -2.600284954947866
+   epot_diff_z                         :  1.1877579497721058E-007
+   F_z                                 : -3.1426721767181501E-003
+   err_z                               : -0.000000000013
+ - epot_l_x                            : -2.600285116885496
+   epot_r_x                            : -2.600284911812492
+   epot_diff_x                         :  2.0507300391159333E-007
+   iat                                 :  12
+   F_x                                 : -5.4259980336038606E-003
+   err_x                               :  0.000000000031
+   epot_l_y                            : -2.600285024336132
+   epot_r_y                            : -2.600285004348343
+   epot_diff_y                         :  1.9987789201536543E-008
+   F_y                                 : -5.2885410022366405E-004
+   err_y                               : -0.000000000026
+   epot_l_z                            : -2.600284980938323
+   epot_r_z                            : -2.60028504774692
+   epot_diff_z                         : -6.6808596876910542E-008
+   F_z                                 :  1.7676794640676613E-003
+   err_z                               : -0.000000000119
+ - epot_l_x                            : -2.600285082986426
+   epot_r_x                            : -2.600284945702224
+   epot_diff_x                         :  1.3728420222847149E-007
+   iat                                 :  13
+   F_x                                 : -3.6323835677604718E-003
+   err_x                               :  0.000000000012
+   epot_l_y                            : -2.600285019854475
+   epot_r_y                            : -2.600285008830421
+   epot_diff_y                         :  1.102405411401719E-008
+   F_y                                 : -2.9168394927157545E-004
+   err_y                               :  0.000000000039
+   epot_l_z                            : -2.600285038891666
+   epot_r_z                            : -2.600284989795623
+   epot_diff_z                         :  4.9096042786800353E-008
+   F_z                                 : -1.2990254837299017E-003
+   err_z                               :  0.000000000137
+ - epot_l_x                            : -2.600285165764908
+   epot_r_x                            : -2.600284862891594
+   epot_diff_x                         :  3.0287331398426431E-007
+   iat                                 :  14
+   F_x                                 : -8.0136827464917428E-003
+   err_x                               : -0.000000000017
+   epot_l_y                            : -2.60028499619649
+   epot_r_y                            : -2.600285032500034
+   epot_diff_y                         : -3.6303544170834812E-008
+   F_y                                 :  9.6055041803699858E-004
+   err_y                               : -0.000000000007
+   epot_l_z                            : -2.600284986686302
+   epot_r_z                            : -2.600285041995866
+   epot_diff_z                         : -5.5309564039873749E-008
+   F_z                                 :  1.4634281192290278E-003
+   err_z                               : -0.000000000080
+ - epot_l_x                            : -2.60028513963585
+   epot_r_x                            : -2.600284889046768
+   epot_diff_x                         :  2.5058908148523074E-007
+   iat                                 :  15
+   F_x                                 : -6.6303015868035371E-003
+   err_x                               :  0.000000000037
+   epot_l_y                            : -2.600284744357975
+   epot_r_y                            : -2.600285284307421
+   epot_diff_y                         : -5.3994944559931923E-007
+   F_y                                 :  1.4286447033074537E-002
+   err_y                               :  0.000000000025
+   epot_l_z                            : -2.600284984196995
+   epot_r_z                            : -2.600285044498793
+   epot_diff_z                         : -6.0301798221473746E-008
+   F_z                                 :  1.59551677612102E-003
+   err_z                               :  0.000000000091
+ - epot_l_x                            : -2.600284988886297
+   epot_r_x                            : -2.600285039801824
+   epot_diff_x                         : -5.0915526461636773E-008
+   iat                                 :  16
+   F_x                                 :  1.3471668124449658E-003
+   err_x                               : -0.000000000001
+   epot_l_y                            : -2.600285049062385
+   epot_r_y                            : -2.600284979617423
+   epot_diff_y                         :  6.9444962669251709E-008
+   F_y                                 : -1.8374345835884425E-003
+   err_y                               :  0.000000000004
+   epot_l_z                            : -2.600284985246448
+   epot_r_z                            : -2.600285043436358
+   epot_diff_z                         : -5.8189909779571281E-008
+   F_z                                 :  1.5396386409797765E-003
+   err_z                               :  0.000000000064
+ - epot_l_x                            : -2.600284478739534
+   epot_r_x                            : -2.600285549944154
+   epot_diff_x                         : -1.0712046201177827E-006
+   iat                                 :  17
+   F_x                                 :  2.8342853759272622E-002
+   err_x                               : -0.000000000149
+   epot_l_y                            : -2.600285043268597
+   epot_r_y                            : -2.600284985392868
+   epot_diff_y                         :  5.7875728209921817E-008
+   F_y                                 : -1.5313258584691754E-003
+   err_y                               :  0.000000000039
+   epot_l_z                            : -2.600285071011932
+   epot_r_z                            : -2.600284957674183
+   epot_diff_z                         :  1.1333774896371551E-007
+   F_z                                 : -2.9987876782565158E-003
+   err_z                               : -0.000000000011
+ - epot_l_x                            : -2.600285111393077
+   epot_r_x                            : -2.600284917298075
+   epot_diff_x                         :  1.940950022927268E-007
+   iat                                 :  18
+   F_x                                 : -5.1355326451279137E-003
+   err_x                               :  0.000000000056
+   epot_l_y                            : -2.600285147709579
+   epot_r_y                            : -2.600284880966585
+   epot_diff_y                         :  2.6674299435924809E-007
+   F_y                                 : -7.0577157246918118E-003
+   err_y                               :  0.000000000048
+   epot_l_z                            : -2.60028491990466
+   epot_r_z                            : -2.600285108785416
+   epot_diff_z                         : -1.8888075548062488E-007
+   F_z                                 :  4.9975695671568201E-003
+   err_z                               : -0.000000000007
+ - epot_l_x                            : -2.600284961095213
+   epot_r_x                            : -2.600285067597038
+   epot_diff_x                         : -1.0650182558080701E-007
+   iat                                 :  19
+   F_x                                 :  2.817916966603759E-003
+   err_x                               : -0.000000000021
+   epot_l_y                            : -2.600285026163732
+   epot_r_y                            : -2.60028500252659
+   epot_diff_y                         :  2.3637141577381726E-008
+   F_y                                 : -6.254119207397919E-004
+   err_y                               :  0.000000000089
+   epot_l_z                            : -2.600285020755328
+   epot_r_z                            : -2.600285007932466
+   epot_diff_z                         :  1.282286188342141E-008
+   F_z                                 : -3.3927831636406964E-004
+   err_z                               :  0.000000000003
+ CPU time: {iproc:  0, hrs:  0.633E-04, min:  0.380E-02, sec:  0.228E+00}
+ mpi finalized: {iproc_world:  0, nproc_world:  1}
+ Memory Consumption Report:
+   Tot. No. of Allocations             :  18
+   Tot. No. of Deallocations           :  18
+   Remaining Memory (B)                :  0
+   Memory occupation:
+     Peak Value (MB)                   :  0.003
+     for the array                     : atoms%itypat
+     in the routine                    : Main_program
+     Memory Peak of process            : 30.472 MB
+ Walltime since initialization         :  00:00:00.243677576
+ Max No. of dictionaries used          :  855 #( 185 still in use)
+ Number of dictionary folders allocated:  1
