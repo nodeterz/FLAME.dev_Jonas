@@ -150,6 +150,7 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
         enddo
         tt1=sqrt(tt1)
         tt2=sqrt(tt2)
+        write(99,*) tt1,tt2
         ann_arr%fchi_angle=tt3/(tt1*tt2)
         ann_arr%fchi_norm=tt2/tt1
     endif
@@ -586,26 +587,29 @@ subroutine get_gama_cent2(atoms,ann_arr)
     !local variables
     integer:: iat
     real(8):: dx, dy, dz, rsq, pi
-    real(8):: alpha_1, alpha_2, beta_1, beta_2, sigma
+    real(8):: a1, a2, sigma, omega
+    real(8):: cft1, cfb1, cft2, cfb2 
     pi=4.d0*atan(1.d0)
-    write(*,*) atoms%nat,atoms%fakegw, atoms%fakeindex, atoms%fakecoeff
     call update_ratp(atoms)
     do iat=1,atoms%nat
-        alpha_1=ann_arr%ann(atoms%itypat(iat))%gausswidth_1
-        alpha_2=ann_arr%ann(atoms%itypat(iat))%gausswidth_2
-        sigma  = atoms%fakegw
-        beta_1=1.d0/(sqrt(pi*(alpha_1**2+sigma**2)))**3
-        beta_2=1.d0/(sqrt(pi*(alpha_2**2+sigma**2)))**3
+        a1=ann_arr%ann(atoms%itypat(iat))%gausswidth_1
+        a2=ann_arr%ann(atoms%itypat(iat))%gausswidth_2
+        sigma=atoms%fakegw
+        omega=atoms%fakecoeff
         if (iat==atoms%fakeindex) then
-            ann_arr%gama(iat)=atoms%fakecoeff*beta_1
-            ann_arr%gama(atoms%nat+iat)=atoms%fakecoeff*beta_2
+            ann_arr%gama(iat)=3.d0*omega*(a1**2)*(sigma**2)/(2.d0*((a1**2+sigma**2)**2.5d0)*(pi**1.5d0))
+            ann_arr%gama(atoms%nat+iat)=3.d0*omega*(a2**2)*(sigma**2)/(2.d0*((a2**2+sigma**2)**2.5d0)*(pi**1.5d0))
         else
             dx=atoms%ratp(1,iat)-atoms%ratp(1,atoms%fakeindex)
             dy=atoms%ratp(2,iat)-atoms%ratp(2,atoms%fakeindex)
             dz=atoms%ratp(3,iat)-atoms%ratp(3,atoms%fakeindex)
             rsq=dx*dx+dy*dy+dz*dz
-            ann_arr%gama(iat)=atoms%fakecoeff*beta_1*exp(-rsq/(alpha_1**2+sigma**2))
-            ann_arr%gama(atoms%nat+iat)=atoms%fakecoeff*beta_2*exp(-rsq/(alpha_1**2+sigma**2))
+            cft1=omega*sigma*(3.d0*(a1**4)+3.d0*(a1**2)*(sigma**2)+2.d0*(sigma**2)*rsq)
+            cfb1=2.d0*a1*sqrt(a1**(-2) + sigma**(-2))*((a1**2+sigma**2)**3)*(pi**1.5)
+            cft2=omega*sigma*(3.d0*(a2**4)+3.d0*(a2**2)*(sigma**2)+2.d0*(sigma**2)*rsq)
+            cfb2=2.d0*a2*sqrt(a2**(-2) + sigma**(-2))*((a2**2+sigma**2)**3)*(pi**1.5)
+            ann_arr%gama(iat)=cft1*exp(-rsq/(a1**2+sigma**2))/cfb1
+            ann_arr%gama(atoms%nat+iat)=cft2*exp(-rsq/(a2**2+sigma**2))/cfb2
         endif
     enddo
 end subroutine get_gama_cent2
