@@ -151,7 +151,6 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
         enddo
         tt1=sqrt(tt1)
         tt2=sqrt(tt2)
-        write(99,*) tt1,tt2
         ann_arr%fchi_angle=tt3/(tt1*tt2)
         ann_arr%fchi_norm=tt2/tt1
     endif
