@@ -123,6 +123,7 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
     endif !end of if for potential
     if(parini%iverbose>=2) call cpu_time(time6)
     call get_electrostatic_cent2(parini,atoms,ann_arr,epot_c,ann_arr%a,poisson)
+    call get_gama_force_cent2(atoms,ann_arr)
     if(parini%iverbose>=2) then
         call cpu_time(time7)
         call yaml_mapping_open('Timing of CENT2')
@@ -614,3 +615,48 @@ subroutine get_gama_cent2(atoms,ann_arr)
     enddo
 end subroutine get_gama_cent2
 !*****************************************************************************************
+subroutine get_gama_force_cent2(atoms,ann_arr)
+    use mod_atoms, only: typ_atoms, update_ratp
+    use mod_ann, only: typ_ann_arr
+    implicit none
+    type(typ_atoms), intent(inout):: atoms
+    type(typ_ann_arr), intent(inout):: ann_arr
+    !local variables
+    integer:: iat
+    real(8):: dx, dy, dz, rsq, pi
+    real(8):: a1, a2, sigma, omega
+    real(8):: gama_d1, gama_d2
+    pi=4.d0*atan(1.d0)
+    call update_ratp(atoms)
+    gama_d1=0.d0
+    gama_d2=0.d0
+    do iat=1,atoms%nat
+        a1=ann_arr%ann(atoms%itypat(iat))%gausswidth_1
+        a2=ann_arr%ann(atoms%itypat(iat))%gausswidth_2
+        sigma=atoms%fakegw
+        omega=atoms%fakecoeff
+        if (iat==atoms%fakeindex) then
+            dx=1.d0;dy=1.d0;dz=1.d0
+            gama_d1=-((omega*sigma*(3*a1**4 + a1**2*sigma**2 - 2*sigma**4))&
+                /(a1*Pi**1.5*Sqrt(a1**(-2) + sigma**(-2))*(a1**2 + sigma**2)**4))
+            gama_d2=-((omega*sigma*(3*a2**4 + a2**2*sigma**2 - 2*sigma**4))&
+                /(a2*Pi**1.5*Sqrt(a2**(-2) + sigma**(-2))*(a2**2 + sigma**2)**4))
+        else
+            dx=atoms%ratp(1,iat)-atoms%ratp(1,atoms%fakeindex)
+            dy=atoms%ratp(2,iat)-atoms%ratp(2,atoms%fakeindex)
+            dz=atoms%ratp(3,iat)-atoms%ratp(3,atoms%fakeindex)
+            rsq=dx*dx+dy*dy+dz*dz
+            gama_d1=-((omega*sigma*(3*a1**4 + a1**2*sigma**2 + 2*rsq*sigma**2 - 2*sigma**4))&
+                     /(a1*Exp(rsq/(a1**2 + sigma**2))*Pi**1.5*Sqrt(a1**(-2) + sigma**(-2))&
+                     *(a1**2 + sigma**2)**4))
+            gama_d2=-((omega*sigma*(3*a2**4 + a2**2*sigma**2 + 2*rsq*sigma**2 - 2*sigma**4))&
+                    /(a2*Exp(rsq/(a2**2 + sigma**2))*Pi**1.5*Sqrt(a2**(-2) + sigma**(-2))&
+                    *(a2**2 + sigma**2)**4))
+        endif
+!        write(46,*) 'before' , iat , atoms%fat(1,iat), atoms%fat(2,iat), atoms%fat(3,iat)
+        atoms%fat(1,iat)=atoms%fat(1,iat)+(gama_d1*atoms%qat_1(iat)+gama_d2*atoms%qat_2(iat))*dx
+        atoms%fat(2,iat)=atoms%fat(2,iat)+(gama_d1*atoms%qat_1(iat)+gama_d2*atoms%qat_2(iat))*dy
+        atoms%fat(3,iat)=atoms%fat(3,iat)+(gama_d1*atoms%qat_1(iat)+gama_d2*atoms%qat_2(iat))*dz
+!        write(46,*) 'after' , iat , atoms%fat(1,iat), atoms%fat(2,iat), atoms%fat(3,iat)
+    enddo
+end subroutine get_gama_force_cent2
