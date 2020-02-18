@@ -158,6 +158,7 @@ subroutine ekf_rivals(parini,ann_arr,opt_ann)
         call fit_hgen(parini,ann_arr,opt_ann)
     endif
     do iter=0,parini%nstep_opt_ann
+!        ann_arr%set_eref=.true.
         ann_arr%istep_opt_ann=iter
         call yaml_sequence(advance='no',unit=ann_arr%iunit)
         call cpu_time(time_s)
@@ -423,6 +424,7 @@ subroutine ekf_behler(parini,ann_arr,opt_ann)
     alambda0=0.9998d0
     alambda=0.997d0
     do iter=0,parini%nstep_opt_ann
+!        ann_arr%set_eref=.true.
         call cpu_time(time_s)
         call convert_opt_x_ann_arr(opt_ann,ann_arr)
         if(iproc==0) then

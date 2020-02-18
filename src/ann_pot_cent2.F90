@@ -123,7 +123,7 @@ subroutine cal_ann_cent2(parini,atoms,symfunc,ann_arr)
     endif !end of if for potential
     if(parini%iverbose>=2) call cpu_time(time6)
     call get_electrostatic_cent2(parini,atoms,ann_arr,epot_c,ann_arr%a,poisson)
-    call get_gama_force_cent2(atoms,ann_arr)
+!    call get_gama_force_cent2(atoms,ann_arr)
     if(parini%iverbose>=2) then
         call cpu_time(time7)
         call yaml_mapping_open('Timing of CENT2')

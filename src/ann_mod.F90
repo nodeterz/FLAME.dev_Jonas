@@ -88,6 +88,7 @@ module mod_ann
         integer:: nweight_max=-1
         logical:: compute_symfunc=.true.
         logical:: cal_force=.true.
+        logical:: set_eref=.true.
         character(30):: event='unknown'
         character(50):: approach='unknown'
         character(50):: syslinsolver='unknown'
@@ -266,19 +267,19 @@ subroutine ann_arr_deallocate(ann_arr)
     !if(istat/=0) stop 'ERROR: unable to deallocate array ann_arr%y0d.'
     !deallocate(ann_arr%y0dr,stat=istat)
     !if(istat/=0) stop 'ERROR: unable to deallocate array ann_arr%y0dr.'
-    deallocate(ann_arr%chi_i)
-    deallocate(ann_arr%chi_o)
-    deallocate(ann_arr%chi_1)
-    deallocate(ann_arr%chi_2)
-    deallocate(ann_arr%chi_d)
-    deallocate(ann_arr%a)
-    deallocate(ann_arr%fat_chi)
-    deallocate(ann_arr%dqat_weights)
-    deallocate(ann_arr%g_per_atom)
-    deallocate(ann_arr%fatpq)
-    deallocate(ann_arr%stresspq)
-    deallocate(ann_arr%ipiv)
-    deallocate(ann_arr%qq)
+    if (allocated(ann_arr%chi_i)       )    deallocate(ann_arr%chi_i)
+    if (allocated(ann_arr%chi_o)       )    deallocate(ann_arr%chi_o)
+    if (allocated(ann_arr%chi_1)       )    deallocate(ann_arr%chi_1)
+    if (allocated(ann_arr%chi_2)       )    deallocate(ann_arr%chi_2)
+    if (allocated(ann_arr%chi_d)       )    deallocate(ann_arr%chi_d)
+    if (allocated(ann_arr%a)           )    deallocate(ann_arr%a)
+    if (allocated(ann_arr%fat_chi)     )    deallocate(ann_arr%fat_chi)
+    if (allocated(ann_arr%dqat_weights))    deallocate(ann_arr%dqat_weights)
+    if (allocated(ann_arr%g_per_atom)  )    deallocate(ann_arr%g_per_atom)
+    if (allocated(ann_arr%fatpq)       )    deallocate(ann_arr%fatpq)
+    if (allocated(ann_arr%stresspq)    )    deallocate(ann_arr%stresspq)
+    if (allocated(ann_arr%ipiv)        )    deallocate(ann_arr%ipiv)
+    if (allocated(ann_arr%qq)          )    deallocate(ann_arr%qq)
 end subroutine ann_arr_deallocate
 !*****************************************************************************************
 subroutine convert_x_ann(n,x,ann)

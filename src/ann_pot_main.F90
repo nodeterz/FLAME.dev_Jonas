@@ -116,7 +116,10 @@ subroutine cal_ann_main(parini,atoms,symfunc,ann_arr,opt_ann)
     elseif(trim(ann_arr%approach)=='eem1' .or. trim(ann_arr%approach)=='cent1') then
         call cal_ann_cent1(parini,atoms,symfunc,ann_arr)
     elseif(trim(ann_arr%approach)=='cent2') then
-        call set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
+        if(ann_arr%set_eref) then
+            ann_arr%set_eref=.false.
+            call set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
+        endif
         call cal_ann_cent2(parini,atoms,symfunc,ann_arr)
     elseif(trim(ann_arr%approach)=='centt') then
         call cal_ann_centt(parini,atoms,symfunc,ann_arr)
@@ -309,9 +312,9 @@ end subroutine prefit_cent
 !*****************************************************************************************
 subroutine set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
     use mod_parini, only: typ_parini
-    use mod_ann, only: typ_ann_arr
+    use mod_ann, only: typ_ann_arr, ann_arr_deallocate
     use mod_atoms, only: typ_atoms, atom_allocate_old, atom_deallocate_old, set_rat_iat
-    use mod_symfunc, only: typ_symfunc
+    use mod_symfunc, only: typ_symfunc, symfunc_deallocate
     use dynamic_memory
     use yaml_output
     implicit none
@@ -349,4 +352,7 @@ subroutine set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
         !write(*,'(a,4f)') 'Adjusting ener_ref: total charge= ',atoms_temp%qat_1(1),atoms_temp%qat_2(1),&
         !    ann_arr_temp%ann(atoms_temp%itypat(1))%ener_ref,t_ener_ref-atoms_temp%epot
     enddo
+    call atom_deallocate_old(atoms_temp)
+    call ann_arr_deallocate(ann_arr_temp)
+    call symfunc_deallocate(symfunc_temp)
 end subroutine set_single_atom_energy_cent2
