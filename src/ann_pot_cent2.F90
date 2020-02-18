@@ -446,7 +446,7 @@ subroutine get_electrostatic_cent2(parini,atoms,ann_arr,epot_c,a,poisson)
                 ann_arr%chi_2(iat)*atoms%qat_2(iat)
         tt2=tt2+atoms%qat_1(iat)**2*0.5d0*ann_arr%ann(atoms%itypat(iat))%hardness_1+&
                 atoms%qat_2(iat)**2*0.5d0*ann_arr%ann(atoms%itypat(iat))%hardness_2
-        tt3=tt3+atoms%qat_1(iat)*ann_arr%gama(iat)+atoms%qat_2(iat)*ann_arr%gama(iat+atoms%nat)
+        tt3=tt3+atoms%qat_1(iat)*ann_arr%gama(iat)+atoms%qat_2(iat)*ann_arr%gama(iat+atoms%nat) !FAKEPOT
     enddo
     call cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
     epot_c=epot_es+tt1+tt2+tt3+ann_arr%ener_ref
@@ -467,7 +467,7 @@ subroutine cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
     type(typ_poisson), intent(inout):: poisson
     !local variables
     integer:: iat, jat
-    real(8):: tt2, tt3, ttf, pi
+    real(8):: tt2, tt3, tt4, ttf, pi
     real(8):: gama_1, gama_2, gama_3, gama_4 
     real(8):: beta_iat_1, beta_iat_2, beta_jat_1, beta_jat_2
     real(8):: dx, dy, dz, r, ehartree_t
@@ -477,6 +477,7 @@ subroutine cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
         pi=4.d0*atan(1.d0)
         tt2=0.d0
         tt3=0.d0
+        tt4=0.d0
         call update_ratp(atoms)
         do iat=1,atoms%nat
             beta_iat_1=ann_arr%ann(atoms%itypat(iat))%gausswidth_1
@@ -485,8 +486,8 @@ subroutine cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
             gama_2=1.d0/sqrt(beta_iat_1**2+beta_iat_2**2)
             gama_3=1.d0/sqrt(beta_iat_2**2+beta_iat_1**2)
             gama_4=1.d0/sqrt(beta_iat_2**2+beta_iat_2**2)
-            tt2=tt2+(atoms%qat_1(iat)**2*gama_1 + atoms%qat_2(iat)**2*gama_4 &
-                   + atoms%qat_1(iat)*atoms%qat_2(iat)*(gama_2+gama_3))/sqrt(pi)
+            tt2=tt2+(atoms%qat_1(iat)**2*gama_1 + atoms%qat_2(iat)**2*gama_4)/sqrt(pi)
+            tt4=tt4+(atoms%qat_1(iat)*atoms%qat_2(iat)*(gama_2+gama_3))/sqrt(pi)
             do jat=iat+1,atoms%nat
                 dx=atoms%ratp(1,jat)-atoms%ratp(1,iat)
                 dy=atoms%ratp(2,jat)-atoms%ratp(2,iat)
@@ -513,7 +514,7 @@ subroutine cal_electrostatic_ann_cent2(parini,atoms,ann_arr,a,poisson)
                 atoms%fat(3,jat)=atoms%fat(3,jat)-ttf*dz
             enddo
         enddo
-        ann_arr%epot_es=tt2+tt3
+        ann_arr%epot_es=tt2+tt3+tt4
     elseif(trim(atoms%boundcond)=='slab' .or. trim(atoms%boundcond)=='bulk') then
         gausswidth(:)=ann_arr%ann(atoms%itypat(:))%gausswidth
         call get_hartree(parini,poisson,atoms,gausswidth,ehartree_t)
@@ -659,3 +660,4 @@ subroutine get_gama_force_cent2(atoms,ann_arr)
 !        write(46,*) 'after' , iat , atoms%fat(1,iat), atoms%fat(2,iat), atoms%fat(3,iat)
     enddo
 end subroutine get_gama_force_cent2
+!*****************************************************************************************

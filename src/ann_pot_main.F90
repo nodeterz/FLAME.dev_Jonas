@@ -116,6 +116,7 @@ subroutine cal_ann_main(parini,atoms,symfunc,ann_arr,opt_ann)
     elseif(trim(ann_arr%approach)=='eem1' .or. trim(ann_arr%approach)=='cent1') then
         call cal_ann_cent1(parini,atoms,symfunc,ann_arr)
     elseif(trim(ann_arr%approach)=='cent2') then
+        call set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
         call cal_ann_cent2(parini,atoms,symfunc,ann_arr)
     elseif(trim(ann_arr%approach)=='centt') then
         call cal_ann_centt(parini,atoms,symfunc,ann_arr)
@@ -306,3 +307,46 @@ subroutine prefit_cent(parini,ann_arr,symfunc_train,symfunc_valid,atoms_train,at
     enddo
 end subroutine prefit_cent
 !*****************************************************************************************
+subroutine set_single_atom_energy_cent2(parini,atoms,symfunc,ann_arr)
+    use mod_parini, only: typ_parini
+    use mod_ann, only: typ_ann_arr
+    use mod_atoms, only: typ_atoms, atom_allocate_old, atom_deallocate_old, set_rat_iat
+    use mod_symfunc, only: typ_symfunc
+    use dynamic_memory
+    use yaml_output
+    implicit none
+    type(typ_parini), intent(in):: parini
+    type(typ_ann_arr), intent(inout):: ann_arr
+    type(typ_atoms), intent(inout):: atoms
+    type(typ_symfunc), intent(inout):: symfunc
+    !local variables
+    type(typ_ann_arr)   :: ann_arr_temp
+    type(typ_atoms)     ::atoms_temp
+    type(typ_symfunc)   :: symfunc_temp
+    integer:: ityp
+    real(8):: t_ener_ref
+    ann_arr_temp=ann_arr
+    atoms_temp=atoms
+    symfunc_temp=symfunc
+    call atom_allocate_old(atoms_temp,1,0,0)
+    call set_rat_iat(atoms_temp,1,(/1.d0,1.d0,1.d0/))
+    atoms_temp%cellvec(1:3,1:3)=0.d0
+    atoms_temp%cellvec(1,1)=10.d0
+    atoms_temp%cellvec(2,2)=10.d0
+    atoms_temp%cellvec(3,3)=10.d0
+    atoms_temp%boundcond='free'
+    ann_arr_temp%event='potential'
+    ann_arr_temp%compute_symfunc=.true.
+    do ityp=1,parini%ntypat
+        atoms_temp%sat(1)=parini%stypat(ityp)
+        atoms_temp%itypat(1)=parini%ltypat(ityp)
+        t_ener_ref=ann_arr_temp%ann(atoms_temp%itypat(1))%ener_ref
+        ann_arr_temp%ann(atoms_temp%itypat(1))%ener_ref=0.d0
+        call cal_ann_cent2(parini,atoms_temp,symfunc_temp,ann_arr_temp)
+        ann_arr_temp%ann(atoms_temp%itypat(1))%ener_ref=t_ener_ref-atoms_temp%epot
+        ann_arr%ann(atoms_temp%itypat(1))%ener_ref=t_ener_ref-atoms_temp%epot
+!        call cal_ann_cent2(parini,atoms_temp,symfunc_temp,ann_arr_temp)
+        !write(*,'(a,4f)') 'Adjusting ener_ref: total charge= ',atoms_temp%qat_1(1),atoms_temp%qat_2(1),&
+        !    ann_arr_temp%ann(atoms_temp%itypat(1))%ener_ref,t_ener_ref-atoms_temp%epot
+    enddo
+end subroutine set_single_atom_energy_cent2
